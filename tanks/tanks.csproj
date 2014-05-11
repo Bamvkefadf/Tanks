@@ -51,6 +51,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GameStatus.cs" />
+    <Compile Include="HunterIMG.cs" />
+    <Compile Include="HunterTank.cs" />
     <Compile Include="IExternalWalls.cs" />
     <Compile Include="IPicture.cs" />
     <Compile Include="IRun.cs" />
@@ -60,9 +62,11 @@
     <Compile Include="Player.cs" />
     <Compile Include="PlayerIMG.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Projectile.cs" />
+    <Compile Include="ProjectileIMG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Score.cs" />
-    <Compile Include="Tank.cs" />
+    <Compile Include="EnemyTank.cs" />
     <Compile Include="TankIMG.cs" />
     <Compile Include="View.cs">
       <SubType>UserControl</SubType>
@@ -137,6 +141,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tank0_121.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_132.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_112.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_122.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Projectile.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

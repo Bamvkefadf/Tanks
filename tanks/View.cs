@@ -28,13 +28,18 @@ namespace tanks
             DrawTank(e);
             DrawPlayer(e);
             DrawScore(e);
-            
+            DrawProjectile(e);         
 
             if (model.gameStatus != GameStatus.PLAY)
                 return;
 
             Thread.Sleep(model.speedGame);
             Invalidate();
+        }
+
+        private void DrawProjectile(PaintEventArgs e)
+        {
+            e.Graphics.DrawImage(model.Projectile.Img, new Point(model.Projectile.X, model.Projectile.Y));
         }
 
         private void DrawScore(PaintEventArgs e)
@@ -50,7 +55,7 @@ namespace tanks
 
         private void DrawTank(PaintEventArgs e)
         {
-            foreach (Tank t in model.Tanks)
+            foreach (EnemyTank t in model.Tanks)
             {
                 e.Graphics.DrawImage(t.Img, new Point(t.X, t.Y));
             }
