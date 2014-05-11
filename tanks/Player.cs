@@ -11,31 +11,10 @@ namespace tanks
         PlayerIMG playerImg = new PlayerIMG();
         Image img;
         int x, y;
-        int temp_x, temp_y;
-        int direct_x = 0, direct_y = 1;// 1 - вправо, вниз. 0 - без движения. -1 - влево, вверх
+        public Direction moving_direction;
+        public Direction img_direction;
+        int temp_x, temp_y;             //координаты для сохранения игрока внутри поля
         static Random r;
-
-        public int Direct_y
-        {
-            get { return direct_y; }
-            set
-            {
-                if (value == 0 || value == 1 || value == -1)
-                    direct_y = value;
-                else direct_y = 0;
-            }
-        }
-
-        public int Direct_x
-        {
-            get { return direct_x; }
-            set
-            {
-                if (value == 0 || value == 1 || value == -1)
-                    direct_x = value;
-                else direct_x = 0;
-            }
-        }
 
         public Image Img
         {
@@ -62,8 +41,7 @@ namespace tanks
 
             this.x = 400;
             this.y = 550;
-            this.Direct_x = 0;
-            this.Direct_y = -1;
+            moving_direction = Direction.UP;
 
             PutImg();
         }
@@ -73,14 +51,42 @@ namespace tanks
             temp_x = x;
             temp_y = y;
 
-            x += direct_x;
-            y += direct_y;
+            GoDirection();
 
             ExternalWalls();
 
             PutImg();
 
             Turn();
+        }
+
+        private void GoDirection()
+        {
+            if (moving_direction == Direction.DOWN)
+            {
+                x += 0;
+                y += 1;
+            }
+            else if (moving_direction == Direction.UP)
+            {
+                x += 0;
+                y += -1;
+            }
+            else if (moving_direction == Direction.RIGHT)
+            {
+                x += 1;
+                y += 0;
+            }
+            else if (moving_direction == Direction.LEFT)
+            {
+                x += -1;
+                y += 0;
+            }
+            else
+            {
+                x += 0;
+                y += 0;
+            }
         }
 
         public void Turn()
@@ -93,8 +99,7 @@ namespace tanks
         {
             if (x <= 0 || x >= 761 || y <= 0 || y >= 561)
             {
-                direct_x = 0;
-                direct_y = 0;
+                moving_direction = Direction.STOP;
                 x = temp_x;
                 y = temp_y;
             }
@@ -102,14 +107,26 @@ namespace tanks
 
         void PutImg()
         {
-            if (direct_x == 1)
+            if (moving_direction == Direction.RIGHT)
+            {
+                img_direction = Direction.RIGHT;
                 img = playerImg.Img10;
-            else if (direct_y == 1)
+            }
+            else if (moving_direction == Direction.DOWN)
+            {
+                img_direction = Direction.DOWN;
                 img = playerImg.Img01;
-            else if (direct_x == -1)
+            }
+            else if (moving_direction == Direction.LEFT)
+            {
+                img_direction = Direction.LEFT;
                 img = playerImg.Img_10;
-            else if (direct_y == -1)
+            }
+            else if (moving_direction == Direction.UP)
+            {
+                img_direction = Direction.UP;
                 img = playerImg.Img0_1;
+            }
         }
 
     }

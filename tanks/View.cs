@@ -55,9 +55,14 @@ namespace tanks
 
         private void DrawTank(PaintEventArgs e)
         {
-            foreach (EnemyTank t in model.Tanks)
+            for (int i = 0; i < model.SimpleTanks.Count; i++)
             {
-                e.Graphics.DrawImage(t.Img, new Point(t.X, t.Y));
+                e.Graphics.DrawImage(model.SimpleTanks[i].Img, new Point(model.SimpleTanks[i].X, model.SimpleTanks[i].Y));
+            }
+
+            for (int i = 0; i < model.HunterTanks.Count; i++)
+            {
+                e.Graphics.DrawImage(model.HunterTanks[i].Img, new Point(model.HunterTanks[i].X, model.HunterTanks[i].Y));
             }
         }
 

@@ -23,7 +23,7 @@ namespace tanks
         public Controller_MainForm(int amountTanks, int speedGame, int amountWalls)
         {
             InitializeComponent();
-            model = new Model(amountTanks, speedGame, amountWalls);
+            model = new Model(amountTanks, speedGame, amountWalls, 2);
             view = new View(model);
             view.Location = new Point(50, 50);
             this.Controls.Add(view);
@@ -69,8 +69,7 @@ namespace tanks
                 case 'A':
                 case 'Ф':
                     {
-                        model.Player.Direct_y = 0;
-                        model.Player.Direct_x = -1;
+                        model.Player.moving_direction = Direction.LEFT;
                     }
                     break;
                 case 's':
@@ -78,8 +77,7 @@ namespace tanks
                 case 'S':
                 case 'Ы':
                     {
-                        model.Player.Direct_y = 1;
-                        model.Player.Direct_x = 0;
+                        model.Player.moving_direction = Direction.DOWN;
                     }
                     break;
                 case 'd':
@@ -87,8 +85,7 @@ namespace tanks
                 case 'D':
                 case 'В':
                     {
-                        model.Player.Direct_y = 0;
-                        model.Player.Direct_x = 1;
+                        model.Player.moving_direction = Direction.RIGHT;
                     }
                     break;
                 case 'w':
@@ -96,34 +93,36 @@ namespace tanks
                 case 'W':
                 case 'Ц':
                     {
-                        model.Player.Direct_y = -1;
-                        model.Player.Direct_x = 0;
+                        model.Player.moving_direction = Direction.UP;
                     }
                     break;
                 default:
                     {
-                        model.Projectile.Direct_x = model.Player.Direct_x;
-                        model.Projectile.Direct_y = model.Player.Direct_y;
-                        if (model.Player.Direct_y == -1)
+                        if (model.Projectile.distance == 0)
                         {
-                            model.Projectile.X = model.Player.X + 20;
-                            model.Projectile.Y = model.Player.Y;
+                            model.Projectile.direction = model.Player.img_direction;
+                            if (model.Projectile.direction == Direction.UP)
+                            {
+                                model.Projectile.X = model.Player.X + 20;
+                                model.Projectile.Y = model.Player.Y;
+                            }
+                            else if (model.Projectile.direction == Direction.DOWN)
+                            {
+                                model.Projectile.X = model.Player.X + 20;
+                                model.Projectile.Y = model.Player.Y + 40;
+                            }
+                            else if (model.Projectile.direction == Direction.LEFT)
+                            {
+                                model.Projectile.X = model.Player.X;
+                                model.Projectile.Y = model.Player.Y + 20;
+                            }
+                            else if (model.Projectile.direction == Direction.RIGHT)
+                            {
+                                model.Projectile.X = model.Player.X + 40;
+                                model.Projectile.Y = model.Player.Y + 20;
+                            }
                         }
-                        else if (model.Player.Direct_y == 1)
-                        {
-                            model.Projectile.X = model.Player.X + 20;
-                            model.Projectile.Y = model.Player.Y + 40;
-                        }
-                        else if (model.Player.Direct_x == -1)
-                        {
-                            model.Projectile.X = model.Player.X;
-                            model.Projectile.Y = model.Player.Y + 20;
-                        }
-                        else if (model.Player.Direct_x == 1)
-                        {
-                            model.Projectile.X = model.Player.X + 40;
-                            model.Projectile.Y = model.Player.Y + 20;
-                        }
+
                     }
                     break;
             }

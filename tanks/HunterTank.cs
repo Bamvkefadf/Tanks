@@ -60,7 +60,7 @@ namespace tanks
 
             PutImg();
 
-            if (mustTurn == 25)
+            if (mustTurn == 40)
             {
                 Turn(target_x, target_y);
                 mustTurn = 0;

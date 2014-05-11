@@ -10,8 +10,9 @@ namespace tanks
     {
         private ProjectileIMG projectileImg = new ProjectileIMG();
         private Image img;
+        public int distance;
         int x, y;
-        int direct_x, direct_y;
+        public Direction direction;
 
         public Image Img
         {
@@ -31,52 +32,69 @@ namespace tanks
             set { x = value; }
         }
 
-        public int Direct_y
-        {
-            get { return direct_y; }
-            set
-            {
-                if (value == 0 || value == 1 || value == -1)
-                    direct_y = value;
-                else direct_y = 0;
-            }
-        }
-
-        public int Direct_x
-        {
-            get { return direct_x; }
-            set
-            {
-                if (value == 0 || value == 1 || value == -1)
-                    direct_x = value;
-                else direct_x = 0;
-            }
-        }
-
         public Projectile()
         {
             img = projectileImg.Img_10;
+            ProjectileDefaultSettings();
+        }
+
+        public void ProjectileDefaultSettings()
+        {
             x = y = -10;
-            direct_x = direct_y = 0;
+            direction = Direction.STOP;
+            distance = 0;
         }
 
         private void PutImg()
         {
-            if (direct_x == 1)
+            if (direction == Direction.RIGHT)
                 img = projectileImg.Img10;
-            else if (direct_y == 1)
+            else if (direction == Direction.DOWN)
                 img = projectileImg.Img01;
-            else if (direct_x == -1)
+            else if (direction == Direction.LEFT)
                 img = projectileImg.Img_10;
-            else if (direct_y == -1)
+            else if (direction == Direction.UP)
                 img = projectileImg.Img0_1;
         }
 
         public void Run()
         {
+            if (direction == Direction.STOP)
+                return;
+            distance = distance + 3;
             PutImg();
-            x += direct_x * 3;
-            y += direct_y * 3;
+            GoDirection();
+            if (distance > 250)
+                ProjectileDefaultSettings();
+        }
+
+        private void GoDirection()
+        {
+            if (direction == Direction.DOWN)
+            {
+                x += 0;
+                y += 3;
+            }
+            else if (direction == Direction.UP)
+            {
+                x += 0;
+                y += -3;
+            }
+            else if (direction == Direction.RIGHT)
+            {
+                x += 3;
+                y += 0;
+            }
+            else if (direction == Direction.LEFT)
+            {
+                x += -3;
+                y += 0;
+            }
+            else
+            {
+                x += 0;
+                y += 0;
+            }
         }
     }
 }
