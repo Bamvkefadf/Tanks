@@ -9,51 +9,71 @@ namespace tanks
     {
         HunterIMG hunterImg = new HunterIMG();
 
-        private void PutImg()
+        void PutImg()
         {
-            if (direct_x == 1)
+            if (moving_direction == Direction.RIGHT)
+            {
+                moving_direction = Direction.RIGHT;
                 img = hunterImg.Img10;
-            else if (direct_y == 1)
+            }
+            else if (moving_direction == Direction.DOWN)
+            {
+                moving_direction = Direction.DOWN;
                 img = hunterImg.Img01;
-            else if (direct_x == -1)
+            }
+            else if (moving_direction == Direction.LEFT)
+            {
+                moving_direction = Direction.LEFT;
                 img = hunterImg.Img_10;
-            else if (direct_y == -1)
+            }
+            else if (moving_direction == Direction.UP)
+            {
+                moving_direction = Direction.UP;
                 img = hunterImg.Img0_1;
+            }
         }
 
         public void Turn(int target_x, int target_y)
         {
-            Direct_x = Direct_y = 0;
+            moving_direction = Direction.STOP;
 
-            if (X > target_x)
-                Direct_x = -1;
-            if (X < target_x)
-                direct_x = 1;
-            if (Y > target_y)
-                direct_y = -1;
-            if (Y < target_y)
-                direct_y = 1;
-
-            if (Direct_x != 0 || Direct_y != 0)
-                if (r.Next(500) < 250)
-                    Direct_x = 0;
-                else
-                    Direct_y = 0;
-
+            if (r.Next(500) < 250)
+            {
+                if (X > target_x)
+                    moving_direction = Direction.LEFT;
+                else if (X < target_x)
+                    moving_direction = Direction.RIGHT;
+            }
+            else
+            {
+                if (Y > target_y)
+                    moving_direction = Direction.UP;
+                else if (Y < target_y)
+                    moving_direction = Direction.DOWN;
+            }
+            
            PutImg();
         }
 
         new public void TurnAround()
         {
-            Direct_x = -Direct_x;
-            Direct_y = -Direct_y;
+            if (moving_direction == Direction.LEFT)
+                moving_direction = Direction.RIGHT;
+            else if (moving_direction == Direction.RIGHT)
+                moving_direction = Direction.LEFT;
+            else if (moving_direction == Direction.UP)
+                moving_direction = Direction.DOWN;
+            else if (moving_direction == Direction.DOWN)
+                moving_direction = Direction.UP;
             PutImg();
         }
 
         public void Run(int target_x, int target_y)
         {
-            x += direct_x;
-            y += direct_y;
+            prev_x = x;
+            prev_y = y;
+
+            GoDirection();
             mustTurn++;
 
             ExternalWalls();

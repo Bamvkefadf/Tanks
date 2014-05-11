@@ -9,8 +9,8 @@ namespace tanks
 {
     class Model
     {
-        int amountSimpleTanks;
         public int speedGame;
+        int amountSimpleTanks;
         int amountWalls;
         int amountHunterTanks;
         List<EnemyTank> simpleTanks;
@@ -190,62 +190,100 @@ namespace tanks
                     hunterTanks[i].Run(player.X, player.Y);
                 }
 
-                    for (int i = 0; i < simpleTanks.Count; i++)
-                        if ((Projectile.X - simpleTanks[i].X) < 40 && (Projectile.Y - simpleTanks[i].Y) < 40
-                            && (Projectile.X - simpleTanks[i].X) > 0 && (Projectile.Y - simpleTanks[i].Y) > 0)
-                        {
-                            simpleTanks.RemoveAt(i);
+                for (int i = 0; i < simpleTanks.Count; i++)
+                    if 
+                        (
+                        Math.Abs(Projectile.X - simpleTanks[i].X) == 8 && Math.Abs(Projectile.Y - simpleTanks[i].Y) < 40
+                        ||
+                        Math.Abs(Projectile.X - simpleTanks[i].X) == 40 && Math.Abs(Projectile.Y - simpleTanks[i].Y) < 40
+                        ||
+                        Math.Abs(Projectile.X - simpleTanks[i].X) < 40 && Math.Abs(Projectile.Y - simpleTanks[i].Y) == 8
+                        ||
+                        Math.Abs(Projectile.X - simpleTanks[i].X) < 40 && Math.Abs(Projectile.Y - simpleTanks[i].Y) == 40
+                        )
+                    {
+                        score.Increment();
+                        simpleTanks.RemoveAt(i);
+                        projectile.ProjectileDefaultSettings();
+                    }
+
+                for (int i = 0; i < hunterTanks.Count; i++)
+                    if (Math.Abs(hunterTanks[i].X - Projectile.X) < 40 && Math.Abs(hunterTanks[i].Y - Projectile.Y) < 40)
+                    {
+                        score.DoubleIncrement();
+                        hunterTanks.RemoveAt(i);
+                        projectile.ProjectileDefaultSettings();
+                    }
+
+                for (int i = 0; i < walls.Count; i++)
+                    //if (Math.Abs(walls[i].X - Projectile.X) < 40 && Math.Abs(walls[i].Y - Projectile.Y) < 40)
+                    if
+                        (
+                        ((Projectile.X - walls[i].X) == -8 && (Projectile.Y - walls[i].Y) < 40 && (Projectile.Y - walls[i].Y) > -8)
+                        ||
+                        ((Projectile.X - walls[i].X) == 40 && (Projectile.Y - walls[i].Y) < 40 && (Projectile.Y - walls[i].Y) > -8)
+                        ||
+                        ((Projectile.Y - walls[i].Y) == -8 && (Projectile.X - walls[i].X) < 40 && (Projectile.X - walls[i].X) > -8)
+                        ||
+                        ((Projectile.Y - walls[i].Y) == 40 && (Projectile.X - walls[i].X) < 40 && (Projectile.X - walls[i].X) > -8))
+                    {
+                            walls.RemoveAt(i);
                             projectile.ProjectileDefaultSettings();
-                        }
+                    }
 
-                    for (int i = 0; i < hunterTanks.Count; i++)
-                        if (Math.Abs(hunterTanks[i].X - Projectile.X) < 40 && Math.Abs(hunterTanks[i].Y - Projectile.Y) < 40)
+                for (int i = 0; i < simpleTanks.Count - 1; i++)
+                    for (int j = i + 1; j < simpleTanks.Count; j++)
+                        if (
+                            (Math.Abs(simpleTanks[i].X - simpleTanks[j].X) <= 41 && (simpleTanks[i].Y == simpleTanks[j].Y))
+                            ||
+                            (Math.Abs(simpleTanks[i].Y - simpleTanks[j].Y) <= 41 && (simpleTanks[i].X == simpleTanks[j].X))
+                            ||
+                            (Math.Abs(simpleTanks[i].X - simpleTanks[j].X) <= 41 && Math.Abs(simpleTanks[i].Y - simpleTanks[j].Y) <= 41)
+                            )
                         {
-                            hunterTanks.RemoveAt(i);
-                            projectile.ProjectileDefaultSettings();
-                        }
-
-                    for (int i = 0; i < simpleTanks.Count - 1; i++)
-                        for (int j = i + 1; j < simpleTanks.Count; j++)
-                            if (
-                                /*(Math.Abs(simpleTanks[i].X - simpleTanks[j].X) <= 41 && (simpleTanks[i].Y == simpleTanks[j].Y))
-                                ||
-                                (Math.Abs(simpleTanks[i].Y - simpleTanks[j].Y) <= 41 && (simpleTanks[i].X == simpleTanks[j].X))
-                                ||*/
-                                (Math.Abs(simpleTanks[i].X - simpleTanks[j].X) <= 45 && Math.Abs(simpleTanks[i].Y - simpleTanks[j].Y) <= 45)
-                                )
-                            {
-                                    simpleTanks[i].TurnAround();
-                                    simpleTanks[j].TurnAround();
-                            }
-
-                    for (int i = 0; i < simpleTanks.Count; i++)
-                        for (int j = 0; j < hunterTanks.Count; j++)
-                            if (
-                                /*(Math.Abs(simpleTanks[i].X - hunterTanks[j].X) <= 41 && (simpleTanks[i].Y == hunterTanks[j].Y))
-                                ||
-                                (Math.Abs(simpleTanks[i].Y - hunterTanks[j].Y) <= 41 && (simpleTanks[i].X == hunterTanks[j].X))
-                                ||*/
-                                (Math.Abs(simpleTanks[i].X - hunterTanks[j].X) <= 45 && Math.Abs(simpleTanks[i].Y - hunterTanks[j].Y) <= 45)
-                                )
-                            {
+                                simpleTanks[i].X = simpleTanks[i].Prev_x;
+                                simpleTanks[i].Y = simpleTanks[i].Prev_y;
+                                simpleTanks[j].X = simpleTanks[j].Prev_x;
+                                simpleTanks[j].Y = simpleTanks[j].Prev_y;
                                 simpleTanks[i].TurnAround();
-                                hunterTanks[j].TurnAround();
-                            }
+                                simpleTanks[j].TurnAround();
+                        }
 
-                    for (int i = 0; i < hunterTanks.Count - 1; i++)
-                        for (int j = i + 1; j < hunterTanks.Count; j++)
-                            if (
-                                /*(Math.Abs(hunterTanks[i].X - hunterTanks[j].X) <= 41 && (hunterTanks[i].Y == hunterTanks[j].Y))
-                                ||
-                                (Math.Abs(hunterTanks[i].Y - hunterTanks[j].Y) <= 41 && (hunterTanks[i].X == hunterTanks[j].X))
-                                ||*/
-                                (Math.Abs(hunterTanks[i].X - hunterTanks[j].X) <= 45 && Math.Abs(hunterTanks[i].Y - hunterTanks[j].Y) <= 45)
-                                )
-                            {
-                                hunterTanks[i].TurnAround();
-                                hunterTanks[j].TurnAround();
-                            }
+                for (int i = 0; i < simpleTanks.Count; i++)
+                    for (int j = 0; j < hunterTanks.Count; j++)
+                        if (
+                            (Math.Abs(simpleTanks[i].X - hunterTanks[j].X) <= 41 && (simpleTanks[i].Y == hunterTanks[j].Y))
+                            ||
+                            (Math.Abs(simpleTanks[i].Y - hunterTanks[j].Y) <= 41 && (simpleTanks[i].X == hunterTanks[j].X))
+                            ||
+                            (Math.Abs(simpleTanks[i].X - hunterTanks[j].X) <= 41 && Math.Abs(simpleTanks[i].Y - hunterTanks[j].Y) <= 41)
+                            )
+                        {
+                            simpleTanks[i].X = simpleTanks[i].Prev_x;
+                            simpleTanks[i].Y = simpleTanks[i].Prev_y;
+                            hunterTanks[j].X = hunterTanks[j].Prev_x;
+                            hunterTanks[j].Y = hunterTanks[j].Prev_y;
+                            simpleTanks[i].TurnAround();
+                            hunterTanks[j].TurnAround();
+                        }
+
+                for (int i = 0; i < hunterTanks.Count - 1; i++)
+                    for (int j = i + 1; j < hunterTanks.Count; j++)
+                        if (
+                            (Math.Abs(hunterTanks[i].X - hunterTanks[j].X) <= 41 && (hunterTanks[i].Y == hunterTanks[j].Y))
+                            ||
+                            (Math.Abs(hunterTanks[i].Y - hunterTanks[j].Y) <= 41 && (hunterTanks[i].X == hunterTanks[j].X))
+                            ||
+                            (Math.Abs(hunterTanks[i].X - hunterTanks[j].X) <= 41 && Math.Abs(hunterTanks[i].Y - hunterTanks[j].Y) <= 41)
+                            )
+                        {
+                            hunterTanks[i].X = hunterTanks[i].Prev_x;
+                            hunterTanks[i].Y = hunterTanks[i].Prev_y;
+                            hunterTanks[j].X = hunterTanks[j].Prev_x;
+                            hunterTanks[j].Y = hunterTanks[j].Prev_y;
+                            hunterTanks[i].TurnAround();
+                            hunterTanks[j].TurnAround();
+                        }
 
                 for (int i = 0; i < walls.Count; i++)
                     if (
@@ -284,6 +322,8 @@ namespace tanks
                             (Math.Abs(hunterTanks[i].X - walls[j].X) <= 41 && Math.Abs(hunterTanks[i].Y - walls[j].Y) <= 41)
                             )
                     {
+                        hunterTanks[i].X = hunterTanks[i].Prev_x;
+                        hunterTanks[i].Y = hunterTanks[i].Prev_y;
                         hunterTanks[i].TurnAround();
                     }
                 }
@@ -304,6 +344,8 @@ namespace tanks
                             (Math.Abs(simpleTanks[i].X - walls[j].X) <= 41 && Math.Abs(simpleTanks[i].Y - walls[j].Y) <= 41)
                             )
                     {
+                        simpleTanks[i].X = simpleTanks[i].Prev_x;
+                        simpleTanks[i].Y = simpleTanks[i].Prev_y;
                         simpleTanks[i].TurnAround();
                     }
                 }

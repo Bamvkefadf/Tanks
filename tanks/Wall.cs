@@ -9,6 +9,8 @@ namespace tanks
     class Wall : IPicture
     {
         WallIMG wallImg = new WallIMG();
+        int health;
+        int currentHealth;
         Image img;
         int x, y;
 

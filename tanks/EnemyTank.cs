@@ -12,30 +12,19 @@ namespace tanks
         private TankIMG tankImg = new TankIMG();
         protected Image img;
         protected int x, y;
-        protected int direct_x = 0, direct_y = 1;// 1 - вправо, вниз. 0 - без движения. -1 - влево, вверх
+        protected int prev_x, prev_y;
         protected static Random r;
         protected int mustTurn;
+        public Direction moving_direction;
 
-        public int Direct_y
+        public int Prev_y
         {
-            get { return direct_y; }
-            set
-            {
-                if (value == 0 || value == 1 || value == -1)
-                    direct_y = value;
-                else direct_y = 0;
-            }
+            get { return prev_y; }
         }
 
-        public int Direct_x
+        public int Prev_x
         {
-            get { return direct_x; }
-            set 
-            {
-                if (value == 0 || value == 1 || value == -1)
-                    direct_x = value;
-                else direct_x = 0;
-            }
+            get { return prev_x; }
         }
 
         public EnemyTank(int x, int y)
@@ -44,11 +33,7 @@ namespace tanks
 
             img = tankImg.Img0_1;
 
-            Direct_x = r.Next(-1, 2);
-            if (Direct_x != 0)
-                Direct_y = 0;
-            else
-                Direct_y = r.Next(-1, 2);
+            moving_direction = (Direction)r.Next(1, 5);
 
             PutImg();
 
@@ -75,18 +60,50 @@ namespace tanks
 
         public void Run()
         {
-            x += direct_x;
-            y += direct_y;
+            prev_x = x;
+            prev_y = y;
+
+            GoDirection();
+
             mustTurn++;
             
             ExternalWalls();
 
             PutImg();
 
-            if (mustTurn == 40)
+            if (mustTurn == 20)
             {
                 Turn();
                 mustTurn = 0;
+            }
+        }
+
+        protected void GoDirection()
+        {
+            if (moving_direction == Direction.DOWN)
+            {
+                x += 0;
+                y += 1;
+            }
+            else if (moving_direction == Direction.UP)
+            {
+                x += 0;
+                y += -1;
+            }
+            else if (moving_direction == Direction.RIGHT)
+            {
+                x += 1;
+                y += 0;
+            }
+            else if (moving_direction == Direction.LEFT)
+            {
+                x += -1;
+                y += 0;
+            }
+            else
+            {
+                x += 0;
+                y += 0;
             }
         }
 
@@ -94,20 +111,16 @@ namespace tanks
         {
                 if (r.Next(500) < 250)
                 {
-                    if (Direct_y == 0)
+                    if (moving_direction == Direction.LEFT || moving_direction == Direction.RIGHT)
                     {
-                        Direct_x = 0;
-                        while (Direct_y == 0)
-                            Direct_y = r.Next(-1, 2);
+                        moving_direction = (Direction)r.Next(3, 5);
                     }
                 }
                 else
                 {
-                    if (Direct_x == 0)
+                    if (moving_direction == Direction.UP || moving_direction == Direction.DOWN)
                     {
-                        Direct_y = 0;
-                        while (Direct_x == 0)
-                            Direct_x = r.Next(-1, 2);
+                        moving_direction = (Direction)r.Next(1, 3);
                     }
                 }
 
@@ -117,31 +130,49 @@ namespace tanks
         public void ExternalWalls()
         {
             if (x <= 0)
-                direct_x = 1;
+                moving_direction = Direction.RIGHT;
             else if (x >= 761)
-                direct_x = -1;
+                moving_direction = Direction.LEFT;
             else if (y <= 0)
-                    direct_y = 1;
+                moving_direction = Direction.DOWN;
             else if (y >= 561)
-                    direct_y = -1;
+                moving_direction = Direction.UP;
         }
 
-        private void PutImg()
+        void PutImg()
         {
-            if (direct_x == 1)
+            if (moving_direction == Direction.RIGHT)
+            {
+                moving_direction = Direction.RIGHT;
                 img = tankImg.Img10;
-            else if (direct_y == 1)
+            }
+            else if (moving_direction == Direction.DOWN)
+            {
+                moving_direction = Direction.DOWN;
                 img = tankImg.Img01;
-            else if (direct_x == -1)
+            }
+            else if (moving_direction == Direction.LEFT)
+            {
+                moving_direction = Direction.LEFT;
                 img = tankImg.Img_10;
-            else if (direct_y == -1)
+            }
+            else if (moving_direction == Direction.UP)
+            {
+                moving_direction = Direction.UP;
                 img = tankImg.Img0_1;
+            }
         }
 
         public void TurnAround()
         {
-            Direct_x = -Direct_x;
-            Direct_y = -Direct_y;
+            if (moving_direction == Direction.LEFT)
+                moving_direction = Direction.RIGHT;
+            else if (moving_direction == Direction.RIGHT)
+                moving_direction = Direction.LEFT;
+            else if (moving_direction == Direction.UP)
+                moving_direction = Direction.DOWN;
+            else if (moving_direction == Direction.DOWN)
+                moving_direction = Direction.UP;
             PutImg();
         }
     }

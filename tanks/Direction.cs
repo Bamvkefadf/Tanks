@@ -5,12 +5,12 @@ using System.Text;
 
 namespace tanks
 {
-    enum Direction
+    enum Direction : int
     {
-        LEFT,
-        RIGHT,
-        UP,
-        DOWN,
+        LEFT = 1,
+        RIGHT = 2,
+        UP = 3,
+        DOWN = 4,
         STOP
     }
 }

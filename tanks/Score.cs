@@ -18,5 +18,10 @@ namespace tanks
         {
             currentScore++;
         }
+
+        public void DoubleIncrement()
+        { 
+            currentScore += 2;
+        }
     }
 }

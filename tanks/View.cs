@@ -68,9 +68,9 @@ namespace tanks
 
         private void DrawWall(PaintEventArgs e)
         {
-            foreach (Wall w in model.Walls)
+            for (int i = 0; i < model.Walls.Count; i++)
             {
-                e.Graphics.DrawImage(w.Img, new Point(w.X, w.Y));
+                e.Graphics.DrawImage(model.Walls[i].Img, new Point(model.Walls[i].X, model.Walls[i].Y));
             }
         }
 
