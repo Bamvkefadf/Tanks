@@ -6,19 +6,35 @@ using System.Drawing;
 
 namespace tanks
 {
-    class Wall
+    class Wall : IPicture
     {
         WallIMG wallImg = new WallIMG();
         Image img;
+        int x, y;
+
+        public int Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
+        public int X
+        {
+            get { return x; }
+            set { x = value; }
+        }
 
         public Image Img
         {
             get { return img; }
         }
 
-        public Wall()
+        public Wall(int x, int y)
         {
             img = wallImg.Img;
+
+            this.x = x;
+            this.y = y;
         }
     }
 }

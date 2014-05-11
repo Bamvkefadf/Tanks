@@ -26,11 +26,18 @@ namespace tanks
         {
             DrawWall(e);
             DrawTank(e);
+            DrawPlayer(e);
+
             if (model.gameStatus != GameStatus.PLAY)
                 return;
 
             Thread.Sleep(model.speedGame);
             Invalidate();
+        }
+
+        private void DrawPlayer(PaintEventArgs e)
+        {
+            e.Graphics.DrawImage(model.Player.Img, model.Player.X, model.Player.Y);
         }
 
         private void DrawTank(PaintEventArgs e)
@@ -43,9 +50,10 @@ namespace tanks
 
         private void DrawWall(PaintEventArgs e)
         {
-            for (int i = 50; i < 600; i = i + 200)
-                for (int n = 50; n < 600; n = n + 200)
-                    e.Graphics.DrawImage(model.wall.Img, new Point(i, n));
+            foreach (Wall w in model.Walls)
+            {
+                e.Graphics.DrawImage(w.Img, new Point(w.X, w.Y));
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)

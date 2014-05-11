@@ -18,7 +18,7 @@ namespace tanks
 
         public Controller_MainForm() : this(7) { }
         public Controller_MainForm(int amountTanks) : this(amountTanks, 20) { }
-        public Controller_MainForm(int amountTanks, int speedGame) : this(amountTanks, speedGame, 25) { }
+        public Controller_MainForm(int amountTanks, int speedGame) : this(amountTanks, speedGame, 10) { }
 
         public Controller_MainForm(int amountTanks, int speedGame, int amountWalls)
         {
@@ -58,10 +58,38 @@ namespace tanks
                 e.Cancel = false;
             else
                 e.Cancel = true;
+        }
 
-            
-            
-            
+        private void PlayerController(object sender, KeyPressEventArgs e)
+        {
+            switch(e.KeyChar)
+            {
+                case 'a':
+                    {
+                        model.Player.Direct_y = 0;
+                        model.Player.Direct_x = -1;
+                    }
+                    break;
+                case 's':
+                    {
+                        model.Player.Direct_y = 1;
+                        model.Player.Direct_x = 0;
+                    }
+                    break;
+                case 'd':
+                    {
+                        model.Player.Direct_y = 0;
+                        model.Player.Direct_x = 1;
+                    }
+                    break;
+                case 'w':
+                    {
+                        model.Player.Direct_y = -1;
+                        model.Player.Direct_x = 0;
+                    }
+                    break;
+                    
+            }
         }
     }
 }

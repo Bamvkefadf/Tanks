@@ -51,11 +51,14 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GameStatus.cs" />
-    <Compile Include="ICollision.cs" />
     <Compile Include="IExternalWalls.cs" />
+    <Compile Include="IPicture.cs" />
     <Compile Include="IRun.cs" />
     <Compile Include="ITurn.cs" />
+    <Compile Include="ITurnAround.cs" />
     <Compile Include="Model.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerIMG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tank.cs" />
@@ -84,6 +87,7 @@
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -120,6 +124,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tank0_13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_131.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_121.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

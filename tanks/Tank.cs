@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Threading;
 
 namespace tanks
 {
-    class Tank : IRun, ITurn, IExternalWalls
+    class Tank : IRun, ITurn, ITurnAround, IExternalWalls, IPicture
     {
         TankIMG tankImg = new TankIMG();
         Image img;
         int x, y;
         int direct_x = 0, direct_y = 1;// 1 - вправо, вниз. 0 - без движения. -1 - влево, вверх
         static Random r;
+        int mustTurn;
 
         public int Direct_y
         {
@@ -76,13 +78,22 @@ namespace tanks
         {
             x += direct_x;
             y += direct_y;
-
+            mustTurn++;
+            
             ExternalWalls();
 
-            if ((Math.IEEERemainder(x, 20) == 0) && (Math.IEEERemainder(y, 20) == 0))
+            PutImg();
+
+            if (mustTurn == 25)
             {
                 Turn();
-            }        
+                mustTurn = 0;
+            }
+
+            /*if ((Math.IEEERemainder(x, 20) == 0) && (Math.IEEERemainder(y, 20) == 0))
+            {
+                Turn();
+            }    */    
         }
 
         public void Turn()
@@ -110,12 +121,15 @@ namespace tanks
         }
 
         public void ExternalWalls()
-        { 
-            if (x == -1 || x == 561)
-                direct_x = -direct_x;
-            else
-                if ( y == -1 || y == 561)
-                    direct_y = -direct_y;
+        {
+            if (x <= 0)
+                direct_x = 1;
+            else if (x >= 761)
+                direct_x = -1;
+            else if (y <= 0)
+                    direct_y = 1;
+            else if (y >= 561)
+                    direct_y = -1;
         }
 
         void PutImg()
