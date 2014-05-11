@@ -61,6 +61,7 @@
     <Compile Include="PlayerIMG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score.cs" />
     <Compile Include="Tank.cs" />
     <Compile Include="TankIMG.cs" />
     <Compile Include="View.cs">

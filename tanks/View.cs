@@ -27,12 +27,20 @@ namespace tanks
             DrawWall(e);
             DrawTank(e);
             DrawPlayer(e);
+            DrawScore(e);
+            
 
             if (model.gameStatus != GameStatus.PLAY)
                 return;
 
             Thread.Sleep(model.speedGame);
             Invalidate();
+        }
+
+        private void DrawScore(PaintEventArgs e)
+        {
+            label2.Text = model.Score.CurrentScore.ToString();
+            Update();
         }
 
         private void DrawPlayer(PaintEventArgs e)

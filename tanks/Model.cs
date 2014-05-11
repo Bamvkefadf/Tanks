@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace tanks
 {
@@ -14,9 +15,16 @@ namespace tanks
         List<Tank> tanks;
         List<Wall> walls;
         Player player;
+        Score score;
 
         public GameStatus gameStatus;
         Random r;
+
+        internal Score Score
+        {
+            get { return score; }
+            set { score = value; }
+        }
 
         internal Player Player
         {
@@ -41,6 +49,7 @@ namespace tanks
             this.speedGame = speedGame;
             this.amountWalls = amountWalls;
             player = new Player();
+            score = new Score();
 
             tanks = new List<Tank>();
             CreateTanks();
@@ -59,11 +68,11 @@ namespace tanks
             while (walls.Count < amountWalls)
             {
                 x = (r.Next(0, 750));
-                y = (r.Next(1, 560));
+                y = (r.Next(1, 450));
                 flag = true;
 
                 foreach (Wall w in walls)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(w.X - x), 2) + Math.Pow(Math.Abs(w.X - x), 2)) < 56)
+                    if (Math.Abs(w.X - x) <= 40 && Math.Abs(w.Y - y) <= 40)
                     {
                         flag = false;
                         break;
@@ -87,7 +96,7 @@ namespace tanks
                 flag = true;
 
                 foreach (Tank t in tanks)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(t.X - x), 2) + Math.Pow(Math.Abs(t.X - x), 2)) < 56)
+                    if (Math.Sqrt(Math.Pow(Math.Abs(t.X - x), 2) + Math.Pow(Math.Abs(t.Y - y), 2)) < 56)
                         //&& (t.Y == y || t.Y <= y - 40 || t.Y >= y + 40))
                     {
                         flag = false;
@@ -104,8 +113,8 @@ namespace tanks
         {
             while (gameStatus == GameStatus.PLAY)
             {
+                int temp_x = player.X, temp_y = player.Y;
                 Thread.Sleep(speedGame);
-
                 player.Run();
 
                 foreach(Tank t in tanks)
@@ -124,7 +133,27 @@ namespace tanks
                             tanks[i].TurnAround();
                             tanks[j].TurnAround();
                         }
-                checkInternalWalls();
+
+                for (int i = 0; i < walls.Count; i++)
+                    if (
+                        (player.X == walls[i].X && player.Y == walls[i].Y)
+                        ||
+                        (Math.Abs(player.X - walls[i].X) <= 40 && Math.Abs(player.Y - walls[i].Y) <= 40)
+                        )
+                    {
+                        player.X = temp_x;
+                        player.Y = temp_y;
+                        player.Direct_x = 0;
+                        player.Direct_y = 0;
+                    }
+
+                for (int i = 0; i < tanks.Count; i++ )
+                    if (Math.Abs(player.X - tanks[i].X) <= 40 && Math.Abs(player.Y - tanks[i].Y) <= 40)
+                    {
+                        score.Increment();
+                    }
+
+                    checkInternalWalls();
             }
         }
 

@@ -17,8 +17,8 @@ namespace tanks
         Thread modelPlay;
 
         public Controller_MainForm() : this(7) { }
-        public Controller_MainForm(int amountTanks) : this(amountTanks, 20) { }
-        public Controller_MainForm(int amountTanks, int speedGame) : this(amountTanks, speedGame, 10) { }
+        public Controller_MainForm(int amountTanks) : this(amountTanks, 15) { }
+        public Controller_MainForm(int amountTanks, int speedGame) : this(amountTanks, speedGame, 30) { }
 
         public Controller_MainForm(int amountTanks, int speedGame, int amountWalls)
         {
@@ -65,30 +65,33 @@ namespace tanks
             switch(e.KeyChar)
             {
                 case 'a':
+                case 'ф':
                     {
                         model.Player.Direct_y = 0;
                         model.Player.Direct_x = -1;
                     }
                     break;
                 case 's':
+                case 'ы':
                     {
                         model.Player.Direct_y = 1;
                         model.Player.Direct_x = 0;
                     }
                     break;
                 case 'd':
+                case 'в':
                     {
                         model.Player.Direct_y = 0;
                         model.Player.Direct_x = 1;
                     }
                     break;
                 case 'w':
+                case 'ц':
                     {
                         model.Player.Direct_y = -1;
                         model.Player.Direct_x = 0;
                     }
                     break;
-                    
             }
         }
     }

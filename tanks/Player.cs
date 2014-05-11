@@ -11,6 +11,7 @@ namespace tanks
         PlayerIMG playerImg = new PlayerIMG();
         Image img;
         int x, y;
+        int temp_x, temp_y;
         int direct_x = 0, direct_y = 1;// 1 - вправо, вниз. 0 - без движения. -1 - влево, вверх
         static Random r;
 
@@ -59,8 +60,8 @@ namespace tanks
 
             img = playerImg.Img0_1;
 
-            this.x = 300;
-            this.y = 500;
+            this.x = 400;
+            this.y = 550;
             this.Direct_x = 0;
             this.Direct_y = -1;
 
@@ -69,6 +70,9 @@ namespace tanks
 
         public void Run()
         {
+            temp_x = x;
+            temp_y = y;
+
             x += direct_x;
             y += direct_y;
 
@@ -87,14 +91,13 @@ namespace tanks
 
         public void ExternalWalls()
         {
-            if (x <= 0)
-                direct_x = 1;
-            else if (x >= 761)
-                direct_x = -1;
-            else if (y <= 0)
-                direct_y = 1;
-            else if (y >= 561)
-                direct_y = -1;
+            if (x <= 0 || x >= 761 || y <= 0 || y >= 561)
+            {
+                direct_x = 0;
+                direct_y = 0;
+                x = temp_x;
+                y = temp_y;
+            }
         }
 
         void PutImg()
