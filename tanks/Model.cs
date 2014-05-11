@@ -39,14 +39,24 @@ namespace tanks
         private void CreateTanks()
         {
             int x, y;
+            bool flag = true;
+
             while (tanks.Count < amountTanks)
             {
-                x = r.Next(0, 550);
-                y = r.Next(0, 300);
-                tanks.Add(new Tank(x, y));
+                x = r.Next(15) * 40;
+                y = r.Next(4) * 40;
+                flag = true;
+
                 foreach (Tank t in tanks)
-                {
-                }
+                    if ((t.X == x || t.X == x + 40 || t.X == x - 40) && (t.Y == y+10 || t.Y == y-10 || t.Y == y))
+                    {
+                        flag = false;
+                        break;
+                    }
+                    
+                if (flag)
+                     tanks.Add(new Tank(x, y));
+                
             }
         }
 
@@ -56,9 +66,21 @@ namespace tanks
             {
                 Thread.Sleep(speedGame);
                 foreach(Tank t in tanks)
-                {
                     t.Run();
-                }
+
+                for (int i = 0; i < tanks.Count - 1; i++ )
+                    for (int j = i + 1; j < tanks.Count; j++ )
+                        if (
+                            (Math.Abs(tanks[i].X - tanks[j].X) <= 40 && (tanks[i].Y == tanks[j].Y))
+                            ||
+                            (Math.Abs(tanks[i].Y - tanks[j].Y) <= 40 && (tanks[i].X == tanks[j].X))
+                            ||
+                            (Math.Abs(tanks[i].X - tanks[j].X) <= 40 && Math.Abs(tanks[i].Y - tanks[j].Y) <= 40)
+                            )
+                        {
+                            tanks[i].TurnAround();
+                            tanks[j].TurnAround();
+                        }
             }
         }
     }

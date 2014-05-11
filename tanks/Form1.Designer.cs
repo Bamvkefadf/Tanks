@@ -34,9 +34,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(758, 38);
+            this.button1.Location = new System.Drawing.Point(900, 255);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(14, 585);
+            this.button1.Size = new System.Drawing.Size(72, 125);
             this.button1.TabIndex = 0;
             this.button1.Text = "Старт";
             this.button1.UseVisualStyleBackColor = true;
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 761);
+            this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Controller_MainForm";

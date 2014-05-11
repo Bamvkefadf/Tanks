@@ -16,8 +16,8 @@ namespace tanks
         Model model;
         Thread modelPlay;
 
-        public Controller_MainForm() : this(10) { }
-        public Controller_MainForm(int amountTanks) : this(amountTanks, 5) { }
+        public Controller_MainForm() : this(7) { }
+        public Controller_MainForm(int amountTanks) : this(amountTanks, 20) { }
         public Controller_MainForm(int amountTanks, int speedGame) : this(amountTanks, speedGame, 25) { }
 
         public Controller_MainForm(int amountTanks, int speedGame, int amountWalls)

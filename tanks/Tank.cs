@@ -42,6 +42,12 @@ namespace tanks
 
             img = tankImg.Img0_1;
 
+            Direct_x = r.Next(-1, 2);
+            if (Direct_x != 0)
+                Direct_y = 0;
+            else
+                Direct_y = r.Next(-1, 2);
+
             PutImg();
 
             this.x = x;
@@ -73,16 +79,14 @@ namespace tanks
 
             ExternalWalls();
 
-            if ((Math.IEEERemainder(x, 40) == 0) && (Math.IEEERemainder(y, 40) == 0))
+            if ((Math.IEEERemainder(x, 20) == 0) && (Math.IEEERemainder(y, 20) == 0))
             {
                 Turn();
-            }
-           
+            }        
         }
 
         public void Turn()
         {
-
                 if (r.Next(500) < 250)
                 {
                     if (Direct_y == 0)
@@ -124,6 +128,13 @@ namespace tanks
                 img = tankImg.Img_10;
             else if (direct_y == -1)
                 img = tankImg.Img0_1;
+        }
+
+        public void TurnAround()
+        {
+            Direct_x = -Direct_x;
+            Direct_y = -Direct_y;
+            PutImg();
         }
     }
 }
