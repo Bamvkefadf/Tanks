@@ -101,6 +101,37 @@ namespace tanks
             }
         }
 
+        private void CreateSimpleTanks()
+        {
+            int x, y;
+            bool flag = true;
+
+            while (simpleTanks.Count < amountSimpleTanks)
+            {
+                x = (r.Next(0, 750));
+                y = (r.Next(1, 250));
+
+                flag = true;
+
+                foreach (EnemyTank t in simpleTanks)
+                    if (Math.Sqrt(Math.Pow(Math.Abs(t.X - x), 2) + Math.Pow(Math.Abs(t.Y - y), 2)) < 56)
+                    {
+                        flag = false;
+                        break;
+                    }
+
+                foreach (HunterTank h in hunterTanks)
+                    if (Math.Sqrt(Math.Pow(Math.Abs(h.X - x), 2) + Math.Pow(Math.Abs(h.Y - y), 2)) < 56)
+                    {
+                        flag = false;
+                        break;
+                    }
+
+                if (flag)
+                    simpleTanks.Add(new EnemyTank(x, y));
+            }
+        }
+
         private void CreateWalls()
         {
             int x, y;
@@ -108,12 +139,12 @@ namespace tanks
 
             while (walls.Count < amountWalls)
             {
-                x = (r.Next(0, 750));
-                y = (r.Next(1, 450));
+                x = (r.Next(0, 765));
+                y = (r.Next(1, 500));
                 flag = true;
 
                 foreach (Wall w in walls)
-                    if (Math.Abs(w.X - x) <= 40 && Math.Abs(w.Y - y) <= 40)
+                    if (Math.Sqrt(Math.Pow(Math.Abs(w.X - x), 2) + Math.Pow(Math.Abs(w.Y - y), 2)) < 40)
                     {
                         flag = false;
                         break;
@@ -136,37 +167,6 @@ namespace tanks
                 if (flag)
                     walls.Add(new Wall(x, y));        
 
-            }
-        }
-
-        private void CreateSimpleTanks()
-        {          
-            int x, y;
-            bool flag = true;
-
-            while (simpleTanks.Count < amountSimpleTanks)
-            {
-                x = (r.Next(0, 750));
-                y = (r.Next(1, 200));
-                
-                flag = true;
-
-                foreach (EnemyTank t in simpleTanks)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(t.X - x), 2) + Math.Pow(Math.Abs(t.Y - y), 2)) < 50)
-                    {
-                        flag = false;
-                        break;
-                    }
-
-                foreach(HunterTank h in hunterTanks)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(h.X - x), 2) + Math.Pow(Math.Abs(h.Y - y), 2)) < 50)
-                    {
-                        flag = false;
-                        break;
-                    }
-                    
-                if (flag)
-                     simpleTanks.Add(new EnemyTank(x, y));  
             }
         }
 

@@ -29,40 +29,111 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Controller_MainForm));
-            this.button1 = new System.Windows.Forms.Button();
+            this.playButton = new System.Windows.Forms.PictureBox();
+            this.mainMenu = new System.Windows.Forms.MenuStrip();
+            this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.новаяИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.playButton)).BeginInit();
+            this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // playButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Image = global::tanks.Properties.Resources.enemyTank;
-            this.button1.Location = new System.Drawing.Point(415, 704);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 45);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Старт";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PlayerController);
+            this.playButton.Image = global::tanks.Properties.Resources.PlayButton;
+            this.playButton.Location = new System.Drawing.Point(477, 347);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(150, 150);
+            this.playButton.TabIndex = 1;
+            this.playButton.TabStop = false;
+            this.playButton.Click += new System.EventHandler(this.button1_Click);
+            this.playButton.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.playButton_PreviewKeyDown);
+            // 
+            // mainMenu
+            // 
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.играToolStripMenuItem,
+            this.настройкиToolStripMenuItem,
+            this.помощьToolStripMenuItem});
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(984, 24);
+            this.mainMenu.TabIndex = 2;
+            this.mainMenu.Text = "menuStrip1";
+            // 
+            // играToolStripMenuItem
+            // 
+            this.играToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.новаяИграToolStripMenuItem,
+            this.выходToolStripMenuItem,
+            this.выходToolStripMenuItem1});
+            this.играToolStripMenuItem.Name = "играToolStripMenuItem";
+            this.играToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.играToolStripMenuItem.Text = "&Игра";
+            // 
+            // новаяИграToolStripMenuItem
+            // 
+            this.новаяИграToolStripMenuItem.Name = "новаяИграToolStripMenuItem";
+            this.новаяИграToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.новаяИграToolStripMenuItem.Text = "Новая игра";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
+            // 
+            // выходToolStripMenuItem1
+            // 
+            this.выходToolStripMenuItem1.Name = "выходToolStripMenuItem1";
+            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.выходToolStripMenuItem1.Text = "Выход";
+            this.выходToolStripMenuItem1.Click += new System.EventHandler(this.выходToolStripMenuItem1_Click);
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.настройкиToolStripMenuItem.Text = "&Настройки";
+            // 
+            // помощьToolStripMenuItem
+            // 
+            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
+            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.помощьToolStripMenuItem.Text = "&Помощь";
             // 
             // Controller_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 761);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(984, 749);
+            this.Controls.Add(this.playButton);
+            this.Controls.Add(this.mainMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.mainMenu;
             this.Name = "Controller_MainForm";
             this.Text = "Танчики";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Controller_MainForm_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.playButton)).EndInit();
+            this.mainMenu.ResumeLayout(false);
+            this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox playButton;
+        private System.Windows.Forms.MenuStrip mainMenu;
+        private System.Windows.Forms.ToolStripMenuItem играToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem новаяИграToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
     }
 }
 

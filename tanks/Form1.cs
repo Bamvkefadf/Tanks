@@ -16,7 +16,7 @@ namespace tanks
         Model model;
         Thread modelPlay;
 
-        public Controller_MainForm() : this(10) { }
+        public Controller_MainForm() : this(12) { }
         public Controller_MainForm(int amountTanks) : this(amountTanks, 20) { }
         public Controller_MainForm(int amountTanks, int speedGame) : this(amountTanks, speedGame, 50) { }
 
@@ -25,7 +25,8 @@ namespace tanks
             InitializeComponent();
             model = new Model(amountTanks, speedGame, amountWalls, 2);
             view = new View(model);
-            view.Location = new Point(50, 50);
+            view.Location = new Point(10, 10);
+            view.Visible = false;
             this.Controls.Add(view);
         }
 
@@ -38,11 +39,14 @@ namespace tanks
             }
             else
             {
+                
                 model.gameStatus = GameStatus.PLAY;
                 modelPlay = new Thread(model.Play);
                 modelPlay.Start();
-
                 view.Invalidate();
+                view.Visible = true;
+                playButton.Location = new Point(-500, 0);
+                playButton.Focus();
             }
         }
 
@@ -60,43 +64,47 @@ namespace tanks
                 e.Cancel = true;
         }
 
-        private void PlayerController(object sender, KeyPressEventArgs e)
+        private void playButton_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            switch(e.KeyChar)
+            switch (e.KeyData)
             {
-                case 'a':
-                case 'ф':
-                case 'A':
-                case 'Ф':
+
+                case Keys.A:
+                /*case "Ф":
+                case "A":
+                case "a":*/
                     {
                         model.Player.moving_direction = Direction.LEFT;
                     }
                     break;
-                case 's':
-                case 'ы':
-                case 'S':
-                case 'Ы':
+                /*case "S":
+                case "s":
+                case "Ы":
+                case "ы":*/
+                case Keys.S:
                     {
                         model.Player.moving_direction = Direction.DOWN;
                     }
                     break;
-                case 'd':
-                case 'в':
-                case 'D':
-                case 'В':
+                /*case "D":
+                case "d":
+                case "в":
+                case "В":*/
+                case Keys.D:
                     {
                         model.Player.moving_direction = Direction.RIGHT;
                     }
                     break;
-                case 'w':
-                case 'ц':
-                case 'W':
-                case 'Ц':
+                /*case "W":
+                case "w":
+                case "ц":
+                case "Ц":*/
+                case Keys.W:
                     {
                         model.Player.moving_direction = Direction.UP;
                     }
                     break;
-                default:
+                case Keys.Space:
                     {
                         if (model.Projectile.distance == 0)
                         {
@@ -125,7 +133,13 @@ namespace tanks
 
                     }
                     break;
+                    
             }
+        }
+
+        private void выходToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

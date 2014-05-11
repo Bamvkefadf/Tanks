@@ -117,35 +117,68 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="mainIcon" xml:space="preserve">
-    <value />
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MainIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MainIcon1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Image1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemyTank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\X8ea6HTs-Tk.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="tank01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tank0_11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tank0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Projectile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Projectile.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tank10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hunter_tank10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_122.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tank_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tank0_13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tank0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerTank01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_111.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tank10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerTank_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_131.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerTank10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_121.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mainIcon" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Fire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fire.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunter_tank0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_15.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemyTank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\X8ea6HTs-Tk.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunter_tank01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_112.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MainIcon1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunter_tank_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_132.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerTank0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
