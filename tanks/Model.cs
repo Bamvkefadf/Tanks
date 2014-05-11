@@ -191,16 +191,11 @@ namespace tanks
                 }
 
                 for (int i = 0; i < simpleTanks.Count; i++)
-                    if 
-                        (
-                        Math.Abs(Projectile.X - simpleTanks[i].X) == 8 && Math.Abs(Projectile.Y - simpleTanks[i].Y) < 40
-                        ||
-                        Math.Abs(Projectile.X - simpleTanks[i].X) == 40 && Math.Abs(Projectile.Y - simpleTanks[i].Y) < 40
-                        ||
-                        Math.Abs(Projectile.X - simpleTanks[i].X) < 40 && Math.Abs(Projectile.Y - simpleTanks[i].Y) == 8
-                        ||
-                        Math.Abs(Projectile.X - simpleTanks[i].X) < 40 && Math.Abs(Projectile.Y - simpleTanks[i].Y) == 40
-                        )
+                    if
+                        ((Projectile.X > simpleTanks[i].X - 8) &&
+                        (Projectile.X < simpleTanks[i].X + 40) &&
+                        (Projectile.Y > simpleTanks[i].Y - 8) &&
+                        (Projectile.Y < simpleTanks[i].Y + 40))
                     {
                         score.Increment();
                         simpleTanks.RemoveAt(i);
@@ -208,7 +203,11 @@ namespace tanks
                     }
 
                 for (int i = 0; i < hunterTanks.Count; i++)
-                    if (Math.Abs(hunterTanks[i].X - Projectile.X) < 40 && Math.Abs(hunterTanks[i].Y - Projectile.Y) < 40)
+                    if 
+                        ((Projectile.X > hunterTanks[i].X-8) && 
+                        (Projectile.X < hunterTanks[i].X + 40) && 
+                        (Projectile.Y > hunterTanks[i].Y - 8) && 
+                        (Projectile.Y < hunterTanks[i].Y + 40))
                     {
                         score.DoubleIncrement();
                         hunterTanks.RemoveAt(i);
@@ -216,16 +215,11 @@ namespace tanks
                     }
 
                 for (int i = 0; i < walls.Count; i++)
-                    //if (Math.Abs(walls[i].X - Projectile.X) < 40 && Math.Abs(walls[i].Y - Projectile.Y) < 40)
                     if
-                        (
-                        ((Projectile.X - walls[i].X) == -8 && (Projectile.Y - walls[i].Y) < 40 && (Projectile.Y - walls[i].Y) > -8)
-                        ||
-                        ((Projectile.X - walls[i].X) == 40 && (Projectile.Y - walls[i].Y) < 40 && (Projectile.Y - walls[i].Y) > -8)
-                        ||
-                        ((Projectile.Y - walls[i].Y) == -8 && (Projectile.X - walls[i].X) < 40 && (Projectile.X - walls[i].X) > -8)
-                        ||
-                        ((Projectile.Y - walls[i].Y) == 40 && (Projectile.X - walls[i].X) < 40 && (Projectile.X - walls[i].X) > -8))
+                        ((Projectile.X > walls[i].X-8) && 
+                        (Projectile.X < walls[i].X + 40) && 
+                        (Projectile.Y > walls[i].Y - 8) && 
+                        (Projectile.Y < walls[i].Y + 40))
                     {
                             walls.RemoveAt(i);
                             projectile.ProjectileDefaultSettings();
