@@ -197,9 +197,9 @@ namespace tanks
             for (int i = 0; i < hunterTanks.Count; i++)
                 if
                     ((hunterTanks[i].projectile.X > player.X - 8) &&
-                    (hunterTanks[i].projectile.X > player.X + 40) &&
+                    (hunterTanks[i].projectile.X < player.X + 40) &&
                     (hunterTanks[i].projectile.Y > player.Y - 8) &&
-                    (hunterTanks[i].projectile.Y > player.Y + 40))
+                    (hunterTanks[i].projectile.Y < player.Y + 40))
                 {
                     gameStatus = GameStatus.LOSE;
                 }
@@ -401,6 +401,10 @@ namespace tanks
             simpleTanks = new List<EnemyTank>();
             hunterTanks = new List<HunterTank>();
             walls = new List<Wall>();
+            amountHunterTanks = Properties.Settings.Default.amountHunterTanks;
+            amountSimpleTanks = Properties.Settings.Default.amountSimpleTanks;
+            speedGame = Properties.Settings.Default.speedGame;
+            amountWalls = Properties.Settings.Default.amountWalls;
 
             CreateHunterTanks();
             CreateSimpleTanks();

@@ -47,11 +47,17 @@
     <Compile Include="Direction.cs" />
     <Compile Include="Fire.cs" />
     <Compile Include="FireIMG.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Game Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Game Form.Designer.cs">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game Settings Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game Settings Form.Designer.cs">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
     </Compile>
     <Compile Include="GameStatus.cs" />
     <Compile Include="HunterIMG.cs" />
@@ -79,8 +85,11 @@
     </Compile>
     <Compile Include="Wall.cs" />
     <Compile Include="WallIMG.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Game Form.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,6 +104,7 @@
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
