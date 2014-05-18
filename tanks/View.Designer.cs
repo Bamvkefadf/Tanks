@@ -75,6 +75,9 @@
             this.DoubleBuffered = true;
             this.Name = "View";
             this.Size = new System.Drawing.Size(900, 600);
+            this.Load += new System.EventHandler(this.View_Load);
+            this.Click += new System.EventHandler(this.View_Click);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.View_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

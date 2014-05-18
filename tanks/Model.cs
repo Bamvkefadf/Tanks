@@ -178,7 +178,8 @@ namespace tanks
                 checkSimpleTanksInteractWalls();
                 checkHunterTanksInteractWalls();
             }
-            MessageBox.Show("Вы потерпели сокрушительное поражение!");
+            if (gameStatus == GameStatus.LOSE)
+                MessageBox.Show("Вы потерпели сокрушительное поражение!");
         }
 
         private void Interaction_EnemiesProjectilesWithObjects()
@@ -197,8 +198,8 @@ namespace tanks
                 if
                     ((hunterTanks[i].projectile.X > player.X - 8) &&
                     (hunterTanks[i].projectile.X > player.X + 40) &&
-                    (hunterTanks[i].projectile.X > player.X - 8) &&
-                    (hunterTanks[i].projectile.X > player.X + 40))
+                    (hunterTanks[i].projectile.Y > player.Y - 8) &&
+                    (hunterTanks[i].projectile.Y > player.Y + 40))
                 {
                     gameStatus = GameStatus.LOSE;
                 }

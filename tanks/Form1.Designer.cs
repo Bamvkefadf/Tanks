@@ -44,7 +44,7 @@
             // playButton
             // 
             this.playButton.Image = global::tanks.Properties.Resources.PlayButton;
-            this.playButton.Location = new System.Drawing.Point(477, 347);
+            this.playButton.Location = new System.Drawing.Point(922, 255);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(150, 150);
             this.playButton.TabIndex = 1;
@@ -60,7 +60,7 @@
             this.помощьToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(984, 24);
+            this.mainMenu.Size = new System.Drawing.Size(1084, 24);
             this.mainMenu.TabIndex = 2;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -73,23 +73,24 @@
             this.играToolStripMenuItem.Name = "играToolStripMenuItem";
             this.играToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.играToolStripMenuItem.Text = "&Игра";
+            this.играToolStripMenuItem.Click += new System.EventHandler(this.играToolStripMenuItem_Click);
             // 
             // новаяИграToolStripMenuItem
             // 
             this.новаяИграToolStripMenuItem.Name = "новаяИграToolStripMenuItem";
-            this.новаяИграToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.новаяИграToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.новаяИграToolStripMenuItem.Text = "Новая игра";
             this.новаяИграToolStripMenuItem.Click += new System.EventHandler(this.новаяИграToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(133, 6);
             // 
             // выходToolStripMenuItem1
             // 
             this.выходToolStripMenuItem1.Name = "выходToolStripMenuItem1";
-            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.выходToolStripMenuItem1.Text = "Выход";
             this.выходToolStripMenuItem1.Click += new System.EventHandler(this.выходToolStripMenuItem1_Click);
             // 
@@ -110,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 749);
+            this.ClientSize = new System.Drawing.Size(1084, 631);
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.mainMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

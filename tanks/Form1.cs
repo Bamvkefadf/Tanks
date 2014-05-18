@@ -26,7 +26,6 @@ namespace tanks
             model = new Model(amountTanks, speedGame, amountWalls, 2);
             view = new View(model);
             view.Location = new Point(10, 10);
-            view.Visible = false;
             this.Controls.Add(view);
         }
 
@@ -36,16 +35,15 @@ namespace tanks
             {
                 modelPlay.Abort();
                 model.gameStatus = GameStatus.STOP;
+                playButton.Image = Properties.Resources.PlayButton;
             }
             else
             {
-                
                 model.gameStatus = GameStatus.PLAY;
                 modelPlay = new Thread(model.Play);
                 modelPlay.Start();
                 view.Invalidate();
-                view.Visible = true;
-                playButton.Location = new Point(-500, 0);
+                playButton.Image = Properties.Resources.PauseButton;
                 playButton.Focus();
             }
         }
@@ -131,15 +129,24 @@ namespace tanks
         private void новаяИграToolStripMenuItem_Click(object sender, EventArgs e)
         {
             model.NewGame();
+            //view.Visible = false;
+            playButton.Image = Properties.Resources.PlayButton;
             view.Refresh();
         }
 
         private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            playButton.Image = Properties.Resources.PlayButton;
+            model.gameStatus = GameStatus.STOP;
             MessageBox.Show(@"Разработчики: 
                             Вальт Игорь 
                             Гофман Александр
                             Ефимов Александр", "Танки");
+        }
+
+        private void играToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

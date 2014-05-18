@@ -80,5 +80,84 @@ namespace tanks
         {
             Draw(e);
         }
+
+        private void View_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void View_Click(object sender, EventArgs e)
+        {
+             
+        }
+
+        private void View_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar)
+            {
+                case 'a':
+                case 'ф':
+                case 'A':
+                case 'Ф':
+                    {
+                        model.Player.moving_direction = Direction.LEFT;
+                    }
+                    break;
+                case 's':
+                case 'ы':
+                case 'S':
+                case 'Ы':
+                    {
+                        model.Player.moving_direction = Direction.DOWN;
+                    }
+                    break;
+                case 'd':
+                case 'в':
+                case 'D':
+                case 'В':
+                    {
+                        model.Player.moving_direction = Direction.RIGHT;
+                    }
+                    break;
+                case 'w':
+                case 'ц':
+                case 'W':
+                case 'Ц':
+                    {
+                        model.Player.moving_direction = Direction.UP;
+                    }
+                    break;
+                default:
+                    {
+                        if (model.Projectile.distance == 0)
+                        {
+                            model.Projectile.direction = model.Player.img_direction;
+                            if (model.Projectile.direction == Direction.UP)
+                            {
+                                model.Projectile.X = model.Player.X + 20;
+                                model.Projectile.Y = model.Player.Y;
+                            }
+                            else if (model.Projectile.direction == Direction.DOWN)
+                            {
+                                model.Projectile.X = model.Player.X + 20;
+                                model.Projectile.Y = model.Player.Y + 40;
+                            }
+                            else if (model.Projectile.direction == Direction.LEFT)
+                            {
+                                model.Projectile.X = model.Player.X;
+                                model.Projectile.Y = model.Player.Y + 20;
+                            }
+                            else if (model.Projectile.direction == Direction.RIGHT)
+                            {
+                                model.Projectile.X = model.Player.X + 40;
+                                model.Projectile.Y = model.Player.Y + 20;
+                            }
+                        }
+
+                    }
+                    break;
+            }
+
+        }
     }
 }
