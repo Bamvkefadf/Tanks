@@ -70,35 +70,20 @@ namespace tanks
             {
 
                 case Keys.A:
-                /*case "Ф":
-                case "A":
-                case "a":*/
                     {
                         model.Player.moving_direction = Direction.LEFT;
                     }
                     break;
-                /*case "S":
-                case "s":
-                case "Ы":
-                case "ы":*/
                 case Keys.S:
                     {
                         model.Player.moving_direction = Direction.DOWN;
                     }
                     break;
-                /*case "D":
-                case "d":
-                case "в":
-                case "В":*/
                 case Keys.D:
                     {
                         model.Player.moving_direction = Direction.RIGHT;
                     }
                     break;
-                /*case "W":
-                case "w":
-                case "ц":
-                case "Ц":*/
                 case Keys.W:
                     {
                         model.Player.moving_direction = Direction.UP;
@@ -106,8 +91,9 @@ namespace tanks
                     break;
                 case Keys.Space:
                     {
-                        if (model.Projectile.distance == 0)
+                        if (model.Projectile.distance == 0 && model.Projectile.cooldown > 100)
                         {
+                            model.Projectile.cooldown = 0;
                             model.Projectile.direction = model.Player.img_direction;
                             if (model.Projectile.direction == Direction.UP)
                             {
@@ -140,6 +126,20 @@ namespace tanks
         private void выходToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void новаяИграToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            model.NewGame();
+            view.Refresh();
+        }
+
+        private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(@"Разработчики: 
+                            Вальт Игорь 
+                            Гофман Александр
+                            Ефимов Александр", "Танки");
         }
     }
 }

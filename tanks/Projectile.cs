@@ -11,6 +11,7 @@ namespace tanks
         private ProjectileIMG projectileImg = new ProjectileIMG();
         private Image img;
         public int distance;
+        public int cooldown;
         int x, y;
         public Direction direction;
 
@@ -59,6 +60,8 @@ namespace tanks
 
         public void Run()
         {
+            if (cooldown <= 110)
+                cooldown++;
             if (direction == Direction.STOP)
                 return;
             distance = distance + 3;

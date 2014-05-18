@@ -63,18 +63,7 @@ namespace tanks
             this.amountWalls = amountWalls;
             this.amountHunterTanks = amountHunterTanks;
 
-            player = new Player();
-            score = new Score();
-            projectile = new Projectile();
-            simpleTanks = new List<EnemyTank>();
-            hunterTanks = new List<HunterTank>();
-            walls = new List<Wall>();
-
-            CreateHunterTanks();
-            CreateSimpleTanks();
-            CreateWalls();
-         
-            gameStatus = GameStatus.STOP;
+            NewGame();
         }
 
         private void CreateHunterTanks()
@@ -182,7 +171,7 @@ namespace tanks
 
                 for (int i = 0; i < simpleTanks.Count; i++)
                 {
-                    simpleTanks[i].Run();
+                    simpleTanks[i].Run(player.X, player.Y);
                 }
 
                 for (int i = 0; i < hunterTanks.Count; i++)
@@ -344,6 +333,22 @@ namespace tanks
                     }
                 }
             }
+        }
+
+        internal void NewGame()
+        {
+            player = new Player();
+            score = new Score();
+            projectile = new Projectile();
+            simpleTanks = new List<EnemyTank>();
+            hunterTanks = new List<HunterTank>();
+            walls = new List<Wall>();
+
+            CreateHunterTanks();
+            CreateSimpleTanks();
+            CreateWalls();
+
+            gameStatus = GameStatus.STOP;
         }
     }
 }

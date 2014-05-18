@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace tanks
 {
-    class EnemyTank : IRun, ITurn, ITurnAround, IExternalWalls, IPicture
+    class EnemyTank : ITurn, ITurnAround, IExternalWalls, IPicture
     {
         private TankIMG tankImg = new TankIMG();
         protected Image img;
@@ -16,6 +16,7 @@ namespace tanks
         protected static Random r;
         protected int mustTurn;
         public Direction moving_direction;
+        public Projectile projectile;
 
         public int Prev_y
         {
@@ -32,7 +33,7 @@ namespace tanks
             r = new Random();
 
             img = tankImg.Img0_1;
-
+            projectile = new Projectile();
             moving_direction = (Direction)r.Next(1, 5);
 
             PutImg();
@@ -58,12 +59,15 @@ namespace tanks
             get { return img; }
         }
 
-        public void Run()
+        public void Run(int target_x, int target_y)
         {
             prev_x = x;
             prev_y = y;
-
+            projectile.Run();
             GoDirection();
+
+            if (X == target_x || Y == target_y)
+                Shoot();
 
             mustTurn++;
             
@@ -75,6 +79,31 @@ namespace tanks
             {
                 Turn();
                 mustTurn = 0;
+            }
+        }
+
+        private void Shoot()
+        {
+            projectile.direction = moving_direction;
+            if (projectile.direction == Direction.UP)
+            {
+                projectile.X = X + 20;
+                projectile.Y = Y;
+            }
+            else if (projectile.direction == Direction.DOWN)
+            {
+                projectile.X = X + 20;
+                projectile.Y = Y + 40;
+            }
+            else if (projectile.direction == Direction.LEFT)
+            {
+                projectile.X = X;
+                projectile.Y = Y + 20;
+            }
+            else if (projectile.direction == Direction.RIGHT)
+            {
+                projectile.X = X + 40;
+                projectile.Y = Y + 20;
             }
         }
 

@@ -79,6 +79,7 @@
             this.новаяИграToolStripMenuItem.Name = "новаяИграToolStripMenuItem";
             this.новаяИграToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.новаяИграToolStripMenuItem.Text = "Новая игра";
+            this.новаяИграToolStripMenuItem.Click += new System.EventHandler(this.новаяИграToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
@@ -103,6 +104,7 @@
             this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
             this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.помощьToolStripMenuItem.Text = "&Помощь";
+            this.помощьToolStripMenuItem.Click += new System.EventHandler(this.помощьToolStripMenuItem_Click);
             // 
             // Controller_MainForm
             // 
