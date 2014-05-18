@@ -34,6 +34,7 @@ namespace tanks
 
             img = tankImg.Img0_1;
             projectile = new Projectile();
+            projectile.Img = Properties.Resources.ProjectileRed;
             moving_direction = (Direction)r.Next(1, 5);
 
             PutImg();

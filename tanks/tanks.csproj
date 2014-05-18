@@ -72,7 +72,6 @@
     <Compile Include="PlayerIMG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Projectile.cs" />
-    <Compile Include="ProjectileIMG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Score.cs" />
     <Compile Include="EnemyTank.cs" />
@@ -178,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PauseButton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Projectile1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

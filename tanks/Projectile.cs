@@ -8,7 +8,6 @@ namespace tanks
 {
     class Projectile
     {
-        private ProjectileIMG projectileImg = new ProjectileIMG();
         private Image img;
         public int distance;
         public int cooldown;
@@ -35,7 +34,6 @@ namespace tanks
 
         public Projectile()
         {
-            img = projectileImg.Img_10;
             ProjectileDefaultSettings();
         }
 
@@ -46,18 +44,6 @@ namespace tanks
             distance = 0;
         }
 
-        private void PutImg()
-        {
-            if (direction == Direction.RIGHT)
-                img = projectileImg.Img10;
-            else if (direction == Direction.DOWN)
-                img = projectileImg.Img01;
-            else if (direction == Direction.LEFT)
-                img = projectileImg.Img_10;
-            else if (direction == Direction.UP)
-                img = projectileImg.Img0_1;
-        }
-
         public void Run()
         {
             if (cooldown <= 110)
@@ -65,7 +51,6 @@ namespace tanks
             if (direction == Direction.STOP)
                 return;
             distance = distance + 3;
-            PutImg();
             GoDirection();
             if (distance > 250)
                 ProjectileDefaultSettings();

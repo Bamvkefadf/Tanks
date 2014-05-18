@@ -93,7 +93,7 @@ namespace tanks
 
         public HunterTank(int x, int y) : base (x, y)
         {
-
+            projectile.Img = Properties.Resources.ProjectileBlue;
             PutImg();
         }
 

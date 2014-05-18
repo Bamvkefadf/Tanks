@@ -13,6 +13,7 @@ namespace tanks
         int amountSimpleTanks;
         int amountWalls;
         int amountHunterTanks;
+        int checkLoading;
         List<EnemyTank> simpleTanks;
         List<HunterTank> hunterTanks;
         List<Wall> walls;
@@ -70,16 +71,24 @@ namespace tanks
         {
             int x, y;
             bool flag = true;
-
+            checkLoading = 0;
             while (hunterTanks.Count < amountHunterTanks)
             {
+                checkLoading++;
+                if (checkLoading > 5000)
+                {
+                    MessageBox.Show("Слишком большое число объектов!");
+                    break;
+                }
+                
                 x = (r.Next(0, 750));
-                y = (r.Next(1, 200));
+                y = (r.Next(1, 300));
 
                 flag = true;
 
                 foreach (HunterTank t in hunterTanks)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(t.X - x), 2) + Math.Pow(Math.Abs(t.Y - y), 2)) < 56)
+                    if //(Math.Sqrt(Math.Pow(Math.Abs(t.X - x), 2) + Math.Pow(Math.Abs(t.Y - y), 2)) < 56)
+                        (Math.Abs(t.X - x) <= 41 && Math.Abs(t.Y - y) <= 41)
                     {
                         flag = false;
                         break;
@@ -94,23 +103,31 @@ namespace tanks
         {
             int x, y;
             bool flag = true;
-
+            checkLoading = 0;
             while (simpleTanks.Count < amountSimpleTanks)
             {
+                checkLoading++;
+                if (checkLoading > 5000)
+                {
+                    MessageBox.Show("Слишком большое число объектов!");
+                    break;
+                }
+
                 x = (r.Next(0, 750));
-                y = (r.Next(1, 250));
+                y = (r.Next(1, 300));
 
                 flag = true;
 
                 foreach (EnemyTank t in simpleTanks)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(t.X - x), 2) + Math.Pow(Math.Abs(t.Y - y), 2)) < 56)
+                    if (Math.Abs(t.X - x) <= 41 && Math.Abs(t.Y - y) <= 41)
                     {
                         flag = false;
                         break;
                     }
 
                 foreach (HunterTank h in hunterTanks)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(h.X - x), 2) + Math.Pow(Math.Abs(h.Y - y), 2)) < 56)
+                    if //(Math.Sqrt(Math.Pow(Math.Abs(h.X - x), 2) + Math.Pow(Math.Abs(h.Y - y), 2)) < 56)
+                        (Math.Abs(h.X - x) <= 41 && Math.Abs(h.Y - y) <= 41)
                     {
                         flag = false;
                         break;
@@ -125,29 +142,38 @@ namespace tanks
         {
             int x, y;
             bool flag = true;
+            checkLoading = 0;
 
             while (walls.Count < amountWalls)
             {
+                checkLoading++;
+                if (checkLoading > 5000)
+                {
+                    MessageBox.Show("Слишком большое число объектов!");
+                    break;
+                }
+
                 x = (r.Next(0, 765));
-                y = (r.Next(1, 500));
+                y = (r.Next(1, 510));
                 flag = true;
 
                 foreach (Wall w in walls)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(w.X - x), 2) + Math.Pow(Math.Abs(w.Y - y), 2)) < 40)
+                    if //(Math.Sqrt(Math.Pow(Math.Abs(w.X - x), 2) + Math.Pow(Math.Abs(w.Y - y), 2)) < 40)
+                        (Math.Abs(w.X - x) <= 41 && Math.Abs(w.Y - y) <= 41)
                     {
                         flag = false;
                         break;
                     }
 
                 foreach (EnemyTank t in simpleTanks)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(t.X - x), 2) + Math.Pow(Math.Abs(t.Y - y), 2)) < 56)
+                    if (Math.Abs(t.X - x) <= 41 && Math.Abs(t.Y - y) <= 41)
                     {
                         flag = false;
                         break;
                     }
 
                 foreach (HunterTank h in hunterTanks)
-                    if (Math.Sqrt(Math.Pow(Math.Abs(h.X - x), 2) + Math.Pow(Math.Abs(h.Y - y), 2)) < 56)
+                    if (Math.Abs(h.X - x) <= 41 && Math.Abs(h.Y - y) <= 41)
                     {
                         flag = false;
                         break;
@@ -398,6 +424,7 @@ namespace tanks
             player = new Player();
             score = new Score();
             projectile = new Projectile();
+            projectile.Img = Properties.Resources.ProjectileRed;
             simpleTanks = new List<EnemyTank>();
             hunterTanks = new List<HunterTank>();
             walls = new List<Wall>();
