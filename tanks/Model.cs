@@ -162,23 +162,62 @@ namespace tanks
         public void Play()
         {
             while (gameStatus == GameStatus.PLAY)
-            {    
+            {
+                int temp_x = player.X, temp_y = player.Y;
                 Thread.Sleep(speedGame);
                 player.Run();
                 projectile.Run();
                 RunEnemies();
+                Interaction_EnemiesProjectilesWithObjects();
                 Interaction_PlayerProjectileWithObjects();
                 Interaction_EnemiesWithEnemies();
-                Interaction_PlayerWithWalls();
+
+                Interaction_PlayerWithWalls(temp_x, temp_y);
+
                 Interaction_PlayerWithEnemies();
                 checkSimpleTanksInteractWalls();
                 checkHunterTanksInteractWalls();
             }
+            MessageBox.Show("Вы потерпели сокрушительное поражение!");
         }
 
-        private void Interaction_PlayerWithWalls()
+        private void Interaction_EnemiesProjectilesWithObjects()
         {
-            int temp_x = player.X, temp_y = player.Y;
+            for (int i = 0; i < simpleTanks.Count; i++)
+                if
+                    ((simpleTanks[i].projectile.X > player.X - 8) &&
+                    (simpleTanks[i].projectile.X < player.X + 40) &&
+                    (simpleTanks[i].projectile.Y > player.Y - 8) &&
+                    (simpleTanks[i].projectile.Y < player.Y + 40))
+                {
+                    gameStatus = GameStatus.LOSE;
+                }
+
+            for (int i = 0; i < hunterTanks.Count; i++)
+                if
+                    ((hunterTanks[i].projectile.X > player.X - 8) &&
+                    (hunterTanks[i].projectile.X > player.X + 40) &&
+                    (hunterTanks[i].projectile.X > player.X - 8) &&
+                    (hunterTanks[i].projectile.X > player.X + 40))
+                {
+                    gameStatus = GameStatus.LOSE;
+                }
+
+            for (int i = 0; i < simpleTanks.Count; i++)
+                for (int j = 0; j < walls.Count; j++)
+                    if
+                        ((simpleTanks[i].projectile.X > walls[j].X - 8) &&
+                        (simpleTanks[i].projectile.X < walls[j].X + 40) &&
+                        (simpleTanks[i].projectile.Y > walls[j].Y - 8) &&
+                        (simpleTanks[i].projectile.Y < walls[j].Y + 40))
+                    {
+                    walls.RemoveAt(j);
+                    simpleTanks[i].projectile.ProjectileDefaultSettings();
+                }
+        }
+
+        private void Interaction_PlayerWithWalls(int temp_x, int temp_y)
+        {
             for (int i = 0; i < walls.Count; i++)
                 if (
                     (Math.Abs(player.X - walls[i].X) <= 40 && Math.Abs(player.Y - walls[i].Y) <= 40)
