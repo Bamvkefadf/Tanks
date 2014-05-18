@@ -75,14 +75,14 @@ namespace tanks
 
             PutImg();
 
-            if (mustTurn == 20)
+            if (mustTurn == 40)
             {
                 Turn();
                 mustTurn = 0;
             }
         }
 
-        private void Shoot()
+        protected void Shoot()
         {
             projectile.direction = moving_direction;
             if (projectile.direction == Direction.UP)

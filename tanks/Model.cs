@@ -162,133 +162,151 @@ namespace tanks
         public void Play()
         {
             while (gameStatus == GameStatus.PLAY)
-            {
-                int temp_x = player.X, temp_y = player.Y;
+            {    
                 Thread.Sleep(speedGame);
-
                 player.Run();
                 projectile.Run();
+                RunEnemies();
+                Interaction_PlayerProjectileWithObjects();
+                Interaction_EnemiesWithEnemies();
+                Interaction_PlayerWithWalls();
+                Interaction_PlayerWithEnemies();
+                checkSimpleTanksInteractWalls();
+                checkHunterTanksInteractWalls();
+            }
+        }
 
-                for (int i = 0; i < simpleTanks.Count; i++)
+        private void Interaction_PlayerWithWalls()
+        {
+            int temp_x = player.X, temp_y = player.Y;
+            for (int i = 0; i < walls.Count; i++)
+                if (
+                    (Math.Abs(player.X - walls[i].X) <= 40 && Math.Abs(player.Y - walls[i].Y) <= 40)
+                    )
                 {
-                    simpleTanks[i].Run(player.X, player.Y);
+                    player.X = temp_x;
+                    player.Y = temp_y;
+                    player.moving_direction = Direction.STOP;
                 }
+        }
 
-                for (int i = 0; i < hunterTanks.Count; i++)
-                {
-                    hunterTanks[i].Run(player.X, player.Y);
-                }
-
-                for (int i = 0; i < simpleTanks.Count; i++)
-                    if
-                        ((Projectile.X > simpleTanks[i].X - 8) &&
-                        (Projectile.X < simpleTanks[i].X + 40) &&
-                        (Projectile.Y > simpleTanks[i].Y - 8) &&
-                        (Projectile.Y < simpleTanks[i].Y + 40))
-                    {
-                        score.Increment();
-                        simpleTanks.RemoveAt(i);
-                        projectile.ProjectileDefaultSettings();
-                    }
-
-                for (int i = 0; i < hunterTanks.Count; i++)
-                    if 
-                        ((Projectile.X > hunterTanks[i].X-8) && 
-                        (Projectile.X < hunterTanks[i].X + 40) && 
-                        (Projectile.Y > hunterTanks[i].Y - 8) && 
-                        (Projectile.Y < hunterTanks[i].Y + 40))
-                    {
-                        score.DoubleIncrement();
-                        hunterTanks.RemoveAt(i);
-                        projectile.ProjectileDefaultSettings();
-                    }
-
-                for (int i = 0; i < walls.Count; i++)
-                    if
-                        ((Projectile.X > walls[i].X-8) && 
-                        (Projectile.X < walls[i].X + 40) && 
-                        (Projectile.Y > walls[i].Y - 8) && 
-                        (Projectile.Y < walls[i].Y + 40))
-                    {
-                            walls.RemoveAt(i);
-                            projectile.ProjectileDefaultSettings();
-                    }
-
-                for (int i = 0; i < simpleTanks.Count - 1; i++)
-                    for (int j = i + 1; j < simpleTanks.Count; j++)
-                        if (
-                            (Math.Abs(simpleTanks[i].X - simpleTanks[j].X) <= 41 && (simpleTanks[i].Y == simpleTanks[j].Y))
-                            ||
-                            (Math.Abs(simpleTanks[i].Y - simpleTanks[j].Y) <= 41 && (simpleTanks[i].X == simpleTanks[j].X))
-                            ||
-                            (Math.Abs(simpleTanks[i].X - simpleTanks[j].X) <= 41 && Math.Abs(simpleTanks[i].Y - simpleTanks[j].Y) <= 41)
-                            )
-                        {
-                                simpleTanks[i].X = simpleTanks[i].Prev_x;
-                                simpleTanks[i].Y = simpleTanks[i].Prev_y;
-                                simpleTanks[j].X = simpleTanks[j].Prev_x;
-                                simpleTanks[j].Y = simpleTanks[j].Prev_y;
-                                simpleTanks[i].TurnAround();
-                                simpleTanks[j].TurnAround();
-                        }
-
-                for (int i = 0; i < simpleTanks.Count; i++)
-                    for (int j = 0; j < hunterTanks.Count; j++)
-                        if (
-                            (Math.Abs(simpleTanks[i].X - hunterTanks[j].X) <= 41 && (simpleTanks[i].Y == hunterTanks[j].Y))
-                            ||
-                            (Math.Abs(simpleTanks[i].Y - hunterTanks[j].Y) <= 41 && (simpleTanks[i].X == hunterTanks[j].X))
-                            ||
-                            (Math.Abs(simpleTanks[i].X - hunterTanks[j].X) <= 41 && Math.Abs(simpleTanks[i].Y - hunterTanks[j].Y) <= 41)
-                            )
-                        {
-                            simpleTanks[i].X = simpleTanks[i].Prev_x;
-                            simpleTanks[i].Y = simpleTanks[i].Prev_y;
-                            hunterTanks[j].X = hunterTanks[j].Prev_x;
-                            hunterTanks[j].Y = hunterTanks[j].Prev_y;
-                            simpleTanks[i].TurnAround();
-                            hunterTanks[j].TurnAround();
-                        }
-
-                for (int i = 0; i < hunterTanks.Count - 1; i++)
-                    for (int j = i + 1; j < hunterTanks.Count; j++)
-                        if (
-                            (Math.Abs(hunterTanks[i].X - hunterTanks[j].X) <= 41 && (hunterTanks[i].Y == hunterTanks[j].Y))
-                            ||
-                            (Math.Abs(hunterTanks[i].Y - hunterTanks[j].Y) <= 41 && (hunterTanks[i].X == hunterTanks[j].X))
-                            ||
-                            (Math.Abs(hunterTanks[i].X - hunterTanks[j].X) <= 41 && Math.Abs(hunterTanks[i].Y - hunterTanks[j].Y) <= 41)
-                            )
-                        {
-                            hunterTanks[i].X = hunterTanks[i].Prev_x;
-                            hunterTanks[i].Y = hunterTanks[i].Prev_y;
-                            hunterTanks[j].X = hunterTanks[j].Prev_x;
-                            hunterTanks[j].Y = hunterTanks[j].Prev_y;
-                            hunterTanks[i].TurnAround();
-                            hunterTanks[j].TurnAround();
-                        }
-
-                for (int i = 0; i < walls.Count; i++)
+        private void Interaction_EnemiesWithEnemies()
+        {
+            for (int i = 0; i < simpleTanks.Count - 1; i++)
+                for (int j = i + 1; j < simpleTanks.Count; j++)
                     if (
-                        (Math.Abs(player.X - walls[i].X) <= 40 && Math.Abs(player.Y - walls[i].Y) <= 40)
+                        (Math.Abs(simpleTanks[i].X - simpleTanks[j].X) <= 41 && (simpleTanks[i].Y == simpleTanks[j].Y))
+                        ||
+                        (Math.Abs(simpleTanks[i].Y - simpleTanks[j].Y) <= 41 && (simpleTanks[i].X == simpleTanks[j].X))
+                        ||
+                        (Math.Abs(simpleTanks[i].X - simpleTanks[j].X) <= 41 && Math.Abs(simpleTanks[i].Y - simpleTanks[j].Y) <= 41)
                         )
                     {
-                        player.X = temp_x;
-                        player.Y = temp_y;
-                        player.moving_direction = Direction.STOP;
+                        simpleTanks[i].X = simpleTanks[i].Prev_x;
+                        simpleTanks[i].Y = simpleTanks[i].Prev_y;
+                        simpleTanks[j].X = simpleTanks[j].Prev_x;
+                        simpleTanks[j].Y = simpleTanks[j].Prev_y;
+                        simpleTanks[i].TurnAround();
+                        simpleTanks[j].TurnAround();
                     }
 
-                for (int i = 0; i < simpleTanks.Count; i++)
-                    if (Math.Abs(player.X - simpleTanks[i].X) <= 40 && Math.Abs(player.Y - simpleTanks[i].Y) <= 40)
-                        gameStatus = GameStatus.LOSE;
+            for (int i = 0; i < simpleTanks.Count; i++)
+                for (int j = 0; j < hunterTanks.Count; j++)
+                    if (
+                        (Math.Abs(simpleTanks[i].X - hunterTanks[j].X) <= 41 && (simpleTanks[i].Y == hunterTanks[j].Y))
+                        ||
+                        (Math.Abs(simpleTanks[i].Y - hunterTanks[j].Y) <= 41 && (simpleTanks[i].X == hunterTanks[j].X))
+                        ||
+                        (Math.Abs(simpleTanks[i].X - hunterTanks[j].X) <= 41 && Math.Abs(simpleTanks[i].Y - hunterTanks[j].Y) <= 41)
+                        )
+                    {
+                        simpleTanks[i].X = simpleTanks[i].Prev_x;
+                        simpleTanks[i].Y = simpleTanks[i].Prev_y;
+                        hunterTanks[j].X = hunterTanks[j].Prev_x;
+                        hunterTanks[j].Y = hunterTanks[j].Prev_y;
+                        simpleTanks[i].TurnAround();
+                        hunterTanks[j].TurnAround();
+                    }
 
-                for (int i = 0; i < hunterTanks.Count; i++)
-                    if (Math.Abs(player.X - hunterTanks[i].X) <= 40 && Math.Abs(player.Y - hunterTanks[i].Y) <= 40)
-                        gameStatus = GameStatus.LOSE;
+            for (int i = 0; i < hunterTanks.Count - 1; i++)
+                for (int j = i + 1; j < hunterTanks.Count; j++)
+                    if (
+                        (Math.Abs(hunterTanks[i].X - hunterTanks[j].X) <= 41 && (hunterTanks[i].Y == hunterTanks[j].Y))
+                        ||
+                        (Math.Abs(hunterTanks[i].Y - hunterTanks[j].Y) <= 41 && (hunterTanks[i].X == hunterTanks[j].X))
+                        ||
+                        (Math.Abs(hunterTanks[i].X - hunterTanks[j].X) <= 41 && Math.Abs(hunterTanks[i].Y - hunterTanks[j].Y) <= 41)
+                        )
+                    {
+                        hunterTanks[i].X = hunterTanks[i].Prev_x;
+                        hunterTanks[i].Y = hunterTanks[i].Prev_y;
+                        hunterTanks[j].X = hunterTanks[j].Prev_x;
+                        hunterTanks[j].Y = hunterTanks[j].Prev_y;
+                        hunterTanks[i].TurnAround();
+                        hunterTanks[j].TurnAround();
+                    }
+        }
 
-                    checkSimpleTanksInteractWalls();
-                    checkHunterTanksInteractWalls();
+        private void Interaction_PlayerWithEnemies()
+        {
+            for (int i = 0; i < simpleTanks.Count; i++)
+                if (Math.Abs(player.X - simpleTanks[i].X) <= 40 && Math.Abs(player.Y - simpleTanks[i].Y) <= 40)
+                    gameStatus = GameStatus.LOSE;
+
+            for (int i = 0; i < hunterTanks.Count; i++)
+                if (Math.Abs(player.X - hunterTanks[i].X) <= 40 && Math.Abs(player.Y - hunterTanks[i].Y) <= 40)
+                    gameStatus = GameStatus.LOSE;
+        }
+
+        private void RunEnemies()
+        {
+            for (int i = 0; i < simpleTanks.Count; i++)
+            {
+                simpleTanks[i].Run(player.X, player.Y);
             }
+
+            for (int i = 0; i < hunterTanks.Count; i++)
+            {
+                hunterTanks[i].Run(player.X, player.Y);
+            }
+        }
+
+        private void Interaction_PlayerProjectileWithObjects()
+        {
+            for (int i = 0; i < simpleTanks.Count; i++)
+                if
+                    ((Projectile.X > simpleTanks[i].X - 8) &&
+                    (Projectile.X < simpleTanks[i].X + 40) &&
+                    (Projectile.Y > simpleTanks[i].Y - 8) &&
+                    (Projectile.Y < simpleTanks[i].Y + 40))
+                {
+                    score.Increment();
+                    simpleTanks.RemoveAt(i);
+                    projectile.ProjectileDefaultSettings();
+                }
+
+            for (int i = 0; i < hunterTanks.Count; i++)
+                if
+                    ((Projectile.X > hunterTanks[i].X - 8) &&
+                    (Projectile.X < hunterTanks[i].X + 40) &&
+                    (Projectile.Y > hunterTanks[i].Y - 8) &&
+                    (Projectile.Y < hunterTanks[i].Y + 40))
+                {
+                    score.DoubleIncrement();
+                    hunterTanks.RemoveAt(i);
+                    projectile.ProjectileDefaultSettings();
+                }
+
+            for (int i = 0; i < walls.Count; i++)
+                if
+                    ((Projectile.X > walls[i].X - 8) &&
+                    (Projectile.X < walls[i].X + 40) &&
+                    (Projectile.Y > walls[i].Y - 8) &&
+                    (Projectile.Y < walls[i].Y + 40))
+                {
+                    walls.RemoveAt(i);
+                    projectile.ProjectileDefaultSettings();
+                }
         }
 
         private void checkHunterTanksInteractWalls()

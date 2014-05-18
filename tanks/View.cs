@@ -63,6 +63,7 @@ namespace tanks
 
             for (int i = 0; i < model.HunterTanks.Count; i++)
             {
+                e.Graphics.DrawImage(model.HunterTanks[i].projectile.Img, new Point(model.HunterTanks[i].projectile.X, model.HunterTanks[i].projectile.Y));
                 e.Graphics.DrawImage(model.HunterTanks[i].Img, new Point(model.HunterTanks[i].X, model.HunterTanks[i].Y));
             }
         }

@@ -72,8 +72,12 @@ namespace tanks
         {
             prev_x = x;
             prev_y = y;
-
+            projectile.Run();
             GoDirection();
+
+            if (X == target_x || Y == target_y)
+                Shoot();
+
             mustTurn++;
 
             ExternalWalls();
@@ -89,6 +93,7 @@ namespace tanks
 
         public HunterTank(int x, int y) : base (x, y)
         {
+
             PutImg();
         }
 
