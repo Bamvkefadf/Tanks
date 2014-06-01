@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 namespace tanks
 {
@@ -156,6 +157,17 @@ namespace tanks
             model.gameStatus = GameStatus.STOP;
             GS_Form = new Game_Settings_Form();
             GS_Form.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string pathToFile = @"highscore.dat";
+            
+            FileStream fs = new FileStream(pathToFile, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            StreamWriter sw = new StreamWriter(fs);
+
+            sw.WriteLine("Hi1");
+            sw.Close();
         }
     }
 }

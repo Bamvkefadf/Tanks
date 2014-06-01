@@ -81,8 +81,7 @@ namespace tanks
                 flag = true;
 
                 foreach (HunterTank t in hunterTanks)
-                    if //(Math.Sqrt(Math.Pow(Math.Abs(t.X - x), 2) + Math.Pow(Math.Abs(t.Y - y), 2)) < 56)
-                        (Math.Abs(t.X - x) <= 41 && Math.Abs(t.Y - y) <= 41)
+                    if (Math.Abs(t.X - x) <= 41 && Math.Abs(t.Y - y) <= 41)
                     {
                         flag = false;
                         break;

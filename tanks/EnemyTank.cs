@@ -72,7 +72,7 @@ namespace tanks
                 ||
                 (Y > target_y - 30 && Y < target_y + 30))         
                 && 
-                (projectile.distance == 0 && projectile.cooldown > 150)
+                (projectile.distance == 0 && projectile.cooldown > 99)
                 )
                 Shoot();
 
@@ -91,6 +91,7 @@ namespace tanks
 
         protected void Shoot()
         {
+            projectile.cooldown = 0;
             projectile.direction = moving_direction;
             if (projectile.direction == Direction.UP)
             {

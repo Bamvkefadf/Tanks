@@ -80,7 +80,7 @@ namespace tanks
                 ||
                 (Y > target_y - 30 && Y < target_y + 30)) 
                 && 
-                (projectile.distance == 0 && projectile.cooldown > 150)
+                (projectile.distance == 0 && projectile.cooldown > 99)
                 )
                 Shoot();
 
