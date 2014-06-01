@@ -12,6 +12,8 @@ namespace tanks
         Image img;
         int x, y;
         int health;
+        int invulnerability;
+        public bool canDamaged = false;
         public Direction moving_direction;
         public Direction img_direction;
         public Projectile projectile;
@@ -22,6 +24,12 @@ namespace tanks
         {
             get { return health; }
             set { health = value; }
+        }
+
+        public int Invulnerability
+        {
+            get { return invulnerability; }
+            set { invulnerability = value; }
         }
 
         public Image Img
@@ -61,6 +69,14 @@ namespace tanks
         {
             temp_x = x;
             temp_y = y;
+
+            if (canDamaged == false)
+                invulnerability++;
+
+            if (invulnerability > 200)
+            {
+                canDamaged = true;
+            }
 
             GoDirection();
             projectile.Run();
@@ -102,8 +118,15 @@ namespace tanks
 
         public void Turn()
         {
-
             PutImg();
+        }
+
+        public void ResetPlayerAfterDamage()
+        {
+            canDamaged = false;
+            invulnerability = 0;
+            X = 400;
+            Y = 550;
         }
 
         public void ExternalWalls()

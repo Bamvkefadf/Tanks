@@ -187,4 +187,7 @@
   <data name="ProjectileBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Projectile1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Invulnerability" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank0_1311.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -45,7 +45,12 @@ namespace tanks
 
         private void DrawPlayer(PaintEventArgs e)
         {
-            e.Graphics.DrawImage(model.Player.Img, model.Player.X, model.Player.Y);
+            if (model.Player.canDamaged == false)
+            {
+                e.Graphics.DrawImage(Properties.Resources.Invulnerability, model.Player.X, model.Player.Y);
+            }
+            else
+                e.Graphics.DrawImage(model.Player.Img, model.Player.X, model.Player.Y);
             e.Graphics.DrawImage(model.Player.projectile.Img, model.Player.projectile.X, model.Player.projectile.Y);
         }
 

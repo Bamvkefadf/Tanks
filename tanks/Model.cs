@@ -241,13 +241,15 @@ namespace tanks
 
         private void DamagePlayer()
         {
-            player.Health -= 1;
-            if (player.Health == 0)
-                gameStatus = GameStatus.LOSE;
-            else
+            if (player.canDamaged == true)
             {
-                player.X = 400;
-                player.Y = 550;
+                player.Health -= 1;
+                if (player.Health == 0)
+                    gameStatus = GameStatus.LOSE;
+                else
+                {
+                    player.ResetPlayerAfterDamage();
+                }
             }
         }
 
