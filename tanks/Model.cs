@@ -244,7 +244,10 @@ namespace tanks
             {
                 player.Health -= 1;
                 if (player.Health == 0)
+                {
                     gameStatus = GameStatus.LOSE;
+
+                }
                 else
                 {
                     player.ResetPlayerAfterDamage();

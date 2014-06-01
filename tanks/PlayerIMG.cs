@@ -8,10 +8,10 @@ namespace tanks
 {
     class PlayerIMG
     {
-        Image img01 = Properties.Resources.playerTank01;
-        Image img0_1 = Properties.Resources.playerTank0_1;
-        Image img_10 = Properties.Resources.playerTank_10;
-        Image img10 = Properties.Resources.playerTank10;
+        Image img01 = Properties.Resources.player01;
+        Image img0_1 = Properties.Resources.player0_1;
+        Image img_10 = Properties.Resources.player_10;
+        Image img10 = Properties.Resources.player10;
 
         public Image Img0_1
         {
