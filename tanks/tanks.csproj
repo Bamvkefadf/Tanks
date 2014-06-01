@@ -11,6 +11,26 @@
     <AssemblyName>tanks</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Projects VS 2012\tanks\Install\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>en</TargetCulture>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +51,24 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>50B6FD0B03F789E5114F72C19E3DA78F37278C04</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>tanks_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -44,9 +83,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeLanguage.cs" />
     <Compile Include="Direction.cs" />
-    <Compile Include="Fire.cs" />
-    <Compile Include="FireIMG.cs" />
     <Compile Include="Game Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +98,12 @@
       <DependentUpon>Game Settings Form.cs</DependentUpon>
     </Compile>
     <Compile Include="GameStatus.cs" />
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HunterIMG.cs" />
     <Compile Include="HunterTank.cs" />
     <Compile Include="IExternalWalls.cs" />
@@ -67,12 +111,18 @@
     <Compile Include="IRun.cs" />
     <Compile Include="ITurn.cs" />
     <Compile Include="ITurnAround.cs" />
-    <Compile Include="Model.cs" />
+    <Compile Include="MessageBoxManager.cs" />
+    <Compile Include="ModeGame.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerIMG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SaveResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,7 +131,9 @@
     </Compile>
     <Compile Include="Score.cs" />
     <Compile Include="EnemyTank.cs" />
-    <Compile Include="TankIMG.cs" />
+    <Compile Include="EnemyTankIMG.cs" />
+    <Compile Include="Tank.cs" />
+    <Compile Include="TypeOfProjectile.cs" />
     <Compile Include="View.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,30 +142,256 @@
     </Compile>
     <Compile Include="Wall.cs" />
     <Compile Include="WallIMG.cs" />
+    <EmbeddedResource Include="Game Form.ar.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.de.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.el.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.en.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.es.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.et.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.fr-BE.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.fr.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.hi.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.hu.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.it.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.ja.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.ko.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.pl.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.pt.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Game Form.resx">
       <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.ru-RU.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.ru.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.te.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.tr.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.uk.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form.zh.resx">
+      <DependentUpon>Game Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.ar.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.de.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.el.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.en-AU.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.en-CA.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.en-GB.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.en-US.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.en.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.es.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.et-EE.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.et.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.fr-BE.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.fr.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.hi.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.hu.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.it.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.ja-JP.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.ja.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.ko.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.pl.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.pt.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Game Settings Form.resx">
       <DependentUpon>Game Settings Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.ru-RU.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.ru.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.te.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.tr.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.uk.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Settings Form.zh.resx">
+      <DependentUpon>Game Settings Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.ar.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.de.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.el.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.en.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.es.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.et.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.fr.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.hi.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.hu.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.it.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.ja.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.ko.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.pl.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.pt.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.ru-RU.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.ru.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.te.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.tr.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.uk-UA.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.uk.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.zh.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="SaveResultForm.de.resx">
+      <DependentUpon>SaveResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveResultForm.en.resx">
+      <DependentUpon>SaveResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveResultForm.es.resx">
+      <DependentUpon>SaveResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveResultForm.fr.resx">
+      <DependentUpon>SaveResultForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SaveResultForm.resx">
       <DependentUpon>SaveResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveResultForm.ru.resx">
+      <DependentUpon>SaveResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View.en.resx">
+      <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View.ru.resx">
+      <DependentUpon>View.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -222,6 +500,417 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\player_104.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Projectile3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayerProjectile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simpleEnemyUP.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simpleEnemyUP1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simpleEnemyUP2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simpleEnemyUP3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_1321.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_151.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_1121.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank0_1221.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerBOTTOM1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerLEFT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerRIGHT1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк Наш с гусинецами 1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк  Наш с гусинецами 2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк  Наш с гусинецами 3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк  Наш с гусинецами 4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк  Наш с гусинецами 1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP141.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP142.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP151.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP161.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1411.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP143.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP152.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP162.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1412.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP144.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP153.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP163.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1413.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14131.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1441.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1531.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1631.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1421.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1511.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1611.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14121.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1431.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1521.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1621.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1414.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP145.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP154.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP164.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк  ЛЮБОЙ3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк  ЛЮБОЙ4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк врага1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк  противника1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк  противника2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк  противника3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Танк противника4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP141311.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14411.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP15311.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP15111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP16111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP141211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14311.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1451.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1541.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1641.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP141312.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14412.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP15312.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP16311.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP141111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP15112.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP16112.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP141212.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14312.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP15211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP16211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP14141.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1452.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1542.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerTOP1642.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cannon_fire1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton110.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton110.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton121.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton112.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton112.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton113.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton113.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton114.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton115.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton114.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton116.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton115.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton117.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton116.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton118.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PauseButton117.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\иконки\to1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

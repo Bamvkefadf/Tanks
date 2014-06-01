@@ -6,19 +6,28 @@ using System.Drawing;
 
 namespace tanks
 {
-    class Player : IRun, ITurn, IExternalWalls, IPicture
+    public class Player : Tank, IRun, ITurn, IExternalWalls
     {
         PlayerIMG playerImg = new PlayerIMG();
-        Image img;
-        int x, y;
+        Image[] img;
+        Image currentImage;
+        int k;  
         int health;
-        int invulnerability;
+        int invulnerability = 200;
+        int respawnX = 400;
+        int respawnY = 550;
+        public int cooldown = 100;
+        public int distanceOfProjectile = 250;
         public bool canDamaged = false;
         public Direction moving_direction;
-        public Direction img_direction;
-        public Projectile projectile;
+
         int temp_x, temp_y;             //координаты для сохранения игрока внутри поля
         static Random r;
+
+        public Image CurrentImage
+        {
+            get { return currentImage; }
+        }
 
         public int Health
         {
@@ -32,59 +41,135 @@ namespace tanks
             set { invulnerability = value; }
         }
 
-        public Image Img
+        public Image[] Img
         {
             get { return img; }
         }
                
-        public int Y
-        {
-            get { return y; }
-            set { y = value; }
-        }
-
-        public int X
-        {
-            get { return x; }
-            set { x = value; }
-        }
-
         public Player()
         {
             r = new Random();
 
-            img = playerImg.Img0_1;
+            img = playerImg.Up;
             health = 3;
-            projectile = new Projectile();
-            projectile.Img = Properties.Resources.ProjectileRed;
 
-            this.x = 400;
-            this.y = 550;
+            this.x = respawnX;
+            this.y = respawnY;
             moving_direction = Direction.UP;
-
+            PutCurrentImage();
             PutImg();
         }
-
         public void Run()
         {
             temp_x = x;
             temp_y = y;
-
+            cooldown--;
             if (canDamaged == false)
-                invulnerability++;
+                invulnerability--;
 
-            if (invulnerability > 200)
+            if (invulnerability <= 0)
             {
                 canDamaged = true;
             }
 
             GoDirection();
-            projectile.Run();
             ExternalWalls();
-
+            PutCurrentImage();
             PutImg();
 
             Turn();
+        }
+        public override void Turn()
+        {
+            PutImg();
+        }
+        public override void ExternalWalls()
+        {
+            if (x <= leftBorder || x >= rightBorder || y <= topBorder || y >= bottomBorder)
+            {
+                moving_direction = Direction.STOP;
+                x = temp_x;
+                y = temp_y;
+            }
+        }
+        public void ResetPlayer()
+        {
+            canDamaged = false;
+            invulnerability = 200;
+            X = respawnX;
+            Y = respawnY;
+        }
+
+        public override void PutCurrentImage()
+        {
+            if (canDamaged == false)
+            {
+                currentImage = img[0];
+                k = 0;
+            }
+            else
+            {
+                try
+                {
+                    currentImage = img[k];
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    currentImage = img[0];
+                }
+                k++;
+                if (k == 4)
+                    k = 0;
+            }
+        }
+        public override void PutImg()
+        {
+            if (canDamaged == false)
+            {
+                if (moving_direction == Direction.RIGHT)
+                {
+                    img_direction = Direction.RIGHT;
+                    img = playerImg.Inv_right;
+                }
+                else if (moving_direction == Direction.DOWN)
+                {
+                    img_direction = Direction.DOWN;
+                    img = playerImg.Inv_down;
+                }
+                else if (moving_direction == Direction.LEFT)
+                {
+                    img_direction = Direction.LEFT;
+                    img = playerImg.Inv_left;
+                }
+                else if (moving_direction == Direction.UP)
+                {
+                    img_direction = Direction.UP;
+                    img = playerImg.Inv_up;
+                }
+            }
+            else
+            {
+                if (moving_direction == Direction.RIGHT)
+                {
+                    img_direction = Direction.RIGHT;
+                    img = playerImg.Right;
+                }
+                else if (moving_direction == Direction.DOWN)
+                {
+                    img_direction = Direction.DOWN;
+                    img = playerImg.Down;
+                }
+                else if (moving_direction == Direction.LEFT)
+                {
+                    img_direction = Direction.LEFT;
+                    img = playerImg.Left;
+                }
+                else if (moving_direction == Direction.UP)
+                {
+                    img_direction = Direction.UP;
+                    img = playerImg.Up;
+                }
+            }
         }
 
         private void GoDirection()
@@ -113,53 +198,6 @@ namespace tanks
             {
                 x += 0;
                 y += 0;
-            }
-        }
-
-        public void Turn()
-        {
-            PutImg();
-        }
-
-        public void ResetPlayerAfterDamage()
-        {
-            canDamaged = false;
-            invulnerability = 0;
-            X = 400;
-            Y = 550;
-        }
-
-        public void ExternalWalls()
-        {
-            if (x <= 0 || x >= 761 || y <= 0 || y >= 561)
-            {
-                moving_direction = Direction.STOP;
-                x = temp_x;
-                y = temp_y;
-            }
-        }
-
-        void PutImg()
-        {
-            if (moving_direction == Direction.RIGHT)
-            {
-                img_direction = Direction.RIGHT;
-                img = playerImg.Img10;
-            }
-            else if (moving_direction == Direction.DOWN)
-            {
-                img_direction = Direction.DOWN;
-                img = playerImg.Img01;
-            }
-            else if (moving_direction == Direction.LEFT)
-            {
-                img_direction = Direction.LEFT;
-                img = playerImg.Img_10;
-            }
-            else if (moving_direction == Direction.UP)
-            {
-                img_direction = Direction.UP;
-                img = playerImg.Img0_1;
             }
         }
 

@@ -118,88 +118,667 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tank01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ProjectileRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Projectile.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hunter_tank10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_122.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tank_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tank0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="playerTank01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_111.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tank10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="playerInvurability" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Image1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="playerTank_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_131.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="playerTank10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_121.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mainIcon" xml:space="preserve">
-    <value />
+  <data name="ruExit" xml:space="preserve">
+    <value>Вы точно хотите выйти?</value>
   </data>
   <data name="Fire" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fire.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hunter_tank0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_15.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemyTank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\X8ea6HTs-Tk.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hunter_tank01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_112.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="MainIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MainIcon1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hunter_tank_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_132.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="playerTank0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="enPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlayButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="enPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PauseButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ProjectileBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Projectile1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Invulnerability" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank0_1311.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wall.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player_102.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Projectile3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Projectile3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player_103.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="playerDOWN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1413.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player_104.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="playerDOWN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP144.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player_10.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="playerDOWN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP153.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerDOWN4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP163.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerLEFT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1411.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerLEFT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP142.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerLEFT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP151.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerLEFT4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP161.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerProjectile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayerProjectile.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerRIGHT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1412.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerRIGHT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP143.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerRIGHT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP152.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerRIGHT4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP162.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerUP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP141.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerUP2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerUP3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP15.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerUP4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP16.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankDOWN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP14131.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankDOWN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1441.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankDOWN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1531.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankDOWN4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1631.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankLEFT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP14111.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankLEFT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1421.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankLEFT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1511.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankLEFT4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1611.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankRIGHT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP14121.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankRIGHT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1431.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankRIGHT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1521.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankRIGHT4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1621.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankUP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1414.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankUP2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP145.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankUP3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP154.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simpleTankUP4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP164.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankDOWN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP141312.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankDOWN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP14412.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankDOWN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP15312.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankDOWN4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP16311.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankLEFT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP141111.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankLEFT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP14211.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankLEFT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP15112.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankLEFT4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP16112.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankRIGHT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP141212.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankRIGHT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP14312.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankRIGHT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP15211.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankRIGHT4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP16211.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankUP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP14141.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankUP2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1452.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankUP3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1542.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hunterTankUP4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerTOP1642.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cannon_fire1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cannon_fire1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="arExit" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد الإقلاع عن التدخين؟</value>
+  </data>
+  <data name="deExit" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie aufhören wollen?</value>
+  </data>
+  <data name="elExit" xml:space="preserve">
+    <value>Είστε σίγουροι ότι θέλετε να κλείσετε;</value>
+  </data>
+  <data name="enExit" xml:space="preserve">
+    <value>Do you want to exit?</value>
+  </data>
+  <data name="esExit" xml:space="preserve">
+    <value>¿Está seguro de que desea salir?</value>
+  </data>
+  <data name="frExit" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir quitter?</value>
+  </data>
+  <data name="hiExit" xml:space="preserve">
+    <value>क्या आप छोड़ना चाहते हैं?</value>
+  </data>
+  <data name="huExit" xml:space="preserve">
+    <value>Biztos benne, hogy ki akar lépni?</value>
+  </data>
+  <data name="itExit" xml:space="preserve">
+    <value>Sei sicuro di voler uscire?</value>
+  </data>
+  <data name="jaExit" xml:space="preserve">
+    <value>本当に終了してもよろしいですか？</value>
+  </data>
+  <data name="koExit" xml:space="preserve">
+    <value>당신은 당신이 종료 하시겠습니까?</value>
+  </data>
+  <data name="plExit" xml:space="preserve">
+    <value>Czy na pewno chcesz zakończyć?</value>
+  </data>
+  <data name="ptExit" xml:space="preserve">
+    <value>Tem certeza de que deseja sair?</value>
+  </data>
+  <data name="teExit" xml:space="preserve">
+    <value>మీరు నిష్క్రమించాలి అనుకుంటున్నారా?</value>
+  </data>
+  <data name="trExit" xml:space="preserve">
+    <value>Eğer çıkmak istediğinizden emin misiniz?</value>
+  </data>
+  <data name="ukExit" xml:space="preserve">
+    <value>Ви точно хочете вийти?</value>
+  </data>
+  <data name="zhExit" xml:space="preserve">
+    <value>您确定要退出吗？</value>
+  </data>
+  <data name="arCancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="deCancel" xml:space="preserve">
+    <value>Stornierung</value>
+  </data>
+  <data name="elCancel" xml:space="preserve">
+    <value>ακύρωση</value>
+  </data>
+  <data name="enCancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="esCancel" xml:space="preserve">
+    <value>cancelación</value>
+  </data>
+  <data name="frCancel" xml:space="preserve">
+    <value>annulation</value>
+  </data>
+  <data name="hiCancel" xml:space="preserve">
+    <value>रद्द करना</value>
+  </data>
+  <data name="huCancel" xml:space="preserve">
+    <value>törlés</value>
+  </data>
+  <data name="itCancel" xml:space="preserve">
+    <value>cancellazione</value>
+  </data>
+  <data name="jaCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="koCancel" xml:space="preserve">
+    <value>해제</value>
+  </data>
+  <data name="plCancel" xml:space="preserve">
+    <value>anulowanie</value>
+  </data>
+  <data name="ptCancel" xml:space="preserve">
+    <value>cancelamento</value>
+  </data>
+  <data name="ruCancel" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="teCancel" xml:space="preserve">
+    <value>రద్దు చేయుట</value>
+  </data>
+  <data name="trCancel" xml:space="preserve">
+    <value>iptal</value>
+  </data>
+  <data name="ukCancel" xml:space="preserve">
+    <value>скасування</value>
+  </data>
+  <data name="zhCancel" xml:space="preserve">
+    <value>消除</value>
+  </data>
+  <data name="arOK" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="deOK" xml:space="preserve">
+    <value>ja</value>
+  </data>
+  <data name="elOK" xml:space="preserve">
+    <value>ναί</value>
+  </data>
+  <data name="enOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="esOK" xml:space="preserve">
+    <value>sí</value>
+  </data>
+  <data name="frOK" xml:space="preserve">
+    <value>oui</value>
+  </data>
+  <data name="hiOK" xml:space="preserve">
+    <value>हां</value>
+  </data>
+  <data name="huOK" xml:space="preserve">
+    <value>igen</value>
+  </data>
+  <data name="itOK" xml:space="preserve">
+    <value>sì</value>
+  </data>
+  <data name="jaOK" xml:space="preserve">
+    <value>はい</value>
+  </data>
+  <data name="koOK" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="plOK" xml:space="preserve">
+    <value>tak</value>
+  </data>
+  <data name="ptOK" xml:space="preserve">
+    <value>sim</value>
+  </data>
+  <data name="ruOK" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="teOK" xml:space="preserve">
+    <value>అవును</value>
+  </data>
+  <data name="trOK" xml:space="preserve">
+    <value>evet</value>
+  </data>
+  <data name="ukOK" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="zhOK" xml:space="preserve">
+    <value>是的</value>
+  </data>
+  <data name="arLose" xml:space="preserve">
+    <value>كنت هزموا!</value>
+  </data>
+  <data name="arTooMuch" xml:space="preserve">
+    <value>الكثير من الأشياء! محاولة لتقليل عدد الكائنات على الميدان!</value>
+  </data>
+  <data name="arWin" xml:space="preserve">
+    <value>تدمير جميع دبابات العدو. النصر!</value>
+  </data>
+  <data name="deLose" xml:space="preserve">
+    <value>Sie wurden besiegt!</value>
+  </data>
+  <data name="deTooMuch" xml:space="preserve">
+    <value>Zu viele Objekte! Versuchen, die Anzahl der Objekte auf dem Feld zu reduzieren!</value>
+  </data>
+  <data name="deWin" xml:space="preserve">
+    <value>Alle feindlichen Panzer zerstört. Sieg!</value>
+  </data>
+  <data name="elLose" xml:space="preserve">
+    <value>Μπορείτε νικήθηκαν!</value>
+  </data>
+  <data name="elTooMuch" xml:space="preserve">
+    <value>Πάρα πολλά αντικείμενα! Προσπαθήστε να μειώσετε τον αριθμό των αντικειμένων στο γήπεδο!</value>
+  </data>
+  <data name="elWin" xml:space="preserve">
+    <value>Όλα τα τανκς του εχθρού καταστράφηκαν. Νίκη!</value>
+  </data>
+  <data name="enLose" xml:space="preserve">
+    <value>You were defeated!</value>
+  </data>
+  <data name="enTooMuch" xml:space="preserve">
+    <value>Too many objects! Try to reduce the number of objects on the field!</value>
+  </data>
+  <data name="enWin" xml:space="preserve">
+    <value>All enemy tanks destroyed. Victory!</value>
+  </data>
+  <data name="esLose" xml:space="preserve">
+    <value>Ustedes fueron derrotados!</value>
+  </data>
+  <data name="esTooMuch" xml:space="preserve">
+    <value>Demasiados objetos! Trate de reducir el número de objetos en el campo!</value>
+  </data>
+  <data name="esWin" xml:space="preserve">
+    <value>Todos los tanques enemigos destruidos. ¡Victoria!</value>
+  </data>
+  <data name="frLose" xml:space="preserve">
+    <value>Vous avez été vaincu!</value>
+  </data>
+  <data name="frTooMuch" xml:space="preserve">
+    <value>Trop nombreux objets! Essayez de réduire le nombre d'objets sur le terrain!</value>
+  </data>
+  <data name="frWin" xml:space="preserve">
+    <value>Tous les chars ennemis détruits. Victoire!</value>
+  </data>
+  <data name="hiLose" xml:space="preserve">
+    <value>तुम हार गए!</value>
+  </data>
+  <data name="hiTooMuch" xml:space="preserve">
+    <value>भी कई वस्तुओं! मैदान पर वस्तुओं की संख्या को कम करने की कोशिश करो!</value>
+  </data>
+  <data name="hiWin" xml:space="preserve">
+    <value>सभी दुश्मन के टैंक को नष्ट कर दिया. जीत!</value>
+  </data>
+  <data name="huLose" xml:space="preserve">
+    <value>Te legyőzte!</value>
+  </data>
+  <data name="huTooMuch" xml:space="preserve">
+    <value>Túl sok tárgyat! Próbálja meg csökkenteni az objektumok száma a pályán!</value>
+  </data>
+  <data name="huWin" xml:space="preserve">
+    <value>Minden ellenséges tankok elpusztult. Győzelem!</value>
+  </data>
+  <data name="itLose" xml:space="preserve">
+    <value>Sei stato sconfitto!</value>
+  </data>
+  <data name="itTooMuch" xml:space="preserve">
+    <value>Troppi oggetti! Provare a ridurre il numero di oggetti sul campo!</value>
+  </data>
+  <data name="itWin" xml:space="preserve">
+    <value>Tutti i carri armati nemici distrutti. Vittoria!</value>
+  </data>
+  <data name="jaLose" xml:space="preserve">
+    <value>あなたは敗北した！</value>
+  </data>
+  <data name="jaTooMuch" xml:space="preserve">
+    <value>あまりにも多くのオブジェクト！フィールド上のオブジェクトの数を減らしてみてください！</value>
+  </data>
+  <data name="jaWin" xml:space="preserve">
+    <value>すべての敵の戦車を破壊した。勝利！</value>
+  </data>
+  <data name="koLose" xml:space="preserve">
+    <value>당신은 패배했다!</value>
+  </data>
+  <data name="koTooMuch" xml:space="preserve">
+    <value>너무 많은 개체! 필드에서 개체의 수를 줄이기 위해 노력!</value>
+  </data>
+  <data name="koWin" xml:space="preserve">
+    <value>모든 적의 탱크를 파괴. 승리!</value>
+  </data>
+  <data name="plLose" xml:space="preserve">
+    <value>Ci zostali pokonani!</value>
+  </data>
+  <data name="plTooMuch" xml:space="preserve">
+    <value>Zbyt wiele obiektów! Próbować zmniejszyć liczbę obiektów na terenie!</value>
+  </data>
+  <data name="plWin" xml:space="preserve">
+    <value>Wszystkie czołgi zniszczone. Zwycięstwo!</value>
+  </data>
+  <data name="ruLose" xml:space="preserve">
+    <value>Вы потерпели сокрушительное поражение!</value>
+  </data>
+  <data name="ruTooMuch" xml:space="preserve">
+    <value>Слишком большое число объектов! Попробуйте уменьшить количество объектов на поле!</value>
+  </data>
+  <data name="ruWin" xml:space="preserve">
+    <value>Все танки врага уничтожены. Победа!</value>
+  </data>
+  <data name="teLose" xml:space="preserve">
+    <value>మీరు ఓడిపోయారు!</value>
+  </data>
+  <data name="teTooMuch" xml:space="preserve">
+    <value>చాలా వస్తువులు! మైదానంలో వస్తువులను తగ్గించేందుకు ప్రయత్నించండి!</value>
+  </data>
+  <data name="teWin" xml:space="preserve">
+    <value>అన్ని శత్రువు ట్యాంకులు నాశనం. విక్టరీ!</value>
+  </data>
+  <data name="trLose" xml:space="preserve">
+    <value>Sen yenildi!</value>
+  </data>
+  <data name="trTooMuch" xml:space="preserve">
+    <value>Çok fazla obje!Alanında nesnelerin sayısını azaltmak için deneyin!</value>
+  </data>
+  <data name="trWin" xml:space="preserve">
+    <value>Tüm düşman tankları yok. Zafer!</value>
+  </data>
+  <data name="ukLose" xml:space="preserve">
+    <value>Ви зазнали нищівної поразки!</value>
+  </data>
+  <data name="ukTooMuch" xml:space="preserve">
+    <value>Занадто велике число об'єктів! Спробуйте зменшити кількість об'єктів на поле!</value>
+  </data>
+  <data name="ukWin" xml:space="preserve">
+    <value>Всі танки ворога знищені. Перемога!</value>
+  </data>
+  <data name="zhLose" xml:space="preserve">
+    <value>你被擊敗了！</value>
+  </data>
+  <data name="zhTooMuch" xml:space="preserve">
+    <value>太多的對象！盡量減少在球場上的對象的數目！</value>
+  </data>
+  <data name="zhWin" xml:space="preserve">
+    <value>所有敵人的坦克摧毀。勝利！</value>
+  </data>
+  <data name="ptLose" xml:space="preserve">
+    <value>Você foram derrotados!</value>
+  </data>
+  <data name="ptTooMuch" xml:space="preserve">
+    <value>Muitos objetos! Tente reduzir o número de objetos no campo!</value>
+  </data>
+  <data name="ptWin" xml:space="preserve">
+    <value>Todos os tanques inimigos destruídos. Vitória!</value>
+  </data>
+  <data name="arPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton114.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton115.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dePauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dePlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="elPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton116.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="elPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton117.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="esPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton19.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="esPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton19.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton121.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hiPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton16.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hiPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton16.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton15.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton15.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="itPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton110.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="itPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton110.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jaPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton117.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jaPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton118.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="koPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton113.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="koPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton114.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ptPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton115.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ptPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton116.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ruPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ruPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tePauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tePlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton17.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton17.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ukPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton18.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ukPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton18.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zhPauseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PauseButton112.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zhPlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayButton112.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arCheck" xml:space="preserve">
+    <value>الكائنات على ارض الملعب لا يتجاوز 111، وتلعب سرعة أكثر من 100</value>
+  </data>
+  <data name="deCheck" xml:space="preserve">
+    <value>Die Objekte auf dem Feld nicht mehr als 111, und die Abspielgeschwindigkeit über 100</value>
+  </data>
+  <data name="elCheck" xml:space="preserve">
+    <value>Τα αντικείμενα στον αγωνιστικό χώρο δεν πρέπει να υπερβαίνει το 111, και να παίξει ταχύτητα πάνω από 100</value>
+  </data>
+  <data name="enCheck" xml:space="preserve">
+    <value>The number of objects cannot be over 111 and play speed cannot be over 100</value>
+  </data>
+  <data name="esCheck" xml:space="preserve">
+    <value>Los objetos en el campo no sea superior a 111, y la velocidad de reproducción de más de 100</value>
+  </data>
+  <data name="frCheck" xml:space="preserve">
+    <value>Les objets sur le terrain ne dépasse pas 111, et jouent vitesse de plus de 100</value>
+  </data>
+  <data name="hiCheck" xml:space="preserve">
+    <value>मैदान पर वस्तुओं 111 से अधिक है, और 100 से अधिक गति से नहीं चलती है</value>
+  </data>
+  <data name="huCheck" xml:space="preserve">
+    <value>Az objektumok a pályán nem haladja meg a 111, és a játék sebessége több mint 100</value>
+  </data>
+  <data name="itCheck" xml:space="preserve">
+    <value>Gli oggetti sul campo non supera 111, e giocare la velocità oltre 100</value>
+  </data>
+  <data name="jaCheck" xml:space="preserve">
+    <value>フィールド上のオブジェクトが111を超え、100以上の速度が再生されない</value>
+  </data>
+  <data name="koCheck" xml:space="preserve">
+    <value>필드에있는 개체 (111)를 초과하고, 100 이상 속도를 재생되지 않습니다</value>
+  </data>
+  <data name="plCheck" xml:space="preserve">
+    <value>Obiekty na polu nie przekracza 111, a grać prędkość ponad 100</value>
+  </data>
+  <data name="ptCheck" xml:space="preserve">
+    <value>Os objetos no campo não exceda 111, e velocidade do jogo mais de 100</value>
+  </data>
+  <data name="ruCheck" xml:space="preserve">
+    <value>Число объектов на поле не должно превышать 111, а скорость игры более 100</value>
+  </data>
+  <data name="teCheck" xml:space="preserve">
+    <value>మైదానంలో వస్తువులు 111 అధిగమించటానికి, మరియు 100 పైగా వేగం లేదు</value>
+  </data>
+  <data name="trCheck" xml:space="preserve">
+    <value>Sahada nesneler 111 aşan, ve 100'ün üzerinde hız çalmıyor</value>
+  </data>
+  <data name="ukCheck" xml:space="preserve">
+    <value>Число об'єктів на поле не повинно перевищувати 111, а швидкість гри більше 100</value>
+  </data>
+  <data name="zhCheck" xml:space="preserve">
+    <value>在球場上的對象不超過111，並播放速度超過100</value>
+  </data>
+  <data name="tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="to1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\иконки\to1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

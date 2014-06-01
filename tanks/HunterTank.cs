@@ -2,106 +2,115 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace tanks
 {
     class HunterTank : EnemyTank
     {
         HunterIMG hunterImg = new HunterIMG();
+        Image[] img;
 
-        void PutImg()
+        public HunterTank(int x, int y): base(x, y)
         {
-            if (moving_direction == Direction.RIGHT)
-            {
-                moving_direction = Direction.RIGHT;
-                img = hunterImg.Img10;
-            }
-            else if (moving_direction == Direction.DOWN)
-            {
-                moving_direction = Direction.DOWN;
-                img = hunterImg.Img01;
-            }
-            else if (moving_direction == Direction.LEFT)
-            {
-                moving_direction = Direction.LEFT;
-                img = hunterImg.Img_10;
-            }
-            else if (moving_direction == Direction.UP)
-            {
-                moving_direction = Direction.UP;
-                img = hunterImg.Img0_1;
-            }
+            DistanceOfProjectile = 200;
+            PutImg();
+            PutCurrentImage();
+            cooldown = 100;
         }
-
         public void Turn(int target_x, int target_y)
         {
-            moving_direction = Direction.STOP;
+            Moving_direction = Direction.STOP;
 
             if (r.Next(500) < 250)
             {
                 if (X > target_x)
-                    moving_direction = Direction.LEFT;
+                    Moving_direction = Direction.LEFT;
                 else if (X < target_x)
-                    moving_direction = Direction.RIGHT;
+                    Moving_direction = Direction.RIGHT;
             }
             else
             {
                 if (Y > target_y)
-                    moving_direction = Direction.UP;
+                    Moving_direction = Direction.UP;
                 else if (Y < target_y)
-                    moving_direction = Direction.DOWN;
+                    Moving_direction = Direction.DOWN;
             }
-            
-           PutImg();
-        }
 
-        new public void TurnAround()
-        {
-            if (moving_direction == Direction.LEFT)
-                moving_direction = Direction.RIGHT;
-            else if (moving_direction == Direction.RIGHT)
-                moving_direction = Direction.LEFT;
-            else if (moving_direction == Direction.UP)
-                moving_direction = Direction.DOWN;
-            else if (moving_direction == Direction.DOWN)
-                moving_direction = Direction.UP;
             PutImg();
         }
-
-        public void Run(int target_x, int target_y)
+        new public void TurnAround()
+        {
+            if (Moving_direction == Direction.LEFT)
+                Moving_direction = Direction.RIGHT;
+            else if (Moving_direction == Direction.RIGHT)
+                Moving_direction = Direction.LEFT;
+            else if (Moving_direction == Direction.UP)
+                Moving_direction = Direction.DOWN;
+            else if (Moving_direction == Direction.DOWN)
+                Moving_direction = Direction.UP;
+            PutImg();
+        }
+        new public void Run(int target_x, int target_y)
         {
             prev_x = x;
             prev_y = y;
-            projectile.Run();
+
             GoDirection();
 
             if (
                 ((X > target_x - 30 && X < target_x + 30)
                 ||
-                (Y > target_y - 30 && Y < target_y + 30)) 
-                && 
-                (projectile.distance == 0 && projectile.cooldown > 99)
+                (Y > target_y - 30 && Y < target_y + 30))
+                &&
+                (cooldown <= 0)
                 )
-                Shoot();
+                Shoot(100);
 
-            mustTurn++;
+            countToTurn++;
+            cooldown--;
 
             ExternalWalls();
-
+            PutCurrentImage();
             PutImg();
 
-            if (mustTurn == 40)
+            if (countToTurn == 40)
             {
                 Turn(target_x, target_y);
-                mustTurn = 0;
+                countToTurn = 0;
             }
         }
-
-        public HunterTank(int x, int y) : base (x, y)
+        new private void PutImg()
         {
-            projectile.Img = Properties.Resources.ProjectileBlue;
-            PutImg();
+            if (Moving_direction == Direction.RIGHT)
+            {
+                Moving_direction = Direction.RIGHT;
+                img = hunterImg.Right;
+            }
+            else if (Moving_direction == Direction.DOWN)
+            {
+                Moving_direction = Direction.DOWN;
+                img = hunterImg.Down;
+            }
+            else if (Moving_direction == Direction.LEFT)
+            {
+                Moving_direction = Direction.LEFT;
+                img = hunterImg.Left;
+            }
+            else if (Moving_direction == Direction.UP)
+            {
+                Moving_direction = Direction.UP;
+                img = hunterImg.Up;
+            }
         }
+        new private void PutCurrentImage()
+        {
+            currentImage = img[k];
+            k++;
+            if (k == 4)
+                k = 0;
+        }
+
 
     }
 }

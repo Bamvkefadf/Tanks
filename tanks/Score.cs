@@ -15,7 +15,6 @@ namespace tanks
             get { return name; }
             set { name = value; }
         }
-
         public int CurrentScore
         {
             get { return currentScore; }

@@ -61,12 +61,426 @@ namespace tanks.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to إلغاء.
+        /// </summary>
+        internal static string arCancel {
+            get {
+                return ResourceManager.GetString("arCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الكائنات على ارض الملعب لا يتجاوز 111، وتلعب سرعة أكثر من 100.
+        /// </summary>
+        internal static string arCheck {
+            get {
+                return ResourceManager.GetString("arCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هل أنت متأكد أنك تريد الإقلاع عن التدخين؟.
+        /// </summary>
+        internal static string arExit {
+            get {
+                return ResourceManager.GetString("arExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to كنت هزموا!.
+        /// </summary>
+        internal static string arLose {
+            get {
+                return ResourceManager.GetString("arLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نعم.
+        /// </summary>
+        internal static string arOK {
+            get {
+                return ResourceManager.GetString("arOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap enemyTank {
+        internal static System.Drawing.Bitmap arPauseButton {
             get {
-                object obj = ResourceManager.GetObject("enemyTank", resourceCulture);
+                object obj = ResourceManager.GetObject("arPauseButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("arPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الكثير من الأشياء! محاولة لتقليل عدد الكائنات على الميدان!.
+        /// </summary>
+        internal static string arTooMuch {
+            get {
+                return ResourceManager.GetString("arTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تدمير جميع دبابات العدو. النصر!.
+        /// </summary>
+        internal static string arWin {
+            get {
+                return ResourceManager.GetString("arWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream cannon_fire1 {
+            get {
+                return ResourceManager.GetStream("cannon_fire1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stornierung.
+        /// </summary>
+        internal static string deCancel {
+            get {
+                return ResourceManager.GetString("deCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die Objekte auf dem Feld nicht mehr als 111, und die Abspielgeschwindigkeit über 100.
+        /// </summary>
+        internal static string deCheck {
+            get {
+                return ResourceManager.GetString("deCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sind Sie sicher, dass Sie aufhören wollen?.
+        /// </summary>
+        internal static string deExit {
+            get {
+                return ResourceManager.GetString("deExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sie wurden besiegt!.
+        /// </summary>
+        internal static string deLose {
+            get {
+                return ResourceManager.GetString("deLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ja.
+        /// </summary>
+        internal static string deOK {
+            get {
+                return ResourceManager.GetString("deOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dePauseButton {
+            get {
+                object obj = ResourceManager.GetObject("dePauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dePlayButton {
+            get {
+                object obj = ResourceManager.GetObject("dePlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zu viele Objekte! Versuchen, die Anzahl der Objekte auf dem Feld zu reduzieren!.
+        /// </summary>
+        internal static string deTooMuch {
+            get {
+                return ResourceManager.GetString("deTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alle feindlichen Panzer zerstört. Sieg!.
+        /// </summary>
+        internal static string deWin {
+            get {
+                return ResourceManager.GetString("deWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ακύρωση.
+        /// </summary>
+        internal static string elCancel {
+            get {
+                return ResourceManager.GetString("elCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Τα αντικείμενα στον αγωνιστικό χώρο δεν πρέπει να υπερβαίνει το 111, και να παίξει ταχύτητα πάνω από 100.
+        /// </summary>
+        internal static string elCheck {
+            get {
+                return ResourceManager.GetString("elCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Είστε σίγουροι ότι θέλετε να κλείσετε;.
+        /// </summary>
+        internal static string elExit {
+            get {
+                return ResourceManager.GetString("elExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Μπορείτε νικήθηκαν!.
+        /// </summary>
+        internal static string elLose {
+            get {
+                return ResourceManager.GetString("elLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ναί.
+        /// </summary>
+        internal static string elOK {
+            get {
+                return ResourceManager.GetString("elOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("elPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("elPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Πάρα πολλά αντικείμενα! Προσπαθήστε να μειώσετε τον αριθμό των αντικειμένων στο γήπεδο!.
+        /// </summary>
+        internal static string elTooMuch {
+            get {
+                return ResourceManager.GetString("elTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Όλα τα τανκς του εχθρού καταστράφηκαν. Νίκη!.
+        /// </summary>
+        internal static string elWin {
+            get {
+                return ResourceManager.GetString("elWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cancel.
+        /// </summary>
+        internal static string enCancel {
+            get {
+                return ResourceManager.GetString("enCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number of objects cannot be over 111 and play speed cannot be over 100.
+        /// </summary>
+        internal static string enCheck {
+            get {
+                return ResourceManager.GetString("enCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to exit?.
+        /// </summary>
+        internal static string enExit {
+            get {
+                return ResourceManager.GetString("enExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You were defeated!.
+        /// </summary>
+        internal static string enLose {
+            get {
+                return ResourceManager.GetString("enLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string enOK {
+            get {
+                return ResourceManager.GetString("enOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap enPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("enPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap enPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("enPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Too many objects! Try to reduce the number of objects on the field!.
+        /// </summary>
+        internal static string enTooMuch {
+            get {
+                return ResourceManager.GetString("enTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All enemy tanks destroyed. Victory!.
+        /// </summary>
+        internal static string enWin {
+            get {
+                return ResourceManager.GetString("enWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cancelación.
+        /// </summary>
+        internal static string esCancel {
+            get {
+                return ResourceManager.GetString("esCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Los objetos en el campo no sea superior a 111, y la velocidad de reproducción de más de 100.
+        /// </summary>
+        internal static string esCheck {
+            get {
+                return ResourceManager.GetString("esCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ¿Está seguro de que desea salir?.
+        /// </summary>
+        internal static string esExit {
+            get {
+                return ResourceManager.GetString("esExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ustedes fueron derrotados!.
+        /// </summary>
+        internal static string esLose {
+            get {
+                return ResourceManager.GetString("esLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sí.
+        /// </summary>
+        internal static string esOK {
+            get {
+                return ResourceManager.GetString("esOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap esPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("esPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap esPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("esPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Demasiados objetos! Trate de reducir el número de objetos en el campo!.
+        /// </summary>
+        internal static string esTooMuch {
+            get {
+                return ResourceManager.GetString("esTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Todos los tanques enemigos destruidos. ¡Victoria!.
+        /// </summary>
+        internal static string esWin {
+            get {
+                return ResourceManager.GetString("esWin", resourceCulture);
             }
         }
         
@@ -81,11 +495,56 @@ namespace tanks.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to annulation.
+        /// </summary>
+        internal static string frCancel {
+            get {
+                return ResourceManager.GetString("frCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les objets sur le terrain ne dépasse pas 111, et jouent vitesse de plus de 100.
+        /// </summary>
+        internal static string frCheck {
+            get {
+                return ResourceManager.GetString("frCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Etes-vous sûr de vouloir quitter?.
+        /// </summary>
+        internal static string frExit {
+            get {
+                return ResourceManager.GetString("frExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vous avez été vaincu!.
+        /// </summary>
+        internal static string frLose {
+            get {
+                return ResourceManager.GetString("frLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to oui.
+        /// </summary>
+        internal static string frOK {
+            get {
+                return ResourceManager.GetString("frOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hunter_tank_10 {
+        internal static System.Drawing.Bitmap frPauseButton {
             get {
-                object obj = ResourceManager.GetObject("hunter_tank_10", resourceCulture);
+                object obj = ResourceManager.GetObject("frPauseButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +552,82 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hunter_tank0_1 {
+        internal static System.Drawing.Bitmap frPlayButton {
             get {
-                object obj = ResourceManager.GetObject("hunter_tank0_1", resourceCulture);
+                object obj = ResourceManager.GetObject("frPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trop nombreux objets! Essayez de réduire le nombre d&apos;objets sur le terrain!.
+        /// </summary>
+        internal static string frTooMuch {
+            get {
+                return ResourceManager.GetString("frTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tous les chars ennemis détruits. Victoire!.
+        /// </summary>
+        internal static string frWin {
+            get {
+                return ResourceManager.GetString("frWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to रद्द करना.
+        /// </summary>
+        internal static string hiCancel {
+            get {
+                return ResourceManager.GetString("hiCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to मैदान पर वस्तुओं 111 से अधिक है, और 100 से अधिक गति से नहीं चलती है.
+        /// </summary>
+        internal static string hiCheck {
+            get {
+                return ResourceManager.GetString("hiCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to क्या आप छोड़ना चाहते हैं?.
+        /// </summary>
+        internal static string hiExit {
+            get {
+                return ResourceManager.GetString("hiExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to तुम हार गए!.
+        /// </summary>
+        internal static string hiLose {
+            get {
+                return ResourceManager.GetString("hiLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to हां.
+        /// </summary>
+        internal static string hiOK {
+            get {
+                return ResourceManager.GetString("hiOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hiPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("hiPauseButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +635,73 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hunter_tank01 {
+        internal static System.Drawing.Bitmap hiPlayButton {
             get {
-                object obj = ResourceManager.GetObject("hunter_tank01", resourceCulture);
+                object obj = ResourceManager.GetObject("hiPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to भी कई वस्तुओं! मैदान पर वस्तुओं की संख्या को कम करने की कोशिश करो!.
+        /// </summary>
+        internal static string hiTooMuch {
+            get {
+                return ResourceManager.GetString("hiTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to सभी दुश्मन के टैंक को नष्ट कर दिया. जीत!.
+        /// </summary>
+        internal static string hiWin {
+            get {
+                return ResourceManager.GetString("hiWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to törlés.
+        /// </summary>
+        internal static string huCancel {
+            get {
+                return ResourceManager.GetString("huCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Az objektumok a pályán nem haladja meg a 111, és a játék sebessége több mint 100.
+        /// </summary>
+        internal static string huCheck {
+            get {
+                return ResourceManager.GetString("huCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biztos benne, hogy ki akar lépni?.
+        /// </summary>
+        internal static string huExit {
+            get {
+                return ResourceManager.GetString("huExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Te legyőzte!.
+        /// </summary>
+        internal static string huLose {
+            get {
+                return ResourceManager.GetString("huLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankDOWN1 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankDOWN1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +709,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hunter_tank10 {
+        internal static System.Drawing.Bitmap hunterTankDOWN2 {
             get {
-                object obj = ResourceManager.GetObject("hunter_tank10", resourceCulture);
+                object obj = ResourceManager.GetObject("hunterTankDOWN2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +719,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Image1 {
+        internal static System.Drawing.Bitmap hunterTankDOWN3 {
             get {
-                object obj = ResourceManager.GetObject("Image1", resourceCulture);
+                object obj = ResourceManager.GetObject("hunterTankDOWN3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,19 +729,426 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Invulnerability {
+        internal static System.Drawing.Bitmap hunterTankDOWN4 {
             get {
-                object obj = ResourceManager.GetObject("Invulnerability", resourceCulture);
+                object obj = ResourceManager.GetObject("hunterTankDOWN4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string mainIcon {
+        internal static System.Drawing.Bitmap hunterTankLEFT1 {
             get {
-                return ResourceManager.GetString("mainIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("hunterTankLEFT1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankLEFT2 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankLEFT2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankLEFT3 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankLEFT3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankLEFT4 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankLEFT4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankRIGHT1 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankRIGHT1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankRIGHT2 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankRIGHT2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankRIGHT3 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankRIGHT3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankRIGHT4 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankRIGHT4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankUP1 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankUP1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankUP2 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankUP2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankUP3 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankUP3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hunterTankUP4 {
+            get {
+                object obj = ResourceManager.GetObject("hunterTankUP4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to igen.
+        /// </summary>
+        internal static string huOK {
+            get {
+                return ResourceManager.GetString("huOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap huPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("huPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap huPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("huPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Túl sok tárgyat! Próbálja meg csökkenteni az objektumok száma a pályán!.
+        /// </summary>
+        internal static string huTooMuch {
+            get {
+                return ResourceManager.GetString("huTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minden ellenséges tankok elpusztult. Győzelem!.
+        /// </summary>
+        internal static string huWin {
+            get {
+                return ResourceManager.GetString("huWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cancellazione.
+        /// </summary>
+        internal static string itCancel {
+            get {
+                return ResourceManager.GetString("itCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gli oggetti sul campo non supera 111, e giocare la velocità oltre 100.
+        /// </summary>
+        internal static string itCheck {
+            get {
+                return ResourceManager.GetString("itCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sei sicuro di voler uscire?.
+        /// </summary>
+        internal static string itExit {
+            get {
+                return ResourceManager.GetString("itExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sei stato sconfitto!.
+        /// </summary>
+        internal static string itLose {
+            get {
+                return ResourceManager.GetString("itLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sì.
+        /// </summary>
+        internal static string itOK {
+            get {
+                return ResourceManager.GetString("itOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap itPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("itPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap itPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("itPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Troppi oggetti! Provare a ridurre il numero di oggetti sul campo!.
+        /// </summary>
+        internal static string itTooMuch {
+            get {
+                return ResourceManager.GetString("itTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tutti i carri armati nemici distrutti. Vittoria!.
+        /// </summary>
+        internal static string itWin {
+            get {
+                return ResourceManager.GetString("itWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to キャンセル.
+        /// </summary>
+        internal static string jaCancel {
+            get {
+                return ResourceManager.GetString("jaCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to フィールド上のオブジェクトが111を超え、100以上の速度が再生されない.
+        /// </summary>
+        internal static string jaCheck {
+            get {
+                return ResourceManager.GetString("jaCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 本当に終了してもよろしいですか？.
+        /// </summary>
+        internal static string jaExit {
+            get {
+                return ResourceManager.GetString("jaExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to あなたは敗北した！.
+        /// </summary>
+        internal static string jaLose {
+            get {
+                return ResourceManager.GetString("jaLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to はい.
+        /// </summary>
+        internal static string jaOK {
+            get {
+                return ResourceManager.GetString("jaOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jaPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("jaPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jaPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("jaPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to あまりにも多くのオブジェクト！フィールド上のオブジェクトの数を減らしてみてください！.
+        /// </summary>
+        internal static string jaTooMuch {
+            get {
+                return ResourceManager.GetString("jaTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to すべての敵の戦車を破壊した。勝利！.
+        /// </summary>
+        internal static string jaWin {
+            get {
+                return ResourceManager.GetString("jaWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 해제.
+        /// </summary>
+        internal static string koCancel {
+            get {
+                return ResourceManager.GetString("koCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 필드에있는 개체 (111)를 초과하고, 100 이상 속도를 재생되지 않습니다.
+        /// </summary>
+        internal static string koCheck {
+            get {
+                return ResourceManager.GetString("koCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 당신은 당신이 종료 하시겠습니까?.
+        /// </summary>
+        internal static string koExit {
+            get {
+                return ResourceManager.GetString("koExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 당신은 패배했다!.
+        /// </summary>
+        internal static string koLose {
+            get {
+                return ResourceManager.GetString("koLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 예.
+        /// </summary>
+        internal static string koOK {
+            get {
+                return ResourceManager.GetString("koOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap koPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("koPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap koPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("koPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 너무 많은 개체! 필드에서 개체의 수를 줄이기 위해 노력!.
+        /// </summary>
+        internal static string koTooMuch {
+            get {
+                return ResourceManager.GetString("koTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 모든 적의 탱크를 파괴. 승리!.
+        /// </summary>
+        internal static string koWin {
+            get {
+                return ResourceManager.GetString("koWin", resourceCulture);
             }
         }
         
@@ -162,9 +1165,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PauseButton {
+        internal static System.Drawing.Bitmap playerDOWN1 {
             get {
-                object obj = ResourceManager.GetObject("PauseButton", resourceCulture);
+                object obj = ResourceManager.GetObject("playerDOWN1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -172,9 +1175,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PlayButton {
+        internal static System.Drawing.Bitmap playerDOWN2 {
             get {
-                object obj = ResourceManager.GetObject("PlayButton", resourceCulture);
+                object obj = ResourceManager.GetObject("playerDOWN2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -182,9 +1185,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap player_10 {
+        internal static System.Drawing.Bitmap playerDOWN3 {
             get {
-                object obj = ResourceManager.GetObject("player_10", resourceCulture);
+                object obj = ResourceManager.GetObject("playerDOWN3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -192,9 +1195,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap player0_1 {
+        internal static System.Drawing.Bitmap playerDOWN4 {
             get {
-                object obj = ResourceManager.GetObject("player0_1", resourceCulture);
+                object obj = ResourceManager.GetObject("playerDOWN4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -202,9 +1205,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap player01 {
+        internal static System.Drawing.Bitmap playerInvurability {
             get {
-                object obj = ResourceManager.GetObject("player01", resourceCulture);
+                object obj = ResourceManager.GetObject("playerInvurability", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -212,9 +1215,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap player10 {
+        internal static System.Drawing.Bitmap playerLEFT1 {
             get {
-                object obj = ResourceManager.GetObject("player10", resourceCulture);
+                object obj = ResourceManager.GetObject("playerLEFT1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -222,9 +1225,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap playerTank_10 {
+        internal static System.Drawing.Bitmap playerLEFT2 {
             get {
-                object obj = ResourceManager.GetObject("playerTank_10", resourceCulture);
+                object obj = ResourceManager.GetObject("playerLEFT2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -232,9 +1235,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap playerTank0_1 {
+        internal static System.Drawing.Bitmap playerLEFT3 {
             get {
-                object obj = ResourceManager.GetObject("playerTank0_1", resourceCulture);
+                object obj = ResourceManager.GetObject("playerLEFT3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -242,9 +1245,9 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap playerTank01 {
+        internal static System.Drawing.Bitmap playerLEFT4 {
             get {
-                object obj = ResourceManager.GetObject("playerTank01", resourceCulture);
+                object obj = ResourceManager.GetObject("playerLEFT4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -252,9 +1255,182 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap playerTank10 {
+        internal static System.Drawing.Bitmap PlayerProjectile {
             get {
-                object obj = ResourceManager.GetObject("playerTank10", resourceCulture);
+                object obj = ResourceManager.GetObject("PlayerProjectile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playerRIGHT1 {
+            get {
+                object obj = ResourceManager.GetObject("playerRIGHT1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playerRIGHT2 {
+            get {
+                object obj = ResourceManager.GetObject("playerRIGHT2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playerRIGHT3 {
+            get {
+                object obj = ResourceManager.GetObject("playerRIGHT3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playerRIGHT4 {
+            get {
+                object obj = ResourceManager.GetObject("playerRIGHT4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playerUP1 {
+            get {
+                object obj = ResourceManager.GetObject("playerUP1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playerUP2 {
+            get {
+                object obj = ResourceManager.GetObject("playerUP2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playerUP3 {
+            get {
+                object obj = ResourceManager.GetObject("playerUP3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playerUP4 {
+            get {
+                object obj = ResourceManager.GetObject("playerUP4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to anulowanie.
+        /// </summary>
+        internal static string plCancel {
+            get {
+                return ResourceManager.GetString("plCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Obiekty na polu nie przekracza 111, a grać prędkość ponad 100.
+        /// </summary>
+        internal static string plCheck {
+            get {
+                return ResourceManager.GetString("plCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Czy na pewno chcesz zakończyć?.
+        /// </summary>
+        internal static string plExit {
+            get {
+                return ResourceManager.GetString("plExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ci zostali pokonani!.
+        /// </summary>
+        internal static string plLose {
+            get {
+                return ResourceManager.GetString("plLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tak.
+        /// </summary>
+        internal static string plOK {
+            get {
+                return ResourceManager.GetString("plOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("plPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("plPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zbyt wiele obiektów! Próbować zmniejszyć liczbę obiektów na terenie!.
+        /// </summary>
+        internal static string plTooMuch {
+            get {
+                return ResourceManager.GetString("plTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wszystkie czołgi zniszczone. Zwycięstwo!.
+        /// </summary>
+        internal static string plWin {
+            get {
+                return ResourceManager.GetString("plWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Projectile3 {
+            get {
+                object obj = ResourceManager.GetObject("Projectile3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -280,6 +1456,332 @@ namespace tanks.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to cancelamento.
+        /// </summary>
+        internal static string ptCancel {
+            get {
+                return ResourceManager.GetString("ptCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Os objetos no campo não exceda 111, e velocidade do jogo mais de 100.
+        /// </summary>
+        internal static string ptCheck {
+            get {
+                return ResourceManager.GetString("ptCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tem certeza de que deseja sair?.
+        /// </summary>
+        internal static string ptExit {
+            get {
+                return ResourceManager.GetString("ptExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Você foram derrotados!.
+        /// </summary>
+        internal static string ptLose {
+            get {
+                return ResourceManager.GetString("ptLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sim.
+        /// </summary>
+        internal static string ptOK {
+            get {
+                return ResourceManager.GetString("ptOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ptPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("ptPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ptPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("ptPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Muitos objetos! Tente reduzir o número de objetos no campo!.
+        /// </summary>
+        internal static string ptTooMuch {
+            get {
+                return ResourceManager.GetString("ptTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Todos os tanques inimigos destruídos. Vitória!.
+        /// </summary>
+        internal static string ptWin {
+            get {
+                return ResourceManager.GetString("ptWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Нет.
+        /// </summary>
+        internal static string ruCancel {
+            get {
+                return ResourceManager.GetString("ruCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Число объектов на поле не должно превышать 111, а скорость игры более 100.
+        /// </summary>
+        internal static string ruCheck {
+            get {
+                return ResourceManager.GetString("ruCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вы точно хотите выйти?.
+        /// </summary>
+        internal static string ruExit {
+            get {
+                return ResourceManager.GetString("ruExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вы потерпели сокрушительное поражение!.
+        /// </summary>
+        internal static string ruLose {
+            get {
+                return ResourceManager.GetString("ruLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Да.
+        /// </summary>
+        internal static string ruOK {
+            get {
+                return ResourceManager.GetString("ruOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ruPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("ruPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ruPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("ruPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Слишком большое число объектов! Попробуйте уменьшить количество объектов на поле!.
+        /// </summary>
+        internal static string ruTooMuch {
+            get {
+                return ResourceManager.GetString("ruTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Все танки врага уничтожены. Победа!.
+        /// </summary>
+        internal static string ruWin {
+            get {
+                return ResourceManager.GetString("ruWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankDOWN1 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankDOWN1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankDOWN2 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankDOWN2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankDOWN3 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankDOWN3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankDOWN4 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankDOWN4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankLEFT1 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankLEFT1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankLEFT2 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankLEFT2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankLEFT3 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankLEFT3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankLEFT4 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankLEFT4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankRIGHT1 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankRIGHT1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankRIGHT2 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankRIGHT2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankRIGHT3 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankRIGHT3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankRIGHT4 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankRIGHT4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankUP1 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankUP1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankUP2 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankUP2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankUP3 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankUP3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpleTankUP4 {
+            get {
+                object obj = ResourceManager.GetObject("simpleTankUP4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap tank {
@@ -290,11 +1792,56 @@ namespace tanks.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to రద్దు చేయుట.
+        /// </summary>
+        internal static string teCancel {
+            get {
+                return ResourceManager.GetString("teCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to మైదానంలో వస్తువులు 111 అధిగమించటానికి, మరియు 100 పైగా వేగం లేదు.
+        /// </summary>
+        internal static string teCheck {
+            get {
+                return ResourceManager.GetString("teCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to మీరు నిష్క్రమించాలి అనుకుంటున్నారా?.
+        /// </summary>
+        internal static string teExit {
+            get {
+                return ResourceManager.GetString("teExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to మీరు ఓడిపోయారు!.
+        /// </summary>
+        internal static string teLose {
+            get {
+                return ResourceManager.GetString("teLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to అవును.
+        /// </summary>
+        internal static string teOK {
+            get {
+                return ResourceManager.GetString("teOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tank_10 {
+        internal static System.Drawing.Bitmap tePauseButton {
             get {
-                object obj = ResourceManager.GetObject("tank_10", resourceCulture);
+                object obj = ResourceManager.GetObject("tePauseButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -302,9 +1849,92 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tank0_1 {
+        internal static System.Drawing.Bitmap tePlayButton {
             get {
-                object obj = ResourceManager.GetObject("tank0_1", resourceCulture);
+                object obj = ResourceManager.GetObject("tePlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to చాలా వస్తువులు! మైదానంలో వస్తువులను తగ్గించేందుకు ప్రయత్నించండి!.
+        /// </summary>
+        internal static string teTooMuch {
+            get {
+                return ResourceManager.GetString("teTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to అన్ని శత్రువు ట్యాంకులు నాశనం. విక్టరీ!.
+        /// </summary>
+        internal static string teWin {
+            get {
+                return ResourceManager.GetString("teWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon to1 {
+            get {
+                object obj = ResourceManager.GetObject("to1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to iptal.
+        /// </summary>
+        internal static string trCancel {
+            get {
+                return ResourceManager.GetString("trCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sahada nesneler 111 aşan, ve 100&apos;ün üzerinde hız çalmıyor.
+        /// </summary>
+        internal static string trCheck {
+            get {
+                return ResourceManager.GetString("trCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eğer çıkmak istediğinizden emin misiniz?.
+        /// </summary>
+        internal static string trExit {
+            get {
+                return ResourceManager.GetString("trExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sen yenildi!.
+        /// </summary>
+        internal static string trLose {
+            get {
+                return ResourceManager.GetString("trLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to evet.
+        /// </summary>
+        internal static string trOK {
+            get {
+                return ResourceManager.GetString("trOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("trPauseButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -312,9 +1942,82 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tank01 {
+        internal static System.Drawing.Bitmap trPlayButton {
             get {
-                object obj = ResourceManager.GetObject("tank01", resourceCulture);
+                object obj = ResourceManager.GetObject("trPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Çok fazla obje!Alanında nesnelerin sayısını azaltmak için deneyin!.
+        /// </summary>
+        internal static string trTooMuch {
+            get {
+                return ResourceManager.GetString("trTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tüm düşman tankları yok. Zafer!.
+        /// </summary>
+        internal static string trWin {
+            get {
+                return ResourceManager.GetString("trWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to скасування.
+        /// </summary>
+        internal static string ukCancel {
+            get {
+                return ResourceManager.GetString("ukCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Число об&apos;єктів на поле не повинно перевищувати 111, а швидкість гри більше 100.
+        /// </summary>
+        internal static string ukCheck {
+            get {
+                return ResourceManager.GetString("ukCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ви точно хочете вийти?.
+        /// </summary>
+        internal static string ukExit {
+            get {
+                return ResourceManager.GetString("ukExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ви зазнали нищівної поразки!.
+        /// </summary>
+        internal static string ukLose {
+            get {
+                return ResourceManager.GetString("ukLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Так.
+        /// </summary>
+        internal static string ukOK {
+            get {
+                return ResourceManager.GetString("ukOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ukPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("ukPauseButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -322,10 +2025,28 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tank10 {
+        internal static System.Drawing.Bitmap ukPlayButton {
             get {
-                object obj = ResourceManager.GetObject("tank10", resourceCulture);
+                object obj = ResourceManager.GetObject("ukPlayButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Занадто велике число об&apos;єктів! Спробуйте зменшити кількість об&apos;єктів на поле!.
+        /// </summary>
+        internal static string ukTooMuch {
+            get {
+                return ResourceManager.GetString("ukTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Всі танки ворога знищені. Перемога!.
+        /// </summary>
+        internal static string ukWin {
+            get {
+                return ResourceManager.GetString("ukWin", resourceCulture);
             }
         }
         
@@ -336,6 +2057,89 @@ namespace tanks.Properties {
             get {
                 object obj = ResourceManager.GetObject("Wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 消除.
+        /// </summary>
+        internal static string zhCancel {
+            get {
+                return ResourceManager.GetString("zhCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 在球場上的對象不超過111，並播放速度超過100.
+        /// </summary>
+        internal static string zhCheck {
+            get {
+                return ResourceManager.GetString("zhCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 您确定要退出吗？.
+        /// </summary>
+        internal static string zhExit {
+            get {
+                return ResourceManager.GetString("zhExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 你被擊敗了！.
+        /// </summary>
+        internal static string zhLose {
+            get {
+                return ResourceManager.GetString("zhLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 是的.
+        /// </summary>
+        internal static string zhOK {
+            get {
+                return ResourceManager.GetString("zhOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zhPauseButton {
+            get {
+                object obj = ResourceManager.GetObject("zhPauseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zhPlayButton {
+            get {
+                object obj = ResourceManager.GetObject("zhPlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 太多的對象！盡量減少在球場上的對象的數目！.
+        /// </summary>
+        internal static string zhTooMuch {
+            get {
+                return ResourceManager.GetString("zhTooMuch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 所有敵人的坦克摧毀。勝利！.
+        /// </summary>
+        internal static string zhWin {
+            get {
+                return ResourceManager.GetString("zhWin", resourceCulture);
             }
         }
     }

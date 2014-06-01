@@ -5,7 +5,7 @@ using System.Text;
 
 namespace tanks
 {
-    interface ITurn
+    public interface ITurn
     {
         void Turn();
     }

@@ -8,33 +8,30 @@ namespace tanks
 {
     class HunterIMG
     {
-        Image img01 = Properties.Resources.hunter_tank01;
-        Image img0_1 = Properties.Resources.hunter_tank0_1;
-        Image img_10 = Properties.Resources.hunter_tank_10;
-        Image img10 = Properties.Resources.hunter_tank10;
+        Image[] up = new Image[] { Properties.Resources.hunterTankUP1, Properties.Resources.hunterTankUP2, Properties.Resources.hunterTankUP3, Properties.Resources.hunterTankUP4 };
+        Image[] down = new Image[] { Properties.Resources.hunterTankDOWN1, Properties.Resources.hunterTankDOWN2, Properties.Resources.hunterTankDOWN3, Properties.Resources.hunterTankDOWN4 };
+        Image[] left = new Image[] { Properties.Resources.hunterTankLEFT1, Properties.Resources.hunterTankLEFT2, Properties.Resources.hunterTankLEFT3, Properties.Resources.hunterTankLEFT4 };
+        Image[] right = new Image[] { Properties.Resources.hunterTankRIGHT1, Properties.Resources.hunterTankRIGHT2, Properties.Resources.hunterTankRIGHT3, Properties.Resources.hunterTankRIGHT4 };
 
-        public Image Img0_1
+        public Image[] Up
         {
-            get { return img0_1; }
-            set { img0_1 = value; }
+            get { return up; }
+            set { up = value; }
         }
-
-        public Image Img10
+        public Image[] Down
         {
-            get { return img10; }
-            set { img10 = value; }
+            get { return down; }
+            set { down = value; }
         }
-
-        public Image Img_10
+        public Image[] Left
         {
-            get { return img_10; }
-            set { img_10 = value; }
+            get { return left; }
+            set { left = value; }
         }
-
-        public Image Img01
+        public Image[] Right
         {
-            get { return img01; }
-            set { img01 = value; }
+            get { return right; }
+            set { right = value; }
         }
     }
 }

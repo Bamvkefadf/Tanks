@@ -9,10 +9,16 @@ namespace tanks
     class Projectile
     {
         private Image img;
-        public int distance;
-        public int cooldown;
+        public int distanceToDestruct;
         int x, y;
         public Direction direction;
+        public int safeProjectile = 0;
+        TypeOfProjectile type;
+        public bool ended = false;
+
+        public bool throughWalls = false;
+        public int damage = 1;
+        public int speed = 6;
 
         public Image Img
         {
@@ -32,28 +38,50 @@ namespace tanks
             set { x = value; }
         }
 
-        public Projectile()
+        public Projectile(int distance, int x, int y, Direction direction, TypeOfProjectile type)
         {
-            ProjectileDefaultSettings();
+            this.distanceToDestruct = distance;
+            this.type = type;
+
+            if (type == TypeOfProjectile.RED)
+                SetRedType();
+              
+            if (type == TypeOfProjectile.BLUE)
+                SetBlueType();
+
+            if (type == TypeOfProjectile.PLAYER)
+                SetPlayerType();
+
+            this.x = x;
+            this.y = y;
+            this.direction = direction;
+            Run();
         }
 
-        public void ProjectileDefaultSettings()
+        private void SetPlayerType()
         {
-            x = y = -10;
-            direction = Direction.STOP;
-            distance = 0;
+            Img = Properties.Resources.PlayerProjectile;
+        }
+
+        private void SetRedType()
+        {
+            Img = Properties.Resources.ProjectileRed;
+            speed = 3;
+        }
+
+        private void SetBlueType()
+        {
+            Img = Properties.Resources.ProjectileBlue;
+            throughWalls = true;
         }
 
         public void Run()
         {
-            if (cooldown <= 100)
-                cooldown++;
-            if (direction == Direction.STOP)
-                return;
-            distance = distance + 3;
+            distanceToDestruct = distanceToDestruct - speed;
             GoDirection();
-            if (distance > 250)
-                ProjectileDefaultSettings();
+            safeProjectile++;
+            if (distanceToDestruct < 0)
+                ended = true;
         }
 
         private void GoDirection()
@@ -61,21 +89,21 @@ namespace tanks
             if (direction == Direction.DOWN)
             {
                 x += 0;
-                y += 3;
+                y += speed;
             }
             else if (direction == Direction.UP)
             {
                 x += 0;
-                y += -3;
+                y += -speed;
             }
             else if (direction == Direction.RIGHT)
             {
-                x += 3;
+                x += speed;
                 y += 0;
             }
             else if (direction == Direction.LEFT)
             {
-                x += -3;
+                x += -speed;
                 y += 0;
             }
             else

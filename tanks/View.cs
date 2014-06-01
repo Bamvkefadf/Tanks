@@ -7,33 +7,54 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.Globalization;
 
 namespace tanks
 {
     partial class View : UserControl
     {
-        Model model;
+        ModeGame model;
         Random r;
+        public int check = 1;
 
-        public View(Model model)
+        public View(ModeGame model)
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.language);
             InitializeComponent();
             r = new Random();
             this.model = model;       
         }
 
-        void Draw(PaintEventArgs e)
+        public void SetLanguage()
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.language);
+            InitializeComponent();
+        }
+
+        public void Draw(PaintEventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.language);
             DrawWall(e);
             DrawTank(e);
             DrawPlayer(e);
-            DrawScore(e);       
+            DrawScore(e);
+            DrawProjectiles(e);
 
-            if (model.gameStatus != GameStatus.PLAY)
+            if (check == -1)
+            {
                 return;
+            }
 
-            Thread.Sleep(model.speedGame);
+            Thread.Sleep(model.SpeedGame);
             Invalidate();
+        }
+
+        private void DrawProjectiles(PaintEventArgs e)
+        {
+            for (int i = 0; i < model.Projectiles.Count; i++)
+            {
+                e.Graphics.DrawImage(model.Projectiles[i].Img, new Point(model.Projectiles[i].X, model.Projectiles[i].Y));
+            }
         }
 
         private void DrawScore(PaintEventArgs e)
@@ -45,27 +66,19 @@ namespace tanks
 
         private void DrawPlayer(PaintEventArgs e)
         {
-            if (model.Player.canDamaged == false)
-            {
-                e.Graphics.DrawImage(Properties.Resources.Invulnerability, model.Player.X, model.Player.Y);
-            }
-            else
-                e.Graphics.DrawImage(model.Player.Img, model.Player.X, model.Player.Y);
-            e.Graphics.DrawImage(model.Player.projectile.Img, model.Player.projectile.X, model.Player.projectile.Y);
+                e.Graphics.DrawImage(model.Player.CurrentImage, model.Player.X, model.Player.Y);
         }
 
         private void DrawTank(PaintEventArgs e)
         {
             for (int i = 0; i < model.SimpleTanks.Count; i++)
             {
-                e.Graphics.DrawImage(model.SimpleTanks[i].Img, new Point(model.SimpleTanks[i].X, model.SimpleTanks[i].Y));
-                e.Graphics.DrawImage(model.SimpleTanks[i].projectile.Img, new Point(model.SimpleTanks[i].projectile.X, model.SimpleTanks[i].projectile.Y));
+                e.Graphics.DrawImage(model.SimpleTanks[i].CurrentImage, new Point(model.SimpleTanks[i].X, model.SimpleTanks[i].Y));
             }
 
             for (int i = 0; i < model.HunterTanks.Count; i++)
             {
-                e.Graphics.DrawImage(model.HunterTanks[i].projectile.Img, new Point(model.HunterTanks[i].projectile.X, model.HunterTanks[i].projectile.Y));
-                e.Graphics.DrawImage(model.HunterTanks[i].Img, new Point(model.HunterTanks[i].X, model.HunterTanks[i].Y));
+                e.Graphics.DrawImage(model.HunterTanks[i].CurrentImage, new Point(model.HunterTanks[i].X, model.HunterTanks[i].Y));
             }
         }
 
@@ -79,7 +92,11 @@ namespace tanks
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Draw(e);
+            if (check == -1)
+                return;
+            else
+                Draw(e);
+                
         }
 
         private void View_Load(object sender, EventArgs e)
@@ -92,7 +109,7 @@ namespace tanks
              
         }
 
-        private void View_KeyPress(object sender, KeyPressEventArgs e)
+        private void controlPlayer(object sender, KeyPressEventArgs e)
         {
             switch (e.KeyChar)
             {
@@ -130,34 +147,19 @@ namespace tanks
                     break;
                 default:
                     {
-                        if (model.Player.projectile.distance == 0)
+                        if (model.Player.cooldown <= 0)
                         {
-                            model.Player.projectile.direction = model.Player.img_direction;
-                            if (model.Player.projectile.direction == Direction.UP)
-                            {
-                                model.Player.projectile.X = model.Player.X + 20;
-                                model.Player.projectile.Y = model.Player.Y;
-                            }
-                            else if (model.Player.projectile.direction == Direction.DOWN)
-                            {
-                                model.Player.projectile.X = model.Player.X + 20;
-                                model.Player.projectile.Y = model.Player.Y + 40;
-                            }
-                            else if (model.Player.projectile.direction == Direction.LEFT)
-                            {
-                                model.Player.projectile.X = model.Player.X;
-                                model.Player.projectile.Y = model.Player.Y + 20;
-                            }
-                            else if (model.Player.projectile.direction == Direction.RIGHT)
-                            {
-                                model.Player.projectile.X = model.Player.X + 40;
-                                model.Player.projectile.Y = model.Player.Y + 20;
-                            }
+                            model.Player.cooldown = 100;
+                            model.Projectiles.Add(new Projectile(model.Player.distanceOfProjectile, model.Player.GetDefaultProjectileX(), model.Player.GetDefaultProjectileY(), model.Player.img_direction, TypeOfProjectile.PLAYER));
                         }
-
                     }
                     break;
             }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

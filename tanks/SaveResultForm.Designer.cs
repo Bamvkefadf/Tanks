@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,46 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NameTB = new System.Windows.Forms.TextBox();
+            this.SaveScores = new System.Windows.Forms.Button();
+            this.resultsTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // NameTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 296);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 0;
+            this.NameTB.Location = new System.Drawing.Point(12, 270);
+            this.NameTB.Name = "NameTB";
+            this.NameTB.Size = new System.Drawing.Size(164, 20);
+            this.NameTB.TabIndex = 0;
             // 
-            // button1
+            // SaveScores
             // 
-            this.button1.Location = new System.Drawing.Point(197, 294);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SaveScores.Enabled = false;
+            this.SaveScores.Location = new System.Drawing.Point(197, 268);
+            this.SaveScores.Name = "SaveScores";
+            this.SaveScores.Size = new System.Drawing.Size(75, 23);
+            this.SaveScores.TabIndex = 1;
+            this.SaveScores.Text = " OK";
+            this.SaveScores.UseVisualStyleBackColor = true;
+            this.SaveScores.Click += new System.EventHandler(this.SaveResult_Click);
             // 
-            // textBox2
+            // resultsTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 12);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(260, 276);
-            this.textBox2.TabIndex = 2;
+            this.resultsTB.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.resultsTB.Location = new System.Drawing.Point(12, 12);
+            this.resultsTB.Multiline = true;
+            this.resultsTB.Name = "resultsTB";
+            this.resultsTB.ReadOnly = true;
+            this.resultsTB.Size = new System.Drawing.Size(260, 252);
+            this.resultsTB.TabIndex = 2;
             // 
             // SaveResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 326);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(284, 295);
+            this.Controls.Add(this.resultsTB);
+            this.Controls.Add(this.SaveScores);
+            this.Controls.Add(this.NameTB);
+            this.MaximizeBox = false;
             this.Name = "SaveResultForm";
-            this.Text = "SaveResultForm";
+            this.Load += new System.EventHandler(this.SaveResultForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,8 +79,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox NameTB;
+        public System.Windows.Forms.Button SaveScores;
+        private System.Windows.Forms.TextBox resultsTB;
     }
 }

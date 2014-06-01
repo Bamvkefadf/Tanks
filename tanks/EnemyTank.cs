@@ -4,117 +4,115 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Threading;
+using System.Diagnostics;
 
 namespace tanks
 {
-    class EnemyTank : ITurn, ITurnAround, IExternalWalls, IPicture
+    public class EnemyTank : Tank, ITurn, ITurnAround, IExternalWalls
     {
-        private TankIMG tankImg = new TankIMG();
-        protected Image img;
-        protected int x, y;
+        private EnemyTankIMG tankImg = new EnemyTankIMG();
+        private Image[] img;
+        private Direction moving_direction;
+        protected Image currentImage;
+        protected int k;
         protected int prev_x, prev_y;
+        protected int respawn_x, respawn_y;
         protected static Random r;
-        protected int mustTurn;
-        public Direction moving_direction;
-        public Projectile projectile;
+        protected int countToTurn = 0;
+        protected int cooldown = 200;
+        protected int distanceOfProjectile = 250;
+        protected bool shot = false;
 
+        public bool Shot
+        {
+            get { return shot; }
+            set { shot = value; }
+        }
+        public Direction Moving_direction
+        {
+            get { return moving_direction; }
+            set { moving_direction = value; }
+        }
+        public int DistanceOfProjectile
+        {
+            get { return distanceOfProjectile; }
+            set { distanceOfProjectile = value; }
+        }
+        public int Respawn_y
+        {
+            get { return respawn_y; }
+        }
+        public int Respawn_x
+        {
+            get { return respawn_x; }
+        }
+        public Image CurrentImage
+        {
+            get { return currentImage; }
+        }
         public int Prev_y
         {
             get { return prev_y; }
         }
-
         public int Prev_x
         {
             get { return prev_x; }
         }
-
         public EnemyTank(int x, int y)
         {
             r = new Random();
 
-            img = tankImg.Img0_1;
-            projectile = new Projectile();
-            projectile.Img = Properties.Resources.ProjectileRed;
-            moving_direction = (Direction)r.Next(1, 5);
+            img = tankImg.Down;
 
+            moving_direction = (Direction)r.Next(1, 5);
+            PutCurrentImage();
             PutImg();
 
             this.x = x;
             this.y = y;
         }
-
-        public int Y
-        {
-            get { return y; }
-            set { y = value; }
-        }
-
-        public int X
-        {
-            get { return x; }
-            set { x = value; }
-        }
-
-        public Image Img
+        public Image[] Img
         {
             get { return img; }
         }
 
-        public void Run(int target_x, int target_y)
+        public override void PutImg()
         {
-            prev_x = x;
-            prev_y = y;
-            projectile.Run();
-            GoDirection();
-
-            if (
-                ((X > target_x - 30 && X < target_x + 30)
-                ||
-                (Y > target_y - 30 && Y < target_y + 30))         
-                && 
-                (projectile.distance == 0 && projectile.cooldown > 99)
-                )
-                Shoot();
-
-            mustTurn++;
-            
-            ExternalWalls();
-
-            PutImg();
-
-            if (mustTurn == 40)
+            if (moving_direction == Direction.RIGHT)
             {
-                Turn();
-                mustTurn = 0;
+                moving_direction = Direction.RIGHT;
+                img = tankImg.Right;
             }
+            else if (moving_direction == Direction.DOWN)
+            {
+                moving_direction = Direction.DOWN;
+                img = tankImg.Down;
+            }
+            else if (moving_direction == Direction.LEFT)
+            {
+                moving_direction = Direction.LEFT;
+                img = tankImg.Left;
+            }
+            else if (moving_direction == Direction.UP)
+            {
+                moving_direction = Direction.UP;
+                img = tankImg.Up;
+            }
+            img_direction = moving_direction;
         }
-
-        protected void Shoot()
+        //Анимация танков
+        public override void PutCurrentImage()
         {
-            projectile.cooldown = 0;
-            projectile.direction = moving_direction;
-            if (projectile.direction == Direction.UP)
-            {
-                projectile.X = X + 20;
-                projectile.Y = Y;
-            }
-            else if (projectile.direction == Direction.DOWN)
-            {
-                projectile.X = X + 20;
-                projectile.Y = Y + 40;
-            }
-            else if (projectile.direction == Direction.LEFT)
-            {
-                projectile.X = X;
-                projectile.Y = Y + 20;
-            }
-            else if (projectile.direction == Direction.RIGHT)
-            {
-                projectile.X = X + 40;
-                projectile.Y = Y + 20;
-            }
+            currentImage = img[k];
+            k++;
+            if (k == 4)
+                k = 0;
         }
-
+        protected void Shoot(int value)
+        {
+            shot = true;
+            cooldown = value;
+        }
         protected void GoDirection()
         {
             if (moving_direction == Direction.DOWN)
@@ -144,62 +142,47 @@ namespace tanks
             }
         }
 
-        public void Turn()
+        public void Run()
         {
-                if (r.Next(500) < 250)
+            prev_x = x;
+            prev_y = y;
+            GoDirection();
+
+            if ((r.Next(0, 500) > 450) && (cooldown <= 0))
+                Shoot(200);
+
+            countToTurn++;
+            cooldown--;
+
+            ExternalWalls();
+            PutCurrentImage();
+            PutImg();
+
+            if (countToTurn > r.Next(40, 80))
+            {
+                Turn();
+                countToTurn = 0;
+            }
+        }
+        public override void Turn()
+        {
+            if (r.Next(0, 2) == 0)
+            {
+                if (moving_direction == Direction.LEFT || moving_direction == Direction.RIGHT)
                 {
-                    if (moving_direction == Direction.LEFT || moving_direction == Direction.RIGHT)
-                    {
-                        moving_direction = (Direction)r.Next(3, 5);
-                    }
+                    moving_direction = (Direction)r.Next(3, 5);
                 }
-                else
+            }
+            else
+            {
+                if (moving_direction == Direction.UP || moving_direction == Direction.DOWN)
                 {
-                    if (moving_direction == Direction.UP || moving_direction == Direction.DOWN)
-                    {
-                        moving_direction = (Direction)r.Next(1, 3);
-                    }
+                    moving_direction = (Direction)r.Next(1, 3);
                 }
-
-                PutImg();
+            }
+            img_direction = moving_direction;
+            PutImg();
         }
-
-        public void ExternalWalls()
-        {
-            if (x <= 0)
-                moving_direction = Direction.RIGHT;
-            else if (x >= 761)
-                moving_direction = Direction.LEFT;
-            else if (y <= 0)
-                moving_direction = Direction.DOWN;
-            else if (y >= 561)
-                moving_direction = Direction.UP;
-        }
-
-        void PutImg()
-        {
-            if (moving_direction == Direction.RIGHT)
-            {
-                moving_direction = Direction.RIGHT;
-                img = tankImg.Img10;
-            }
-            else if (moving_direction == Direction.DOWN)
-            {
-                moving_direction = Direction.DOWN;
-                img = tankImg.Img01;
-            }
-            else if (moving_direction == Direction.LEFT)
-            {
-                moving_direction = Direction.LEFT;
-                img = tankImg.Img_10;
-            }
-            else if (moving_direction == Direction.UP)
-            {
-                moving_direction = Direction.UP;
-                img = tankImg.Img0_1;
-            }
-        }
-
         public void TurnAround()
         {
             if (moving_direction == Direction.LEFT)
@@ -210,7 +193,21 @@ namespace tanks
                 moving_direction = Direction.DOWN;
             else if (moving_direction == Direction.DOWN)
                 moving_direction = Direction.UP;
+            img_direction = moving_direction;
             PutImg();
+        }
+        public override void ExternalWalls()
+        {
+            if (x <= leftBorder)
+                moving_direction = Direction.RIGHT;
+            else if (x >= rightBorder)
+                moving_direction = Direction.LEFT;
+            else if (y <= topBorder)
+                moving_direction = Direction.DOWN;
+            else if (y >= bottomBorder)
+                moving_direction = Direction.UP;
+            
+            img_direction = moving_direction;
         }
     }
 }
