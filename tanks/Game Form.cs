@@ -114,8 +114,7 @@ namespace tanks
                         }
 
                     }
-                    break;
-                    
+                    break;     
             }
         }
 
@@ -166,7 +165,6 @@ namespace tanks
             FileStream fs = new FileStream(pathToFile, FileMode.OpenOrCreate, FileAccess.ReadWrite);
             StreamWriter sw = new StreamWriter(fs);
 
-            //if (sw.)
             sw.Close();
         }
     }

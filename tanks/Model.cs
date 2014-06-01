@@ -52,6 +52,7 @@ namespace tanks
         public Model(int amountSimpleTanks, int speedGame, int amountWalls, int amountHunterTanks)
         {
             r = new Random();
+            score = new Score();
 
             this.amountSimpleTanks = amountSimpleTanks;
             this.speedGame = speedGame;
@@ -74,14 +75,21 @@ namespace tanks
                     MessageBox.Show("Слишком большое число объектов!");
                     break;
                 }
-                
-                x = (r.Next(0, 750));
-                y = (r.Next(1, 300));
+
+                x = (r.Next(0, 40)) * 20;
+                y = (r.Next(0, 23)) * 20;
 
                 flag = true;
 
                 foreach (HunterTank t in hunterTanks)
                     if (Math.Abs(t.X - x) <= 41 && Math.Abs(t.Y - y) <= 41)
+                    {
+                        flag = false;
+                        break;
+                    }
+
+                foreach (Wall w in walls)
+                    if (Math.Abs(w.X - x) <= 41 && Math.Abs(w.Y - y) <= 41)
                     {
                         flag = false;
                         break;
@@ -106,8 +114,8 @@ namespace tanks
                     break;
                 }
 
-                x = (r.Next(0, 750));
-                y = (r.Next(1, 300));
+                x = (r.Next(0, 40)) * 20;
+                y = (r.Next(0, 23)) * 20;
 
                 flag = true;
 
@@ -119,8 +127,15 @@ namespace tanks
                     }
 
                 foreach (HunterTank h in hunterTanks)
-                    if //(Math.Sqrt(Math.Pow(Math.Abs(h.X - x), 2) + Math.Pow(Math.Abs(h.Y - y), 2)) < 56)
+                    if 
                         (Math.Abs(h.X - x) <= 41 && Math.Abs(h.Y - y) <= 41)
+                    {
+                        flag = false;
+                        break;
+                    }
+
+                foreach (Wall w in walls)
+                    if (Math.Abs(w.X - x) <= 41 && Math.Abs(w.Y - y) <= 41)
                     {
                         flag = false;
                         break;
@@ -146,26 +161,13 @@ namespace tanks
                     break;
                 }
 
-                x = (r.Next(0, 765));
-                y = (r.Next(1, 510));
+                //800х600
+                x = (r.Next(0, 20)) * 40;
+                y = (r.Next(0, 13)) * 40;
                 flag = true;
 
                 foreach (Wall w in walls)
-                    if (Math.Abs(w.X - x) <= 41 && Math.Abs(w.Y - y) <= 41)
-                    {
-                        flag = false;
-                        break;
-                    }
-
-                foreach (EnemyTank t in simpleTanks)
-                    if (Math.Abs(t.X - x) <= 41 && Math.Abs(t.Y - y) <= 41)
-                    {
-                        flag = false;
-                        break;
-                    }
-
-                foreach (HunterTank h in hunterTanks)
-                    if (Math.Abs(h.X - x) <= 41 && Math.Abs(h.Y - y) <= 41)
+                    if (Math.Abs(w.X - x) <= 20 && Math.Abs(w.Y - y) <= 20)
                     {
                         flag = false;
                         break;
@@ -194,9 +196,29 @@ namespace tanks
                 Interaction_PlayerWithEnemies();
                 checkSimpleTanksInteractWalls();
                 checkHunterTanksInteractWalls();
+                checkWinGame();
             }
             if (gameStatus == GameStatus.LOSE)
+            {
+                
                 MessageBox.Show("Вы потерпели сокрушительное поражение!");
+
+            }
+
+
+            if (gameStatus == GameStatus.WIN)
+            {
+                if (Properties.Settings.Default.mode == 0)
+                    MessageBox.Show("Все танки врага уничтожены. Победа!");
+                if (Properties.Settings.Default.mode == 1)
+                    NewGame();
+            }
+        }
+
+        private void checkWinGame()
+        {
+            if (simpleTanks.Count == 0 && hunterTanks.Count == 0)
+                gameStatus = GameStatus.WIN;
         }
 
         private void Interaction_EnemiesProjectilesWithObjects()
@@ -459,7 +481,7 @@ namespace tanks
         internal void NewGame()
         {
             player = new Player();
-            score = new Score();
+            //score = new Score();
             simpleTanks = new List<EnemyTank>();
             hunterTanks = new List<HunterTank>();
             walls = new List<Wall>();
@@ -468,9 +490,10 @@ namespace tanks
             speedGame = Properties.Settings.Default.speedGame;
             amountWalls = Properties.Settings.Default.amountWalls;
 
+            CreateWalls();
             CreateHunterTanks();
             CreateSimpleTanks();
-            CreateWalls();
+            
 
             gameStatus = GameStatus.STOP;
         }
