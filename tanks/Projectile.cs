@@ -46,7 +46,7 @@ namespace tanks
 
         public void Run()
         {
-            if (cooldown <= 110)
+            if (cooldown <= 160)
                 cooldown++;
             if (direction == Direction.STOP)
                 return;

@@ -9,10 +9,16 @@ namespace tanks
     class Wall : IPicture
     {
         WallIMG wallImg = new WallIMG();
-        int health;
+        int health = 3;
         int currentHealth;
         Image img;
         int x, y;
+
+        public int CurrentHealth
+        {
+            get { return currentHealth; }
+            set { currentHealth = value; }
+        }
 
         public int Y
         {
@@ -34,6 +40,8 @@ namespace tanks
         public Wall(int x, int y)
         {
             img = wallImg.Img;
+
+            currentHealth = health;
 
             this.x = x;
             this.y = y;

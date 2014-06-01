@@ -34,7 +34,7 @@ namespace tanks
                 model.gameStatus = GameStatus.STOP;
                 playButton.Image = Properties.Resources.PlayButton;
             }
-            else
+            else if (model.gameStatus == GameStatus.STOP)
             {
                 model.gameStatus = GameStatus.PLAY;
                 modelPlay = new Thread(model.Play);
@@ -86,29 +86,29 @@ namespace tanks
                     break;
                 case Keys.Space:
                     {
-                        if (model.Projectile.distance == 0 && model.Projectile.cooldown > 100)
+                        if (model.Player.projectile.distance == 0 && model.Player.projectile.cooldown > 100)
                         {
-                            model.Projectile.cooldown = 0;
-                            model.Projectile.direction = model.Player.img_direction;
-                            if (model.Projectile.direction == Direction.UP)
+                            model.Player.projectile.cooldown = 0;
+                            model.Player.projectile.direction = model.Player.img_direction;
+                            if (model.Player.projectile.direction == Direction.UP)
                             {
-                                model.Projectile.X = model.Player.X + 20;
-                                model.Projectile.Y = model.Player.Y;
+                                model.Player.projectile.X = model.Player.X + 20;
+                                model.Player.projectile.Y = model.Player.Y;
                             }
-                            else if (model.Projectile.direction == Direction.DOWN)
+                            else if (model.Player.projectile.direction == Direction.DOWN)
                             {
-                                model.Projectile.X = model.Player.X + 20;
-                                model.Projectile.Y = model.Player.Y + 40;
+                                model.Player.projectile.X = model.Player.X + 20;
+                                model.Player.projectile.Y = model.Player.Y + 40;
                             }
-                            else if (model.Projectile.direction == Direction.LEFT)
+                            else if (model.Player.projectile.direction == Direction.LEFT)
                             {
-                                model.Projectile.X = model.Player.X;
-                                model.Projectile.Y = model.Player.Y + 20;
+                                model.Player.projectile.X = model.Player.X;
+                                model.Player.projectile.Y = model.Player.Y + 20;
                             }
-                            else if (model.Projectile.direction == Direction.RIGHT)
+                            else if (model.Player.projectile.direction == Direction.RIGHT)
                             {
-                                model.Projectile.X = model.Player.X + 40;
-                                model.Projectile.Y = model.Player.Y + 20;
+                                model.Player.projectile.X = model.Player.X + 40;
+                                model.Player.projectile.Y = model.Player.Y + 20;
                             }
                         }
 
@@ -125,6 +125,11 @@ namespace tanks
 
         private void новаяИграToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (modelPlay != null)
+            {
+                model.gameStatus = GameStatus.STOP;
+                modelPlay.Abort();
+            }
             model.NewGame();
             playButton.Image = Properties.Resources.PlayButton;
             view.Refresh();

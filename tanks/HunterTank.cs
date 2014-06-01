@@ -75,7 +75,13 @@ namespace tanks
             projectile.Run();
             GoDirection();
 
-            if (X == target_x || Y == target_y)
+            if (
+                ((X > target_x - 30 && X < target_x + 30)
+                ||
+                (Y > target_y - 30 && Y < target_y + 30)) 
+                && 
+                (projectile.distance == 0 && projectile.cooldown > 150)
+                )
                 Shoot();
 
             mustTurn++;

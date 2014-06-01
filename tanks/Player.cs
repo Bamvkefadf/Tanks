@@ -11,10 +11,18 @@ namespace tanks
         PlayerIMG playerImg = new PlayerIMG();
         Image img;
         int x, y;
+        int health;
         public Direction moving_direction;
         public Direction img_direction;
+        public Projectile projectile;
         int temp_x, temp_y;             //координаты для сохранения игрока внутри поля
         static Random r;
+
+        public int Health
+        {
+            get { return health; }
+            set { health = value; }
+        }
 
         public Image Img
         {
@@ -38,6 +46,9 @@ namespace tanks
             r = new Random();
 
             img = playerImg.Img0_1;
+            health = 3;
+            projectile = new Projectile();
+            projectile.Img = Properties.Resources.ProjectileRed;
 
             this.x = 400;
             this.y = 550;
@@ -52,7 +63,7 @@ namespace tanks
             temp_y = y;
 
             GoDirection();
-
+            projectile.Run();
             ExternalWalls();
 
             PutImg();

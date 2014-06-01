@@ -212,9 +212,19 @@ namespace tanks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Projectile {
+        internal static System.Drawing.Bitmap ProjectileBlue {
             get {
-                object obj = ResourceManager.GetObject("Projectile", resourceCulture);
+                object obj = ResourceManager.GetObject("ProjectileBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProjectileRed {
+            get {
+                object obj = ResourceManager.GetObject("ProjectileRed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

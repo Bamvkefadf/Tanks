@@ -32,13 +32,15 @@ namespace tanks
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || Convert.ToInt32(textBox1.Text) > 50
-                || textBox2.Text == "" || Convert.ToInt32(textBox1.Text) > 50
-                || textBox3.Text == "" || Convert.ToInt32(textBox1.Text) > 50
-                || textBox4.Text == "" || Convert.ToInt32(textBox1.Text) > 50)
+            if (textBox1.Text == "" 
+                || textBox2.Text == "" 
+                || textBox3.Text == "" 
+                || textBox4.Text == "" || Convert.ToInt32(textBox4.Text) > 50
+                ||
+                (Convert.ToInt32(textBox1.Text) + Convert.ToInt32(textBox2.Text) + Convert.ToInt32(textBox3.Text)) > 111)
             {
                 button1.Enabled = false;
-                toolTip1.Show("Необходимо ввести число < 50", button1, 2000);
+                toolTip1.Show("Число объектов на поле не должно превышать 111", button1, 2000);
             }
             else
                 button1.Enabled = true;

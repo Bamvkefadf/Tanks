@@ -12,6 +12,7 @@ namespace tanks
         public int CurrentScore
         {
             get { return currentScore; }
+            set { currentScore = value; }
         }
 
         public void Increment()

@@ -19,15 +19,9 @@ namespace tanks
         List<Wall> walls;
         Player player;
         Score score;
-        Projectile projectile;
 
         public GameStatus gameStatus;
         Random r;
-
-        internal Projectile Projectile
-        {
-            get { return projectile; }
-        }
 
         internal Score Score
         {
@@ -158,8 +152,7 @@ namespace tanks
                 flag = true;
 
                 foreach (Wall w in walls)
-                    if //(Math.Sqrt(Math.Pow(Math.Abs(w.X - x), 2) + Math.Pow(Math.Abs(w.Y - y), 2)) < 40)
-                        (Math.Abs(w.X - x) <= 41 && Math.Abs(w.Y - y) <= 41)
+                    if (Math.Abs(w.X - x) <= 41 && Math.Abs(w.Y - y) <= 41)
                     {
                         flag = false;
                         break;
@@ -192,7 +185,6 @@ namespace tanks
                 int temp_x = player.X, temp_y = player.Y;
                 Thread.Sleep(speedGame);
                 player.Run();
-                projectile.Run();
                 RunEnemies();
                 Interaction_EnemiesProjectilesWithObjects();
                 Interaction_PlayerProjectileWithObjects();
@@ -217,7 +209,8 @@ namespace tanks
                     (simpleTanks[i].projectile.Y > player.Y - 8) &&
                     (simpleTanks[i].projectile.Y < player.Y + 40))
                 {
-                    gameStatus = GameStatus.LOSE;
+                    simpleTanks[i].projectile.ProjectileDefaultSettings();
+                    DamagePlayer();
                 }
 
             for (int i = 0; i < hunterTanks.Count; i++)
@@ -227,7 +220,8 @@ namespace tanks
                     (hunterTanks[i].projectile.Y > player.Y - 8) &&
                     (hunterTanks[i].projectile.Y < player.Y + 40))
                 {
-                    gameStatus = GameStatus.LOSE;
+                    hunterTanks[i].projectile.ProjectileDefaultSettings();
+                    DamagePlayer();
                 }
 
             for (int i = 0; i < simpleTanks.Count; i++)
@@ -238,9 +232,23 @@ namespace tanks
                         (simpleTanks[i].projectile.Y > walls[j].Y - 8) &&
                         (simpleTanks[i].projectile.Y < walls[j].Y + 40))
                     {
-                    walls.RemoveAt(j);
+                    walls[i].CurrentHealth -= 1;
+                    if (walls[i].CurrentHealth == 0)
+                        walls.RemoveAt(j);
                     simpleTanks[i].projectile.ProjectileDefaultSettings();
                 }
+        }
+
+        private void DamagePlayer()
+        {
+            player.Health -= 1;
+            if (player.Health == 0)
+                gameStatus = GameStatus.LOSE;
+            else
+            {
+                player.X = 400;
+                player.Y = 550;
+            }
         }
 
         private void Interaction_PlayerWithWalls(int temp_x, int temp_y)
@@ -317,11 +325,11 @@ namespace tanks
         {
             for (int i = 0; i < simpleTanks.Count; i++)
                 if (Math.Abs(player.X - simpleTanks[i].X) <= 40 && Math.Abs(player.Y - simpleTanks[i].Y) <= 40)
-                    gameStatus = GameStatus.LOSE;
+                    DamagePlayer();
 
             for (int i = 0; i < hunterTanks.Count; i++)
                 if (Math.Abs(player.X - hunterTanks[i].X) <= 40 && Math.Abs(player.Y - hunterTanks[i].Y) <= 40)
-                    gameStatus = GameStatus.LOSE;
+                    DamagePlayer();
         }
 
         private void RunEnemies()
@@ -340,38 +348,63 @@ namespace tanks
         private void Interaction_PlayerProjectileWithObjects()
         {
             for (int i = 0; i < simpleTanks.Count; i++)
+            {
                 if
-                    ((Projectile.X > simpleTanks[i].X - 8) &&
-                    (Projectile.X < simpleTanks[i].X + 40) &&
-                    (Projectile.Y > simpleTanks[i].Y - 8) &&
-                    (Projectile.Y < simpleTanks[i].Y + 40))
+                    ((player.projectile.X > simpleTanks[i].projectile.X - 8) &&
+                    (player.projectile.X < simpleTanks[i].projectile.X + 8) &&
+                    (player.projectile.Y > simpleTanks[i].projectile.Y - 8) &&
+                    (player.projectile.Y < simpleTanks[i].projectile.Y + 8))
+                {
+                    simpleTanks[i].projectile.ProjectileDefaultSettings();
+                    player.projectile.ProjectileDefaultSettings();
+                }
+                if
+                    ((player.projectile.X > simpleTanks[i].X - 8) &&
+                    (player.projectile.X < simpleTanks[i].X + 40) &&
+                    (player.projectile.Y > simpleTanks[i].Y - 8) &&
+                    (player.projectile.Y < simpleTanks[i].Y + 40))
                 {
                     score.Increment();
                     simpleTanks.RemoveAt(i);
-                    projectile.ProjectileDefaultSettings();
+                    player.projectile.ProjectileDefaultSettings();
                 }
+            }
 
             for (int i = 0; i < hunterTanks.Count; i++)
+            {
                 if
-                    ((Projectile.X > hunterTanks[i].X - 8) &&
-                    (Projectile.X < hunterTanks[i].X + 40) &&
-                    (Projectile.Y > hunterTanks[i].Y - 8) &&
-                    (Projectile.Y < hunterTanks[i].Y + 40))
+                    ((player.projectile.X > hunterTanks[i].projectile.X - 8) &&
+                    (player.projectile.X < hunterTanks[i].projectile.X + 8) &&
+                    (player.projectile.Y > hunterTanks[i].projectile.Y - 8) &&
+                    (player.projectile.Y < hunterTanks[i].projectile.Y + 8))
+                {
+                    hunterTanks[i].projectile.ProjectileDefaultSettings();
+                    player.projectile.ProjectileDefaultSettings();
+                }
+                if
+                    ((player.projectile.X > hunterTanks[i].X - 8) &&
+                    (player.projectile.X < hunterTanks[i].X + 40) &&
+                    (player.projectile.Y > hunterTanks[i].Y - 8) &&
+                    (player.projectile.Y < hunterTanks[i].Y + 40))
                 {
                     score.DoubleIncrement();
                     hunterTanks.RemoveAt(i);
-                    projectile.ProjectileDefaultSettings();
+                    player.projectile.ProjectileDefaultSettings();
                 }
+
+            }
 
             for (int i = 0; i < walls.Count; i++)
                 if
-                    ((Projectile.X > walls[i].X - 8) &&
-                    (Projectile.X < walls[i].X + 40) &&
-                    (Projectile.Y > walls[i].Y - 8) &&
-                    (Projectile.Y < walls[i].Y + 40))
+                    ((player.projectile.X > walls[i].X - 8) &&
+                    (player.projectile.X < walls[i].X + 40) &&
+                    (player.projectile.Y > walls[i].Y - 8) &&
+                    (player.projectile.Y < walls[i].Y + 40))
                 {
-                    walls.RemoveAt(i);
-                    projectile.ProjectileDefaultSettings();
+                    walls[i].CurrentHealth -= 1;
+                    if (walls[i].CurrentHealth == 0)
+                        walls.RemoveAt(i);
+                    player.projectile.ProjectileDefaultSettings();
                 }
         }
 
@@ -423,8 +456,6 @@ namespace tanks
         {
             player = new Player();
             score = new Score();
-            projectile = new Projectile();
-            projectile.Img = Properties.Resources.ProjectileRed;
             simpleTanks = new List<EnemyTank>();
             hunterTanks = new List<HunterTank>();
             walls = new List<Wall>();

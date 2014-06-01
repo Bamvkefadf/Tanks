@@ -27,8 +27,7 @@ namespace tanks
             DrawWall(e);
             DrawTank(e);
             DrawPlayer(e);
-            DrawScore(e);
-            DrawProjectile(e);         
+            DrawScore(e);       
 
             if (model.gameStatus != GameStatus.PLAY)
                 return;
@@ -37,20 +36,17 @@ namespace tanks
             Invalidate();
         }
 
-        private void DrawProjectile(PaintEventArgs e)
-        {
-            e.Graphics.DrawImage(model.Projectile.Img, new Point(model.Projectile.X, model.Projectile.Y));
-        }
-
         private void DrawScore(PaintEventArgs e)
         {
             label2.Text = model.Score.CurrentScore.ToString();
+            label4.Text = model.Player.Health.ToString();
             Update();
         }
 
         private void DrawPlayer(PaintEventArgs e)
         {
             e.Graphics.DrawImage(model.Player.Img, model.Player.X, model.Player.Y);
+            e.Graphics.DrawImage(model.Player.projectile.Img, model.Player.projectile.X, model.Player.projectile.Y);
         }
 
         private void DrawTank(PaintEventArgs e)
@@ -129,28 +125,28 @@ namespace tanks
                     break;
                 default:
                     {
-                        if (model.Projectile.distance == 0)
+                        if (model.Player.projectile.distance == 0)
                         {
-                            model.Projectile.direction = model.Player.img_direction;
-                            if (model.Projectile.direction == Direction.UP)
+                            model.Player.projectile.direction = model.Player.img_direction;
+                            if (model.Player.projectile.direction == Direction.UP)
                             {
-                                model.Projectile.X = model.Player.X + 20;
-                                model.Projectile.Y = model.Player.Y;
+                                model.Player.projectile.X = model.Player.X + 20;
+                                model.Player.projectile.Y = model.Player.Y;
                             }
-                            else if (model.Projectile.direction == Direction.DOWN)
+                            else if (model.Player.projectile.direction == Direction.DOWN)
                             {
-                                model.Projectile.X = model.Player.X + 20;
-                                model.Projectile.Y = model.Player.Y + 40;
+                                model.Player.projectile.X = model.Player.X + 20;
+                                model.Player.projectile.Y = model.Player.Y + 40;
                             }
-                            else if (model.Projectile.direction == Direction.LEFT)
+                            else if (model.Player.projectile.direction == Direction.LEFT)
                             {
-                                model.Projectile.X = model.Player.X;
-                                model.Projectile.Y = model.Player.Y + 20;
+                                model.Player.projectile.X = model.Player.X;
+                                model.Player.projectile.Y = model.Player.Y + 20;
                             }
-                            else if (model.Projectile.direction == Direction.RIGHT)
+                            else if (model.Player.projectile.direction == Direction.RIGHT)
                             {
-                                model.Projectile.X = model.Player.X + 40;
-                                model.Projectile.Y = model.Player.Y + 20;
+                                model.Player.projectile.X = model.Player.X + 40;
+                                model.Player.projectile.Y = model.Player.Y + 20;
                             }
                         }
 
